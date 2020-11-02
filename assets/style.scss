@@ -1,3 +1,13 @@
+$main-color:#00ADFF;
+$yellow-color: #FFE200;
+$btn-shadow-color: #7E7E7E;
+
+.main-color{
+    color: $main-color;    
+}
+.main-color-bg{
+    background-color: $main-color;
+}
 #first-view-content{
     position:absolute;
     top:0;
@@ -9,7 +19,7 @@
         "... ... ..." 1fr
         "... fvc-text ..." 1fr
         "... ... ..." 10%
-        / 50% 40% 10%;
+        / 60% 35% 5%;
 }
 
 #first-view-content-text{
@@ -20,4 +30,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.blue-sub-title{
+    text-underline-position: under;
+    text-decoration: underline;
+    color: $main-color;
+}
+.yellow-sub-title{
+    text-underline-position: under;
+    text-decoration: underline;
+    color: $yellow-color;
 }

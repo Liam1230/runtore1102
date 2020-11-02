@@ -2,12 +2,24 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+$main-color:#00ADFF;
+$yellow-color: #FFE200;
+$btn-shadow-color: #7E7E7E;
+
 @font-face {
     font-family: 'mainFont';
     src: url("/font/ヒラギノ角ゴ ProN W6.otf");
 }
 .v-application{
     font-family: "mainFont" !important;
+}
+
+.v-application .v-btn.secondary{
+    box-shadow: 0px 6px $btn-shadow-color;
+}
+
+.v-application .secondary {
+    color:black !important;
 }
 
 .v-application h1.text-h1{
