@@ -1,7 +1,7 @@
 <template>
   <article>
     <section class="p-relative mb-5">
-      <v-img width="100vw" height="100vh" src="/img/first.png" alt=""></v-img>
+      <v-img width="100vw" height="100vh" src="/img/first.png" lazy-src="/img/first_l.png" alt=""></v-img>
       <img class="p-absolute absolute-rb" style="width:35vw; height:35wh; min-width:250px; min-height:250px;" src="/img/triangle.png">
       <div id="first-view-content" class="white--text">
         <div id="first-view-content-text">
@@ -59,6 +59,9 @@
           <p class="text-h6 text-left py-5">ランニング中の痛みは本当に辛いもの。故障・痛みを治すために練習を休めば体力は落ちるし、ただ、痛みを放置して練習を続けると、どんどん体はボロボロになり、走れない体になってしまいます「怪我が癖になってしまっている」「ランニングをしていれば必ずどこかに痛みは出るもの」それは痛みの原因を改善することで変えることが可能。痛みは誤った体の使い方であることを知らせる合図。 正しい知識があれば、怪我は更なるレベルアップの 大きな チャンスなのです！その方法をお伝えします。</p>
         </v-container>
       </div>
+    </section>
+    <section class="my-5 py-5 p-relative text-center">
+      <v-btn x-large color="primary" style="padding:2.5rem; padding-left:4rem; padding-right:4rem;">あなたが気になる<br>悩みはどっち？</v-btn>
     </section>
   </article>
   <!-- <v-container column justify-center> -->
