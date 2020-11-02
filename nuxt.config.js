@@ -35,6 +35,8 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    "@/assets/style.scss",
+    "@/assets/common.scss",
     "@/assets/transition.scss",
   ],
 
