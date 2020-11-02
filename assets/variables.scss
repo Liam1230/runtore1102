@@ -6,6 +6,9 @@ $main-color:#00ADFF;
 $yellow-color: #FFE200;
 $btn-shadow-color: #7E7E7E;
 
+a{
+    text-decoration: none;
+}
 @font-face {
     font-family: 'mainFont';
     src: url("/font/ヒラギノ角ゴ ProN W6.otf");
@@ -303,5 +306,46 @@ $btn-shadow-color: #7E7E7E;
     font-family: "mainFont" !important;
 }
 .v-application p.text-overline{
+    font-family: "mainFont" !important;
+}
+
+
+.v-application span.text-h1{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-h2{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-h3{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-h4{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-h5{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-h6{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-subtitle-1{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-subtitle-2{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-body-1{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-body-2{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-button{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-caption{
+    font-family: "mainFont" !important;
+}
+.v-application span.text-overline{
     font-family: "mainFont" !important;
 }
