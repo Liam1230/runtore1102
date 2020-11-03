@@ -108,6 +108,7 @@
     <section class="py-5 my-5">
       <v-container class="text-center">
         <h3 class="text-h4 my-5 blue-sub-title">無料でランニング力をチェック</h3>
+        あたらしい更新
         <p class="text-h6 text-left py-5 main-text-color">スポーツトレーナーとして多くのランナーの怪我やランニングフォームの相談を受けてきました。経験をもとに解決策を当サイトにまとめております。痛み・ランニングフォームのあなたのお悩みに合った記事をご覧ください！</p>
         <v-btn color="secondary" rounded x-large class="my-5">無料でランニング力をチェック</v-btn>
         <p class="text-h6 text-left py-5 mt-5 main-text-color">あなたのランニング力チェックしませんか？ランナーに必要だと考える「ランニング技術」「練習内容」「体に関する知識」の3項目から問題を作成しております。5分で終了する直感で選ぶ問題で、あなたの強みや弱点を発見しましょう！その弱点に合わせ、あなたにオススメの記事も用意しております！</p>
