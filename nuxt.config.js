@@ -18,6 +18,11 @@ export default {
       return pages
     }
   },
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
+  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {

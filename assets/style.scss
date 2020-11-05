@@ -4,7 +4,18 @@ $btn-shadow-color: #7E7E7E;
 $main-text-color: #707070;
 $title-text-color: #6B6B6B;
 
+.square-box{
+    border: solid 1px $title-text-color;
+}
+.talk{
+    border:solid 3px $title-text-color;
+    padding: 20px;
+    border-radius: 20px;
+}
 .main-text-color{
+    color: $main-text-color;
+}
+.theme--light.v-btn.main-text-color{
     color: $main-text-color;
 }
 .title-text-color{
@@ -49,4 +60,9 @@ $title-text-color: #6B6B6B;
     text-underline-position: under;
     text-decoration: underline;
     color: $yellow-color;
+}
+
+.border-h2{
+    border-bottom: solid 2px $main-color;
+    padding-bottom: 10px;
 }

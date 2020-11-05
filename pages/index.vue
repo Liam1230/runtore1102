@@ -24,20 +24,20 @@
       <v-container column justify-center class="text-center">
         <v-row class="align-center justify-space-between">
           <v-col cols=5 class="mr-5">
-            <v-img src="/img/profile.png"></v-img>
+            <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
           </v-col>
           <v-col cols=6 class="pl-5 text-center">
             <h1 class="text-h4 text-left main-color">大人のRunトレ塾</h1>
             <h2 class="text-h6 mt-3 text-left title-text-color">代表 吉野洸希</h2>
             <v-divider class="my-5"></v-divider>
             <p class="text-left main-text-color">私は月間走行距離100ｋｍで 2:48:56 を 実現しました。初 のフルマラソンで は月間 250 ｋｍ練習し、 膝の痛みや 足底筋膜炎に顔をゆがめながら も 3 45で ゴール。 もっと良いタイムが出ると思っていたのに、 走っても ベストは伸びないばかりか、 痛みが出て しまう。ただ走るだけの 非効率な練習に疑問 を持つように 。そこで 当サイトでお伝えして いる 月間 100 ｋｍメソッドを生み出しました！</p>
-            <v-btn color="primary" large rounded>詳しく見る</v-btn>
+            <v-btn color="primary" large rounded to="profile">詳しく見る</v-btn>
           </v-col>
         </v-row>
       </v-container>
     </section>
     <section class="my-5 pb-5 p-relative">
-      <img class="p-absolute absolute-lt" style="top:10%;" width="90%" src="/img/sectiontop1.png">
+      <img class="p-absolute absolute-lt" style="top:10%;" width="90%" src="/img/sectiontop1.png" lazy-src="/img/sectiontop1_l.png">
       <img style="width:100vw;" src="/img/blueTriangle.png">
       <div class="main-color-bg" style="padding-bottom:120px; padding-top:70px;">
         <v-container column justify-center class="text-center main-color-bg" style="margin-top:-1px;">
@@ -45,12 +45,12 @@
           <h2 class="mt-3 white--text">-Form-</h2>
           <h3 class="text-h4 my-5 py-5 yellow-sub-title">独自の型で無理に走り続けていませんか？</h3>
           <p class="text-h6 text-left py-5 white--text">練習量をこなしてもタイムが伸びない。多くのランナーの悩みの種です。それは 体力に問題があるのではなく 、ロスの多いランニングフォーム のせいかもしれません。ランニングは手軽に始めやすいために自己流のフォームになってしまいがち。 最初はそれでも良いですが、高みを目指すなら確実に頭打ちが来てしまいます。どんどん進む楽なフォームを身に付け、周りを魅了する格好いいフォームを身につけましょう！</p>
-          <v-btn color="secondary" rounded x-large class="mb-5">無料でランニング力をチェック</v-btn>
+          <v-btn color="secondary" rounded x-large class="mb-5" to="running">無料でランニング力をチェック</v-btn>
         </v-container>
       </div>
     </section>
     <section class="mb-5 pb-5 p-relative" style="margin-top: -100px;">
-      <v-img width="90%" style="margin-left: auto;" src="/img/sectiontop2.png"></v-img>
+      <v-img width="90%" style="margin-left: auto;" src="/img/sectiontop2.png" lazy-src="/img/sectiontop2_l.png"></v-img>
       <div class="">
         <v-container column justify-center class="text-center" style="margin-top:-1px;">
           <h1 class="text-h3 mt-5 pt-5 title-text-color">痛みをそのまま放置しないために</h1>
@@ -108,9 +108,8 @@
     <section class="py-5 my-5">
       <v-container class="text-center">
         <h3 class="text-h4 my-5 blue-sub-title">無料でランニング力をチェック</h3>
-        あたらしい更新
         <p class="text-h6 text-left py-5 main-text-color">スポーツトレーナーとして多くのランナーの怪我やランニングフォームの相談を受けてきました。経験をもとに解決策を当サイトにまとめております。痛み・ランニングフォームのあなたのお悩みに合った記事をご覧ください！</p>
-        <v-btn color="secondary" rounded x-large class="my-5">無料でランニング力をチェック</v-btn>
+        <v-btn color="secondary" rounded x-large class="my-5" to="running">無料でランニング力をチェック</v-btn>
         <p class="text-h6 text-left py-5 mt-5 main-text-color">あなたのランニング力チェックしませんか？ランナーに必要だと考える「ランニング技術」「練習内容」「体に関する知識」の3項目から問題を作成しております。5分で終了する直感で選ぶ問題で、あなたの強みや弱点を発見しましょう！その弱点に合わせ、あなたにオススメの記事も用意しております！</p>
       </v-container>
     </section>
