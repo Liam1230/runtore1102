@@ -5,7 +5,7 @@
 $main-color:#00ADFF;
 $yellow-color: #FFE200;
 $btn-shadow-color: #7E7E7E;
-$main-font: "游ゴシック","ヒラギノ角ゴ ProN";
+$main-font: "游ゴシック","ヒラギノ角ゴ ProN","メイリオ","MS Pゴシック",sans-serif;
 
 a{
     text-decoration: none;
@@ -78,7 +78,7 @@ a{
 
 .v-application span.text-h1,.v-application span.text-h2,.v-application span.text-h3,.v-application span.text-h4,.v-application span.text-h5,.v-application span.text-h6,
 .v-application span.text-subtitle-1,.v-application span.text-subtitle-2,.v-application span.text-body-1,.v-application span.text-body-2,.v-application span.text-button,
-.v-application span.text-caption,.v-application span.text-overline{
+.v-application span.text-caption,.v-application span.text-overline,.v-application span.v-btn__content{
     font-family: $main-font !important;
     font-weight: 600 !important;
 }
