@@ -105,8 +105,20 @@ export default {
             './components/**/*.vue',
             './node_modules/vuetify/dist/vuetify.js'
           ],
-          whitelist: ['html', 'body', 'nuxt-progress'],
-          whitelistPatternsChildren: [ /^v\-/ ]
+          whitelist: ['html', 'body', 'nuxt-progress','v-application', 'v-application--wrap','layout','row','col'],
+          whitelistPatterns: [
+            /^v-((?!application).)*$/,
+            /^theme--*/,
+            /.*-transition/,
+            /^justify-*/,
+            /^p*-[0-9]/,
+            /^m*-[0-9]/,
+            /^text--*/,
+            /--text$/,
+            /^row-*/,
+            /^col-*/,   
+          ],
+          whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/, /^v\-/ ]
         }
       }
     }
