@@ -1,5 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
+import path from 'path'
+
+const dev = process.env.NODE_ENV !== 'production'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -92,5 +95,20 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extractCSS: !dev,
+    postcss: {
+    plugins: {
+        '@fullhuman/postcss-purgecss': dev ? false : {
+          content: [
+            './pages/**/*.vue',
+            './layouts/**/*.vue',
+            './components/**/*.vue',
+            './node_modules/vuetify/dist/vuetify.js'
+          ],
+          whitelist: ['html', 'body', 'nuxt-progress'],
+          whitelistPatternsChildren: [ /^v\-/ ]
+        }
+      }
+    }
   }
 }
