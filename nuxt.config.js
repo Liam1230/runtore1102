@@ -106,7 +106,7 @@ export default {
               path.join(__dirname, './components/**/*.vue'),
               path.join(__dirname, './node_modules/vuetify/dist/vuetify.js')
             ]),
-            whitelist: ['v-application', 'v-application--wrap','layout','row','col'],
+            whitelist: ['html', 'body', 'nuxt-progress','v-application', 'v-application--wrap','layout','row','col'],
             whitelistPatterns: [
               /^v-((?!application).)*$/,
               /^theme--*/,
@@ -119,7 +119,7 @@ export default {
               /^row-*/,
               /^col-*/,   
             ],
-            whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/]
+            whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/, /^v\-/ ]
           })
         )
       }
