@@ -1,5 +1,5 @@
 // global transition css
-
+/* purgecss start ignore */
 /* fade */
 .fade-enter-active,
 .fade-leave-active {
@@ -46,3 +46,4 @@
 .breadcrumb-leave-active {
   position: absolute;
 }
+/* purgecss end ignore */
