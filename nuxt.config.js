@@ -1,8 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
-import PurgecssPlugin from 'purgecss-webpack-plugin'
-import glob from 'glob-all'
-import path from 'path'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -95,34 +92,5 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extractCSS: true,
-    extend(config, { isDev, isClient }) {
-      if (!isDev && isClient) {
-        config.plugins.push(
-          new PurgecssPlugin({
-            paths: glob.sync([
-              path.join(__dirname, './pages/**/*.vue'),
-              path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue'),
-              path.join(__dirname, './node_modules/vuetify/dist/vuetify.js')
-            ]),
-            whitelist: ['html', 'body', 'nuxt-progress','v-application', 'v-application--wrap','layout','row','col'],
-            whitelistPatterns: [
-              /^v-((?!application).)*$/,
-              /^theme--*/,
-              /.*-transition/,
-              /^justify-*/,
-              /^p*-[0-9]/,
-              /^m*-[0-9]/,
-              /^text--*/,
-              /--text$/,
-              /^row-*/,
-              /^col-*/,   
-            ],
-            whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/, /^v\-/ ]
-          })
-        )
-      }
-    }
   }
 }
