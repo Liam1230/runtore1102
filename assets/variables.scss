@@ -5,16 +5,18 @@
 $main-color:#00ADFF;
 $yellow-color: #FFE200;
 $btn-shadow-color: #7E7E7E;
+$main-font: "游ゴシック","ヒラギノ角ゴ ProN";
 
 a{
     text-decoration: none;
 }
-@font-face {
-    font-family: 'mainFont';
-    src: url("/font/ヒラギノ角ゴ ProN W6.otf");
-}
+// @font-face {
+//     font-family: 'mainFont';
+//     src: url("/font/ヒラギノ角ゴ ProN W6.otf");
+// }
 .v-application{
-    font-family: "mainFont" !important;
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
 .v-application .v-btn.secondary{
@@ -25,327 +27,58 @@ a{
     color:black !important;
 }
 
-.v-application h1.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h1.text-overline{
-    font-family: "mainFont" !important;
+.v-application h1.text-h1,.v-application h1.text-h2,.v-application h1.text-h3,.v-application h1.text-h4,.v-application h1.text-h5,.v-application h1.text-h6,
+.v-application h1.text-subtitle-1,.v-application h1.text-subtitle-2,.v-application h1.text-body-1,.v-application h1.text-body-2,.v-application h1.text-button,
+.v-application h1.text-caption,.v-application h1.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-.v-application h2.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h2.text-overline{
-    font-family: "mainFont" !important;
+.v-application h2.text-h1,.v-application h2.text-h2,.v-application h2.text-h3,.v-application h2.text-h4,.v-application h2.text-h5,.v-application h2.text-h6,
+.v-application h2.text-subtitle-1,.v-application h2.text-subtitle-2,.v-application h2.text-body-1,.v-application h2.text-body-2,.v-application h2.text-button,
+.v-application h2.text-caption,.v-application h2.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-
-.v-application h3.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h3.text-overline{
-    font-family: "mainFont" !important;
+.v-application h3.text-h1,.v-application h3.text-h2,.v-application h3.text-h3,.v-application h3.text-h4,.v-application h3.text-h5,.v-application h3.text-h6,
+.v-application h3.text-subtitle-1,.v-application h3.text-subtitle-2,.v-application h3.text-body-1,.v-application h3.text-body-2,.v-application h3.text-button,
+.v-application h3.text-caption,.v-application h3.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-
-.v-application h4.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h4.text-overline{
-    font-family: "mainFont" !important;
+.v-application h4.text-h1,.v-application h4.text-h2,.v-application h4.text-h3,.v-application h4.text-h4,.v-application h4.text-h5,.v-application h4.text-h6,
+.v-application h4.text-subtitle-1,.v-application h4.text-subtitle-2,.v-application h4.text-body-1,.v-application h4.text-body-2,.v-application h4.text-button,
+.v-application h4.text-caption,.v-application h4.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-.v-application h5.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h5.text-overline{
-    font-family: "mainFont" !important;
+.v-application h5.text-h1,.v-application h5.text-h2,.v-application h5.text-h3,.v-application h5.text-h4,.v-application h5.text-h5,.v-application h5.text-h6,
+.v-application h5.text-subtitle-1,.v-application h5.text-subtitle-2,.v-application h5.text-body-1,.v-application h5.text-body-2,.v-application h5.text-button,
+.v-application h5.text-caption,.v-application h5.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-
-.v-application h6.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application h6.text-overline{
-    font-family: "mainFont" !important;
+.v-application h6.text-h1,.v-application h6.text-h2,.v-application h6.text-h3,.v-application h6.text-h4,.v-application h6.text-h5,.v-application h6.text-h6,
+.v-application h6.text-subtitle-1,.v-application h6.text-subtitle-2,.v-application h6.text-body-1,.v-application h6.text-body-2,.v-application h6.text-button,
+.v-application h6.text-caption,.v-application h6.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-
-.v-application p.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application p.text-overline{
-    font-family: "mainFont" !important;
+.v-application p.text-h1,.v-application p.text-h2,.v-application p.text-h3,.v-application p.text-h4,.v-application p.text-h5,.v-application p.text-h6,
+.v-application p.text-subtitle-1,.v-application p.text-subtitle-2,.v-application p.text-body-1,.v-application p.text-body-2,.v-application p.text-button,
+.v-application p.text-caption,.v-application p.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
 
-
-.v-application span.text-h1{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-h2{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-h3{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-h4{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-h5{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-h6{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-subtitle-1{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-subtitle-2{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-body-1{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-body-2{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-button{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-caption{
-    font-family: "mainFont" !important;
-}
-.v-application span.text-overline{
-    font-family: "mainFont" !important;
+.v-application span.text-h1,.v-application span.text-h2,.v-application span.text-h3,.v-application span.text-h4,.v-application span.text-h5,.v-application span.text-h6,
+.v-application span.text-subtitle-1,.v-application span.text-subtitle-2,.v-application span.text-body-1,.v-application span.text-body-2,.v-application span.text-button,
+.v-application span.text-caption,.v-application span.text-overline{
+    font-family: $main-font !important;
+    font-weight: 600 !important;
 }
