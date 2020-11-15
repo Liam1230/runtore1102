@@ -4,6 +4,10 @@ $btn-shadow-color: #7E7E7E;
 $main-text-color: #707070;
 $title-text-color: #6B6B6B;
 
+// .v-application p{
+//     word-wrap: break-word;
+//     word-break: break-all;
+// }
 .square-box{
     border: solid 1px $title-text-color;
 }
@@ -65,4 +69,83 @@ $title-text-color: #6B6B6B;
 .border-h2{
     border-bottom: solid 2px $main-color;
     padding-bottom: 10px;
+}
+
+.main-under-line{
+    border-bottom: solid 2px $main-color;
+}
+
+.sub-under-line{
+    padding-bottom: 6px;
+    border-bottom: solid 2px $title-text-color;
+}
+
+.blog-post{
+    border: solid 1px $title-text-color;
+    border-radius: 18px;
+}
+.sidebar-post{
+    margin-top: 18px;
+    border: solid 1px $title-text-color;
+}
+.blog .sidebar-post p{
+    margin-top: 0px;
+    text-align: left;
+}
+.side-bar .sidebar-post p{
+    margin-top: 0px;
+    text-align: left;
+    color: $main-text-color;
+}
+.blog{
+    margin-top:100px;
+}
+.blog img{
+    width: 100%;
+    max-width: 100%;
+}
+.blog h2{
+    background-color: $main-color;
+    text-align: left;
+    border-left: solid 12px $yellow-color;
+    padding-left: 8px;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 36px;
+}
+.blog h2.dence{
+    background-color: $main-color;
+    text-align: left;
+    border-left: solid 12px $yellow-color;
+    padding-left: 8px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 36px;
+}
+
+.side-bar h2{
+    background-color: $main-color;
+    text-align: left;
+    border-left: solid 12px $yellow-color;
+    padding-left: 8px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 36px;
+}
+
+.blog p{
+    margin-top: 24px;
+    color: $main-text-color;
+}
+.blog h3{
+    text-align: left;
+    color: $title-text-color;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    margin-top: 24px;
+    font-size: 1.3rem;
+    border-bottom: solid 2px $title-text-color;
 }

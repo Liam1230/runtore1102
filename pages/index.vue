@@ -13,7 +13,7 @@
       </div>
     </section>
     <section class="my-5 py-5">
-      <v-container column justify-center class="text-center">
+      <v-container column justify-center class="min-container text-center">
         <h1 class="text-h3 mt-5 title-text-color">Runトレについて</h1>
         <h2 class="mt-3 title-text-color">-About-</h2>
         <h3 class="text-h4 my-5 py-5 blue-sub-title">一人ではたどりつけない自己ベストへ</h3>
@@ -21,7 +21,7 @@
       </v-container>
     </section>
     <section class="my-5 py-5">
-      <v-container column justify-center class="text-center">
+      <v-container column justify-center class="min-container text-center">
         <v-row class="align-center justify-space-between">
           <v-col cols=5 class="mr-5">
             <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
@@ -40,7 +40,7 @@
       <img class="p-absolute absolute-lt" style="top:10%;" width="90%" src="/img/sectiontop1.png" lazy-src="/img/sectiontop1_l.png">
       <img style="width:100vw;" src="/img/blueTriangle.png">
       <div class="main-color-bg" style="padding-bottom:120px; padding-top:70px;">
-        <v-container column justify-center class="text-center main-color-bg" style="margin-top:-1px;">
+        <v-container column justify-center class="min-container text-center main-color-bg" style="margin-top:-1px;">
           <h1 class="text-h3 mt-5 pt-5 white--text">フォームの重要性について</h1>
           <h2 class="mt-3 white--text">-Form-</h2>
           <h3 class="text-h4 my-5 py-5 yellow-sub-title">独自の型で無理に走り続けていませんか？</h3>
@@ -52,7 +52,7 @@
     <section class="mb-5 pb-5 p-relative" style="margin-top: -100px;">
       <v-img width="90%" style="margin-left: auto;" src="/img/sectiontop2.png" lazy-src="/img/sectiontop2_l.png"></v-img>
       <div class="">
-        <v-container column justify-center class="text-center" style="margin-top:-1px;">
+        <v-container column justify-center class="min-container text-center" style="margin-top:-1px;">
           <h1 class="text-h3 mt-5 pt-5 title-text-color">痛みをそのまま放置しないために</h1>
           <h2 class="mt-3 title-text-color">-Pain-</h2>
           <h3 class="text-h4 my-5 py-5 blue-sub-title">我慢して痛みを放置しすぎると…</h3>
@@ -68,15 +68,23 @@
           <v-expansion-panels flat v-model="formOpen" multiple class="mt-5">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
-                <v-card class="pa-3 mx-0 my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
-                  <div class="d-flex flex-no-wrap justify-space-between">
-                    <div>
-                      <v-card-title class="headline" v-text="content.title"></v-card-title>
-                    </div>
-                    <v-avatar>
-                      <v-img :src="content.header.url"></v-img>
-                    </v-avatar>
-                  </div>
+                <v-card class="my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
+                  <nuxt-link :to="`/${content.id}`">
+                    <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
+                      <v-col cols="8" class="pt-2 pl-5">
+                        <h3 class="text-left text-h6">
+                          ・{{content.title}}
+                        </h3>
+                        <p class="text-body-2 text-left">
+                          {{content.seoDescription}}
+                        </p>
+                        <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
+                      </v-col>
+                      <v-col cols="4" class="py-0">
+                        <v-img height="100%" :src="content.headerImg.url"></v-img>
+                      </v-col>
+                    </v-row>
+                  </nuxt-link>
                 </v-card>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -88,15 +96,23 @@
           <v-expansion-panels flat v-model="painOpen" multiple class="mt-5">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
-                <v-card class="py-3 my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
-                  <div class="d-flex flex-no-wrap justify-space-between">
-                    <div>
-                      <v-card-title class="headline" v-text="content.title"></v-card-title>
-                    </div>
-                    <v-avatar>
-                      <v-img :src="content.header.url"></v-img>
-                    </v-avatar>
-                  </div>
+                <v-card class="my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
+                  <nuxt-link :to="`/${content.id}`">
+                    <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
+                      <v-col cols="8" class="pt-2 pl-5">
+                        <h3 class="text-left text-h6">
+                          ・{{content.title}}
+                        </h3>
+                        <p class="text-body-2 text-left">
+                          {{content.seoDescription}}
+                        </p>
+                        <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
+                      </v-col>
+                      <v-col cols="4" class="py-0">
+                        <v-img height="100%" :src="content.headerImg.url"></v-img>
+                      </v-col>
+                    </v-row>
+                  </nuxt-link>
                 </v-card>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -106,7 +122,7 @@
     </section>
     <hr style="">
     <section class="py-5 my-5">
-      <v-container class="text-center">
+      <v-container class="min-container text-center">
         <h3 class="text-h4 my-5 blue-sub-title">無料でランニング力をチェック</h3>
         <p class="text-h6 text-left py-5 main-text-color">スポーツトレーナーとして多くのランナーの怪我やランニングフォームの相談を受けてきました。経験をもとに解決策を当サイトにまとめております。痛み・ランニングフォームのあなたのお悩みに合った記事をご覧ください！</p>
         <v-btn color="secondary" rounded x-large class="my-5" to="running">無料でランニング力をチェック</v-btn>
@@ -148,14 +164,15 @@ export default {
       }
     }
   },
-  async asyncData(ctx) {
+  async asyncData(ctx){
     const { data } = await ctx.$axios.get(
-      // your-service-id部分は自分のサービスidに置き換えてください
-      `https://valuup.microcms.io/api/v1/blog`,
-      {
-        headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
-      }
+        // your-service-id部分は自分のサービスidに置き換えてください
+        `https://runtrainingnote.microcms.io/api/v1/blog`,
+        {
+            headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+        }
     )
+    console.log(data)
     return data
   }
 }

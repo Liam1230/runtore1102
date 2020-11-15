@@ -36,7 +36,9 @@
         </template>
         <v-card tile class="mt-5">
           <v-card-text>
-            肩
+            <nuxt-link :to="items[2].to">
+              肩
+            </nuxt-link>
           </v-card-text>
           <v-card-text>
             腰
@@ -108,11 +110,11 @@ export default {
         },
         {
           title: '痛み',
-          to: '/inspire'
+          to: '/blogCategory'
         },
         {
           title: 'フォーム',
-          to: '/inspire'
+          to: '/blogCategory'
         },
         {
           title: 'LINE練習帳',

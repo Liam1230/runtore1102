@@ -6,6 +6,8 @@ $main-color:#00ADFF;
 $yellow-color: #FFE200;
 $btn-shadow-color: #7E7E7E;
 $main-font: "游ゴシック","ヒラギノ角ゴ ProN","メイリオ","MS Pゴシック",sans-serif;
+$main-text-color: #707070;
+$title-text-color: #6B6B6B;
 
 a{
     text-decoration: none;
@@ -14,6 +16,17 @@ a{
 //     font-family: 'mainFont';
 //     src: url("/font/ヒラギノ角ゴ ProN W6.otf");
 // }
+.v-application hr.v-divider{
+    border-color: $title-text-color;
+}
+
+.v-image.rounded .v-image__image.v-image__image--cover{
+    border-radius: 15px !important;
+}
+
+.v-application .v-btn{
+    text-transform: none;
+}
 .v-application{
     font-family: $main-font !important;
     font-weight: 600 !important;
@@ -26,7 +39,7 @@ a{
 .v-application .secondary {
     color:black !important;
 }
-.v-application .container{
+.v-application .container.min-container{
     max-width: 900px !important;
 }
 

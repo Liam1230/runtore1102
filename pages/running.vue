@@ -1,6 +1,6 @@
 <template>
   <article class="mt-5 pt-5">
-		<v-container column justify-center class="text-center pt-5">
+		<v-container column justify-center class="min-container text-center pt-5">
 			<h1 class="text-h3 mt-5 title-text-color">ランニング力チェック</h1>
 			<h2 class="mt-3 pb-5 title-text-color">-Diagnosis-</h2>
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
@@ -25,6 +25,7 @@
 						<v-row class="justify-center align-center">
 							<v-col cols="2">
 								<v-select
+									rounded
 									:items="items"
 									filled
 									label="Filled style"
@@ -35,6 +36,7 @@
 							</v-col>
 							<v-col cols="2">
 								<v-select
+									rounded
 									:items="items"
 									filled
 									label="Filled style"
@@ -52,6 +54,7 @@
 						<v-row class="justify-center align-center">
 							<v-col cols="2">
 								<v-select
+									rounded
 									:items="items"
 									filled
 									label="Filled style"
@@ -62,6 +65,7 @@
 							</v-col>
 							<v-col cols="2">
 								<v-select
+									rounded
 									:items="items"
 									filled
 									label="Filled style"
