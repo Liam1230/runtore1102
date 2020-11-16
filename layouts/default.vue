@@ -69,7 +69,7 @@
                 TEL
               </v-col>
               <v-col cols="9">
-                000-0000-0000
+                080-6143-0685
               </v-col>
             </v-row>
             <v-row class="pl-5">
@@ -77,7 +77,7 @@
                 EMAIL
               </v-col>
               <v-col cols="9">
-                aaaaa@xxx.jp
+                k.o.k.i.running.abc@gmail.com
               </v-col>
             </v-row>
             <v-row class="pl-5">
@@ -85,8 +85,8 @@
                 ADRESS
               </v-col>
               <v-col cols="9">
-                〒000-0000<br>
-                大阪府大阪市・・・・・
+                〒530-0044<br>
+                大阪府大阪市北区東天満2-5-17 古林タワービル7F
               </v-col>
             </v-row>
           </v-col>
