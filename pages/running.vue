@@ -120,6 +120,9 @@
 				</v-col>
 				<v-col cols=12 sm=12 md=1></v-col>
 			</v-row>
+			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
+				<v-btn color="secondary" rounded x-large class="my-5" to="result">診断結果をみる</v-btn>
+			</v-row>
 		</v-container>
   </article>
 </template>
