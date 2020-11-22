@@ -76,7 +76,10 @@
 							</v-col>
 						</v-row>
 					</v-row>
-					
+					<vue-select-image 
+					　　:dataImages="dataImages"
+						@onselectimage="onSelectImage">
+					</vue-select-image>
 
 					<div v-for="(quiz,i) in quizs" :key="i">
 						<v-row class="align-center justify-center pt-5 mt-5 mx-0">
@@ -88,34 +91,54 @@
 							<v-col cols="12" class="text-left">
 								<h3 class="main-color text-h5">Q.{{j+1}} {{content.text}}</h3>
 							</v-col>
-							<v-card width="750" >
-								<v-container class="pa-1">
-									<v-item-group v-model="content.selected" >
-										<v-row>
-											<v-col v-for="(src, m) in content.srcs" :key="m" cols="12" md="6">
-												<v-item v-slot="{ active, toggle }">
-													<v-img :src="content.srcs[m].image" height="200" class="text-right pa-2" @click="toggle">
-														<v-btn icon dark>
-															<v-icon color="blue">
-																{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
-															</v-icon>
-														</v-btn>
-													</v-img>
-												</v-item>
-											</v-col>
-										</v-row>
-									</v-item-group>
-								</v-container>
-							</v-card>
+							<v-col cols="6">
+								<div class="flex">
+									<label class="flex">
+										<input type="radio" name="profile_image" :value="content.srcs[0].score" v-model="content.srcs[0].checked" :class="classList(i,j,0)" active-class="border"><br>
+										<v-img :src="content.srcs[0].image"></v-img>
+									</label>
+								</div>
+							</v-col>
+							<v-col cols="6">
+								<label>
+									<input type="radio" name="profile_image" :value="content.srcs[1].score" v-model="content.srcs[1].checked"><br>
+									<v-img :src="content.srcs[1].image"></v-img>
+								</label>
+							</v-col>
+							<v-col cols="6">
+								<label>
+									<input type="radio" name="profile_image" :value="content.srcs[2].score" v-model="content.srcs[2].checked"><br>
+									<v-img :src="content.srcs[2].image"></v-img>
+								</label>
+							</v-col>
+							<v-col cols="6">
+								<label>
+									<input type="radio" name="profile_image" :value="content.srcs[3].score" v-model="content.srcs[3].checked"><br>
+									<v-img :src="content.srcs[3].image"></v-img>
+								</label>
+							</v-col>
 						</v-row>
 						<v-row v-else class="align-center justify-center mt-3 mx-0">
 							<v-col cols="12" class="text-left">
 								<h3 class="main-color text-h5">Q.{{j+1}} {{content.text}}</h3>
 							</v-col>
-							
+							<v-btn-toggle v-model="content.point">
+								<v-col cols="12">
+									<v-btn :value="content.srcs[0].score" block outlined rounded x-large>{{content.srcs[0].item}}</v-btn>
+								</v-col>
+								<v-col cols="12">
+									<v-btn :value="content.srcs[1].score" block outlined rounded x-large>{{content.srcs[1].item}}</v-btn>
+								</v-col>
+								<v-col cols="12">
+									<v-btn :value="content.srcs[2].score" block outlined rounded x-large>{{content.srcs[2].item}}</v-btn>
+								</v-col>
+								<v-col cols="12">
+									<v-btn :value="content.srcs[3].score" block outlined rounded x-large>{{content.srcs[3].item}}</v-btn>
+								</v-col>
+							</v-btn-toggle>
 							<v-card width="750">
 								<v-list>
-									<v-list-item-group v-model="content.selected" active-class="border" color="indigo">
+									<v-list-item-group v-model="model" active-class="border" color="indigo">
 										<v-list-item v-for="(src, k) in content.srcs" :key="k">
 											<v-list-item-content>
 												<v-list-item-title v-text="src.item"></v-list-item-title>
@@ -126,71 +149,6 @@
 							</v-card>
 						</v-row>
 					</div>
-
-					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize1}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="extraquize1selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize2}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="extraquize2selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize3}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="extraquize3selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row v-else class="align-center justify-center mt-3 mx-0" >
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize4}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="extraquize4selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
 				</v-col>
 				<v-col cols=12 sm=12 md=1></v-col>
 			</v-row>
@@ -213,6 +171,18 @@ export default {
         halfTimes:['1','2','3'],
         times: ['1', '2', '3', '4', '5', '6','7'],
 		minutes:[],
+		dataImages:[
+			{
+				id: '1',
+				src: '/img/sampleqa.png',
+				alt: 'Alt Image 1'
+			}, 
+			{
+				id: '2',
+				src: '/img/sampleqa.png',
+				alt: 'Alt Image ２'
+			},
+		],
 		quizs:[
 			{
 				category:"フォーム・技術",
@@ -226,8 +196,7 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
+						point:0
 						
 					},
 					{
@@ -239,8 +208,7 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 					{
 						type:"img",
@@ -251,8 +219,7 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 					{
 						type:"text",
@@ -263,8 +230,7 @@ export default {
 							{checked:false,score:0,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
 							{checked:false,score:1,item:"1kmあたり11秒以上タイムが変動する"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 				]
 			},
@@ -280,8 +246,7 @@ export default {
 							{checked:false,score:0,item:"息が軽く上がるが余裕のある速度"},
 							{checked:false,score:1,item:"息が上がり余裕の無い速度"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 					{
 						type:"img",
@@ -292,8 +257,7 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 					{
 						type:"img",
@@ -304,8 +268,7 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
+						point:0
 					},
 					{
 						type:"img",
@@ -316,105 +279,11 @@ export default {
 							{checked:false,score:0,image:"/img/sampleqa.png"},
 							{checked:false,score:1,image:"/img/sampleqa.png"},
 						],
-						point:0,
-						selected:[],
-					},
-				]
-			},
-			{
-				category:"目標計画",
-				contents:[
-					{
-						type:"text",
-						text:"練習の目的として”適切ではないも の”を選んでください",
-						srcs:[
-							{checked:false,score:6,item:"ロングジョグ-毛細血管を増やし、脚の耐久性強化"},
-							{checked:false,score:3,item:"インターバル走-疲労物質(乳酸)を除去する能力を高める"},
-							{checked:false,score:0,item:"全力走-脚の回転数・ストライド向上で最大速度を高める"},
-							{checked:false,score:1,item:"ペース走-呼吸循環を高めて疲労回復"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"ランニングにおいて練習方法として適 しているものを選んでください!",
-						srcs:[
-							{checked:false,score:6,item:"全力走では、休憩を長く取って行う。"},
-							{checked:false,score:3,item:"インターバル走は休憩を長く取って行う練習として適している"},
-							{checked:false,score:0,item:"ペース走を行うときは息が上がらない速度で行う"},
-							{checked:false,score:1,item:"ロングジョグは息が上がる程度の速度を維持し続けないと効果は小さい"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"課題に合わせた練習内容として 適したものを選んでください!",
-						srcs:[
-							{checked:false,score:6,item:"1km走のタイムが上がらない-ペース走"},
-							{checked:false,score:3,item:"5km走の途中で疲労で脚が動かない感覚 がある-短い距離の全力走"},
-							{checked:false,score:0,item:"10km走のタイムが上がらない-インター バル走"},
-							{checked:false,score:1,item:"30km以降いつも歩いてしまう-ロング ジョグ"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"フルマラソンを○○切りするための 設定タイムとしてものとして ”適切ではないもの”を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
-						srcs:[
-							{checked:false,score:6,item:"1kmを○○で走ることができる"},
-							{checked:false,score:3,item:"5kmを○○で走ることができる"},
-							{checked:false,score:0,item:"10kmを○○で走ることができる"},
-							{checked:false,score:1,item:"ハーフを○○で走ることができる"},
-						],
-						point:0,
-						selected:[],
+						point:0
 					},
 				]
 			}
-		],
-		extraquize1:"フルマラソンを5時間切りするために 適切な内容をお選びください",
-		extraquize1srcs:[
-			{checked:false,score:6,item:"10km全力を70分で走れる走力が望ましい"},
-			{checked:false,score:3,item:"10km全力を75分で走れる走力が望ましい"},
-			{checked:false,score:0,item:"7分/kmで完走すれば5時間を切れる"},
-			{checked:false,score:1,item:"8分/kmで完走すれば5時間を切れる"},
-		],
-		extraquize1point:0,
-		extraquize1selected:[],
-
-		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
-		extraquize2srcs:[
-			{checked:false,score:6,item:"1km 4分40秒"},
-			{checked:false,score:3,item:"5km 25分"},
-			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:1,item:"ハーフ 51分~52分"},
-		],
-		extraquize2point:0,
-		extraquize2selected:[],
-
-		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
-		extraquize3srcs:[
-			{checked:false,score:6,item:"5km 25分"},
-			{checked:false,score:3,item:"5km 21分40秒"},
-			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:1,item:"ハーフ 51分~52分"},
-		],
-		extraquize3point:0,
-		extraquize3selected:[],
-
-		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
-		extraquize4srcs:[
-			{checked:false,score:6,item:"1km 3分30秒"},
-			{checked:false,score:3,item:"5km 21分40秒"},
-			{checked:false,score:0,item:"10km 38分20秒~39分"},
-			{checked:false,score:1,item:"ハーフ 22分~25分"},
-		],
-		extraquize4point:0,
-		extraquize4selected:[],
-		
+		]
 	}),
 
 	mounted: async function(){
