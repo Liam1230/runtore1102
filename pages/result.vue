@@ -14,7 +14,7 @@
 						<v-col cols="8">
 							<div class="talk">
 								<p class="text-left main-text-color">
-                                    あなたの点数は100点<br>
+                                    あなたの点数は {{this.totlaScore}}点<br>
                                     Aランクです
                                 </p>
 							</div>
@@ -34,9 +34,11 @@
 <script>
 export default {
 	data: () => ({
-
+        totlaScore:0
     }),
     mounted(){
+        //datasets[0].data.push(this.$route.query.toatlFormandTec)
+        this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose)
         const ctx = document.getElementById("resultCharts")
         const myChart = new Chart(ctx, {
             type:'radar',
@@ -45,7 +47,7 @@ export default {
                 datasets:[
                     {
                         label:"得点",
-                        data:[8,7,5],
+                        data:[this.$route.query.toatlFormandTec,this.$route.query.totalBody,this.$route.query.totalPurpose],
                         backgroundColor:'RGBA(255,95,150,0.5)',
                         pointBackgroundColor:'RGB(46,106,177)'
                     }

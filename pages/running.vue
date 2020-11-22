@@ -88,7 +88,7 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz1selected" >
+								<v-item-group v-model="quiz1selected">
 									<v-row>
 										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
@@ -133,12 +133,13 @@
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
+							<div>{{quiz3selected}}</div>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
 								<v-item-group v-model="quiz3selected" >
 									<v-row>
-										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6">
+										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
@@ -409,7 +410,7 @@
 				<v-col cols=12 sm=12 md=1></v-col>
 			</v-row>
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-				<v-btn color="secondary" rounded x-large class="my-5" to="result">診断結果をみる</v-btn>
+				<v-btn color="secondary" rounded x-large class="my-5"  @click="beforeResult()">診断結果をみる</v-btn>
 			</v-row>
 		</v-container>
   </article>
@@ -586,6 +587,9 @@ export default {
 		],
 		extraquize4point:0,
 		extraquize4selected:[],
+		toatlFormandTec:0,
+		totalBody:0,
+		totalPurpose:0
 		
 	}),
 
@@ -601,6 +605,83 @@ export default {
 		onAddcss(i,j,k){
 			this.quizs[idx].contents[idx2].srcs[idx3]
 		},
+		async beforeResult(){
+			let errorMessages = []
+			//let toatlFormandTec = 0
+			//let totalBody = 0
+			//let totalPurpose = 0
+			let test = 0
+			let quiz1 = this.quiz1selected
+			//alert(this.quiz1selected)
+			//alert(Number(this.quiz1srcs[q1].score))
+			//alert(Number(this.quiz1srcs[this.quiz1selected].score))
+			//alert(this.quiz1)
+			if(this.quiz1selected.length == 0){
+				errorMessages.push("Q.1が未回答です。")
+			}
+			if(this.quiz2selected.length != 2){
+				errorMessages.push("Q.2を二つ選択して下さい。")
+			}
+			if(this.quiz3selected.length == 0){
+				errorMessages.push("Q.3が未回答です。")
+			}
+			if(this.quiz4selected.length == 0){
+				errorMessages.push("Q.4が未回答です。")
+			}
+			if(this.quiz5selected.length == 0){
+				errorMessages.push("Q.5が未回答です。")
+			}
+			if(this.quiz6selected.length == 0){
+				errorMessages.push("Q.6が未回答です。")
+			}
+			if(this.quiz7selected.length != 2){
+				errorMessages.push("Q.7を二つ選択して下さい。")
+			}
+			if(this.quiz8selected.length == 0){
+				errorMessages.push("Q.8が未回答です。")
+			}
+			if(this.quiz9selected.length == 0){
+				errorMessages.push("Q.9が未回答です。")
+			}
+			if(this.quiz10selected.length == 0){
+				errorMessages.push("Q.10が未回答です。")
+			}
+			if(this.quiz11selected.length == 0){
+				errorMessages.push("Q.11が未回答です。")
+			}
+			if(this.quiz12selected.length == 0){
+				errorMessages.push("Q.12が未回答です。")
+			}
+			if(this.extraquize1selected.length == 0 && this.extraquize2selected.length == 0 && this.extraquize3selected.length == 0 && this.extraquize4selected.length == 0){
+				errorMessages.push("Q.13が未回答です。")
+			}
+
+			if (errorMessages.length != 0) {
+				alert(errorMessages.join('\n'));
+				return false;
+			}else{
+				let q1 = this.quiz1selected
+				let q21 = this.quiz2selected[0]
+				let q22 = this.quiz2selected[1]
+				let q3 = this.quiz3selected
+				let q4 = this.quiz4selected
+				let q5 = this.quiz5selected
+				let q6 = this.quiz6selected
+				let q71 = this.quiz7selected[0]
+				let q72 = this.quiz7selected[1]
+				let q8 = this.quiz8selected
+				let q9 = this.quiz9selected
+				let q10 = this.quiz10selected
+				let q11 = this.quiz11selected
+				let q12 = this.quiz12selected
+
+			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
+			 	this.totalBody = Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz7srcs[this.quiz7selected[0]].score) + Number(this.quiz7srcs[this.quiz7selected[1]].score) + Number(this.quiz8srcs[this.quiz8selected].score) 
+			 	this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.quiz12srcs[this.quiz12selected].score)
+				 //alert(toatlFormandTec);
+				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose }});
+			 }
+		}
 	},
 
 	computed: {
