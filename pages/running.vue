@@ -77,59 +77,273 @@
 						</v-row>
 					</v-row>
 					
+					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
+						<v-col cols=12 class="main-color-bg">
+							<h2 class="white--text">【{{quiz1category}}】</h2>
+						</v-col>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.1 {{quiz1text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz1selected" >
+									<v-row>
+										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.2 {{quiz2text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz2selected" multiple>
+									<v-row>
+										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz3selected" >
+									<v-row>
+										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.4 {{quiz4text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz4selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, l) in quiz4srcs" :key="l">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
 
-					<div v-for="(quiz,i) in quizs" :key="i">
-						<v-row class="align-center justify-center pt-5 mt-5 mx-0">
-							<v-col cols=12 class="main-color-bg">
-								<h2 class="white--text">【{{quiz.category}}】</h2>
-							</v-col>
-						</v-row>
-						<v-row v-if="content.type == 'img'" class="align-center justify-center mt-3 mx-0" v-for="(content,j) in quiz.contents" :key="j">
-							<v-col cols="12" class="text-left">
-								<h3 class="main-color text-h5">Q.{{j+1}} {{content.text}}</h3>
-							</v-col>
-							<v-card width="750" >
-								<v-container class="pa-1">
-									<v-item-group v-model="content.selected" >
-										<v-row>
-											<v-col v-for="(src, m) in content.srcs" :key="m" cols="12" md="6">
-												<v-item v-slot="{ active, toggle }">
-													<v-img :src="content.srcs[m].image" height="200" class="text-right pa-2" @click="toggle">
-														<v-btn icon dark>
-															<v-icon color="blue">
-																{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
-															</v-icon>
-														</v-btn>
-													</v-img>
-												</v-item>
-											</v-col>
-										</v-row>
-									</v-item-group>
-								</v-container>
-							</v-card>
-						</v-row>
-						<v-row v-else class="align-center justify-center mt-3 mx-0">
-							<v-col cols="12" class="text-left">
-								<h3 class="main-color text-h5">Q.{{j+1}} {{content.text}}</h3>
-							</v-col>
-							
-							<v-card width="750">
-								<v-list>
-									<v-list-item-group v-model="content.selected" active-class="border" color="indigo">
-										<v-list-item v-for="(src, k) in content.srcs" :key="k">
-											<v-list-item-content>
-												<v-list-item-title v-text="src.item"></v-list-item-title>
-											</v-list-item-content>
-										</v-list-item>
-									</v-list-item-group>
-								</v-list>
-							</v-card>
-						</v-row>
-					</div>
+					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
+						<v-col cols=12 class="main-color-bg">
+							<h2 class="white--text">【{{quiz5category}}】</h2>
+						</v-col>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.5 {{quiz5text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz5selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, m) in quiz5srcs" :key="m">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.6 {{quiz6text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz6selected" >
+									<v-row>
+										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.7 {{quiz7text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz7selected" multiple>
+									<v-row>
+										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.8 {{quiz8text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz8selected">
+									<v-row>
+										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+													<v-btn icon dark>
+														<v-icon color="blue">
+															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+
+					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
+						<v-col cols=12 class="main-color-bg">
+							<h2 class="white--text">【{{quiz9category}}】</h2>
+						</v-col>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.9 {{quiz9text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz9selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, r) in quiz9srcs" :key="r">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.10 {{quiz10text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz10selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, s) in quiz10srcs" :key="s">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.11 {{quiz11text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz11selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, t) in quiz11srcs" :key="t">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.12 {{quiz12text}}</h3>
+						</v-col>
+						
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz12selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, u) in quiz12srcs" :key="u">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
 
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize1}}</h3>
+							<h3 class="main-color text-h5">Q.13 {{extraquize1}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -145,7 +359,7 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize2}}</h3>
+							<h3 class="main-color text-h5">Q.13 {{extraquize2}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -161,7 +375,7 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize3}}</h3>
+							<h3 class="main-color text-h5">Q.13 {{extraquize3}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -177,7 +391,7 @@
 					</v-row>
 					<v-row v-else class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">{{extraquize4}}</h3>
+							<h3 class="main-color text-h5">Q.13 {{extraquize4}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -213,204 +427,162 @@ export default {
         halfTimes:['1','2','3'],
         times: ['1', '2', '3', '4', '5', '6','7'],
 		minutes:[],
-		quizs:[
-			{
-				category:"フォーム・技術",
-				contents:[
-					{
-						type:"img",
-						text:"腰の落ちたフォームを選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-						
-					},
-					{
-						type:"img",
-						text:"着地位置として\"正しいもの\"を\"2つ\"選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"img",
-						text:"腰の落ちたフォームを改善するために\"効果の低いもの\"を選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"ご自身でペースをコントロールできますか？",
-						srcs:[
-							{checked:false,score:6,item:"普段タイムの計測を行っていない"},
-							{checked:false,score:3,item:"1kmあたり5秒以内のふり幅でコントロールできる"},
-							{checked:false,score:0,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
-							{checked:false,score:1,item:"1kmあたり11秒以上タイムが変動する"},
-						],
-						point:0,
-						selected:[],
-					},
-				]
-			},
-			{
-				category:"体に関すること",
-				contents:[
-					{
-						type:"text",
-						text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
-						srcs:[
-							{checked:false,score:6,item:"全く辛くなくしゃべられる速度"},
-							{checked:false,score:3,item:"息が上がりかなりつらいと思う速度"},
-							{checked:false,score:0,item:"息が軽く上がるが余裕のある速度"},
-							{checked:false,score:1,item:"息が上がり余裕の無い速度"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"img",
-						text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして\"間違っているもの\"はどれか選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"img",
-						text:"ランニング前後の食事摂取の方法として\"適切ではない\"組み合わせのものを\"2つ\"選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"img",
-						text:"クールダウン・セルフケアの方法と効果で組み合わせが\"間違っているもの\"を選んでください",
-						srcs:[
-							{checked:false,score:6,image:"/img/sampleqa.png"},
-							{checked:false,score:3,image:"/img/sampleqa.png"},
-							{checked:false,score:0,image:"/img/sampleqa.png"},
-							{checked:false,score:1,image:"/img/sampleqa.png"},
-						],
-						point:0,
-						selected:[],
-					},
-				]
-			},
-			{
-				category:"目標計画",
-				contents:[
-					{
-						type:"text",
-						text:"練習の目的として”適切ではないも の”を選んでください",
-						srcs:[
-							{checked:false,score:6,item:"ロングジョグ-毛細血管を増やし、脚の耐久性強化"},
-							{checked:false,score:3,item:"インターバル走-疲労物質(乳酸)を除去する能力を高める"},
-							{checked:false,score:0,item:"全力走-脚の回転数・ストライド向上で最大速度を高める"},
-							{checked:false,score:1,item:"ペース走-呼吸循環を高めて疲労回復"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"ランニングにおいて練習方法として適 しているものを選んでください!",
-						srcs:[
-							{checked:false,score:6,item:"全力走では、休憩を長く取って行う。"},
-							{checked:false,score:3,item:"インターバル走は休憩を長く取って行う練習として適している"},
-							{checked:false,score:0,item:"ペース走を行うときは息が上がらない速度で行う"},
-							{checked:false,score:1,item:"ロングジョグは息が上がる程度の速度を維持し続けないと効果は小さい"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"課題に合わせた練習内容として 適したものを選んでください!",
-						srcs:[
-							{checked:false,score:6,item:"1km走のタイムが上がらない-ペース走"},
-							{checked:false,score:3,item:"5km走の途中で疲労で脚が動かない感覚 がある-短い距離の全力走"},
-							{checked:false,score:0,item:"10km走のタイムが上がらない-インター バル走"},
-							{checked:false,score:1,item:"30km以降いつも歩いてしまう-ロング ジョグ"},
-						],
-						point:0,
-						selected:[],
-					},
-					{
-						type:"text",
-						text:"フルマラソンを○○切りするための 設定タイムとしてものとして ”適切ではないもの”を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
-						srcs:[
-							{checked:false,score:6,item:"1kmを○○で走ることができる"},
-							{checked:false,score:3,item:"5kmを○○で走ることができる"},
-							{checked:false,score:0,item:"10kmを○○で走ることができる"},
-							{checked:false,score:1,item:"ハーフを○○で走ることができる"},
-						],
-						point:0,
-						selected:[],
-					},
-				]
-			}
+		quiz1category:"フォーム・技術",
+		quiz1text:"腰の落ちたフォームを選んでください",
+		quiz1srcs:[
+			{checked:false,score:6,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:1,image:"/img/sampleqa.png"},
 		],
+		quiz1selected:[],
+
+		quiz2category:"フォーム・技術",
+		quiz2text:"着地位置として\"正しいもの\"を\"2つ\"選んでください",
+		quiz2srcs:[
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:1,image:"/img/sampleqa.png"},
+		],
+		quiz2selected:[],
+
+		quiz3category:"フォーム・技術",
+		quiz3text:"腰の落ちたフォームを改善するために\"効果の低いもの\"を選んでください",
+		quiz3srcs:[
+			{checked:false,score:2,image:"/img/sampleqa.png"},
+			{checked:false,score:2,image:"/img/sampleqa.png"},
+			{checked:false,score:2,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/sampleqa.png"},
+		],
+		quiz3selected:[],
+
+		quiz4category:"フォーム・技術",
+		quiz4text:"ご自身でペースをコントロールできますか？",
+		quiz4srcs:[
+			{checked:false,score:2,item:"普段タイムの計測を行っていない"},
+			{checked:false,score:6,item:"1kmあたり5秒以内のふり幅でコントロールできる"},
+			{checked:false,score:3,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
+			{checked:false,score:2,item:"1kmあたり11秒以上タイムが変動する"},
+		],
+		quiz4selected:[],
+
+		quiz5category:"体に関すること",
+		quiz5text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
+		quiz5srcs:[
+			{checked:false,score:2,item:"全く辛くなくしゃべられる速度"},
+			{checked:false,score:0,item:"息が上がりかなりつらいと思う速度"},
+			{checked:false,score:6,item:"息が軽く上がるが余裕のある速度"},
+			{checked:false,score:2,item:"息が上がり余裕の無い速度"},
+		],
+		quiz5selected:[],
+
+		quiz6category:"体に関すること",
+		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして\"間違っているもの\"はどれか選んでください",
+		quiz6srcs:[
+			{checked:false,score:6,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+		],
+		quiz6selected:[],
+
+		quiz7category:"体に関すること",
+		quiz7text:"ランニング前後の食事摂取の方法として\"適切ではない\"組み合わせのものを\"2つ\"選んでください",
+		quiz7srcs:[
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:1,image:"/img/sampleqa.png"},
+		],
+		quiz7selected:[],
+
+		quiz8category:"体に関すること",
+		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが\"間違っているもの\"を選んでください",
+		quiz8srcs:[
+			{checked:false,score:6,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:1,image:"/img/sampleqa.png"},
+		],
+		quiz8selected:[],
+
+		quiz9category:"目標計画",
+		quiz9text:"練習の目的として”適切ではないも の”を選んでください",
+		quiz9srcs:[
+			{checked:false,score:1,item:"ロングジョグ-毛細血管を増やし、脚の耐久性強化"},
+			{checked:false,score:1,item:"インターバル走-疲労物質(乳酸)を除去する能力を高める"},
+			{checked:false,score:1,item:"全力走-脚の回転数・ストライド向上で最大速度を高める"},
+			{checked:false,score:6,item:"ペース走-呼吸循環を高めて疲労回復"},
+		],
+		quiz9selected:[],
+
+		quiz10category:"目標計画",
+		quiz10text:"ランニングにおいて練習方法として適しているものを選んでください!",
+		quiz10srcs:[
+			{checked:false,score:6,item:"全力走では、休憩を長く取って行う。"},
+			{checked:false,score:1,item:"インターバル走は休憩を長く取って行う練習として適している"},
+			{checked:false,score:1,item:"ペース走を行うときは息が上がらない速度で行う"},
+			{checked:false,score:0,item:"ロングジョグは息が上がる程度の速度を維持し続けないと効果は小さい"},
+		],
+		quiz10selected:[],
+
+		quiz11category:"目標計画",
+		quiz11text:"課題に合わせた練習内容として 適したものを選んでください!",
+		quiz11srcs:[
+			{checked:false,score:1,item:"1km走のタイムが上がらない-ペース走"},
+			{checked:false,score:2,item:"5km走の途中で疲労で脚が動かない感覚 がある-短い距離の全力走"},
+			{checked:false,score:2,item:"10km走のタイムが上がらない-インター バル走"},
+			{checked:false,score:6,item:"30km以降いつも歩いてしまう-ロング ジョグ"},
+		],
+		quiz11selected:[],
+
+		quiz12category:"目標計画",
+		quiz12text:"フルマラソンを○○切りするための 設定タイムとしてものとして ”適切ではないもの”を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
+		quiz12srcs:[
+			{checked:false,score:6,item:"1kmを○○で走ることができる"},
+			{checked:false,score:3,item:"5kmを○○で走ることができる"},
+			{checked:false,score:0,item:"10kmを○○で走ることができる"},
+			{checked:false,score:1,item:"ハーフを○○で走ることができる"},
+		],
+		quiz12selected:[],
+
 		extraquize1:"フルマラソンを5時間切りするために 適切な内容をお選びください",
 		extraquize1srcs:[
-			{checked:false,score:6,item:"10km全力を70分で走れる走力が望ましい"},
-			{checked:false,score:3,item:"10km全力を75分で走れる走力が望ましい"},
-			{checked:false,score:0,item:"7分/kmで完走すれば5時間を切れる"},
-			{checked:false,score:1,item:"8分/kmで完走すれば5時間を切れる"},
+			{checked:false,score:0,item:"10km全力を70分で走れる走力が望ましい"},
+			{checked:false,score:0,item:"10km全力を75分で走れる走力が望ましい"},
+			{checked:false,score:6,item:"7分/kmで完走すれば5時間を切れる"},
+			{checked:false,score:0,item:"8分/kmで完走すれば5時間を切れる"},
 		],
 		extraquize1point:0,
 		extraquize1selected:[],
 
 		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
 		extraquize2srcs:[
-			{checked:false,score:6,item:"1km 4分40秒"},
-			{checked:false,score:3,item:"5km 25分"},
+			{checked:false,score:0,item:"1km 4分40秒"},
+			{checked:false,score:0,item:"5km 25分"},
 			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:1,item:"ハーフ 51分~52分"},
+			{checked:false,score:6,item:"ハーフ 51分~52分"},
 		],
 		extraquize2point:0,
 		extraquize2selected:[],
 
 		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
 		extraquize3srcs:[
-			{checked:false,score:6,item:"5km 25分"},
-			{checked:false,score:3,item:"5km 21分40秒"},
+			{checked:false,score:0,item:"5km 25分"},
+			{checked:false,score:6,item:"5km 21分40秒"},
 			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:1,item:"ハーフ 51分~52分"},
+			{checked:false,score:0,item:"ハーフ 51分~52分"},
 		],
 		extraquize3point:0,
 		extraquize3selected:[],
 
 		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
 		extraquize4srcs:[
-			{checked:false,score:6,item:"1km 3分30秒"},
-			{checked:false,score:3,item:"5km 21分40秒"},
-			{checked:false,score:0,item:"10km 38分20秒~39分"},
-			{checked:false,score:1,item:"ハーフ 22分~25分"},
+			{checked:false,score:0,item:"1km 3分30秒"},
+			{checked:false,score:0,item:"5km 21分40秒"},
+			{checked:false,score:6,item:"10km 38分20秒~39分"},
+			{checked:false,score:0,item:"ハーフ 22分~25分"},
 		],
 		extraquize4point:0,
 		extraquize4selected:[],
