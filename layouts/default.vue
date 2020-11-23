@@ -14,11 +14,13 @@
             {{items[1].title}}
           </nuxt-link>
         </template>
-        <v-list v-model="blogCategory">
-          <v-list-item v-for="(category,i) in categorys" :key="i" link v-model="blogCategory">
-              <v-list-item-title v-text="category.name" @click="moveBlog">
-              </v-list-item-title>
-          </v-list-item>
+        <v-list>
+          <nuxt-link v-for="(category,i) in categorys" :key="i" :to="`blogCategory?categoryId=${category.id}`">       
+            <v-list-item link>
+                <v-list-item-title v-text="category.name">
+                </v-list-item-title>
+            </v-list-item>
+          </nuxt-link>
         </v-list>
         
       </v-menu>
@@ -119,7 +121,7 @@ export default {
   },
   methods:{
     async moveBlog(){
-      alert(this.blogCategory)
+      // alert(this.blogCategory)
       this.$router.push({ path: '/blogCategory' , query :{ blogCategory: this.blogCategory}});
     }
   }
