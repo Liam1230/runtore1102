@@ -168,9 +168,9 @@ export default {
         )
         console.log(data)
         //this.formcontens.splice(0)
-        alert(data.contents.length)
+        //alert(data.contents.length)
         for (let i=0; i<data.contents.length;i++){
-            alert('追加')
+            //alert('追加')
             this.$set(this.formcontens, i, data.contents[i]);
         }
       }
@@ -189,9 +189,9 @@ export default {
         )
         console.log(data)
         //this.paincontens.splice(0)
-        alert(data.contents.length)
+        //alert(data.contents.length)
         for (let i=0; i<data.contents.length;i++){
-            alert('追加')
+            //alert('追加')
             this.$set(this.paincontens, i, data.contents[i]);
         }
       }

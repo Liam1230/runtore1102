@@ -14,13 +14,17 @@
             {{items[1].title}}
           </nuxt-link>
         </template>
-        <v-list v-model="blogCategory">
-          <v-list-item v-for="(category,i) in categorys" :key="i" link v-model="blogCategory">
-              <v-list-item-title v-text="category.name" @click="moveBlog">
-              </v-list-item-title>
-          </v-list-item>
-        </v-list>
-        
+        <v-card tile class="mt-5">
+          <v-card-text>
+            肩
+          </v-card-text>
+          <v-card-text>
+            腰
+          </v-card-text>
+          <v-card-text>
+            股関節
+          </v-card-text>
+        </v-card>
       </v-menu>
       <v-menu open-on-hover offset-y tile transition="slide-y-transition">
         <template v-slot:activator="{ on, attrs }">
@@ -28,6 +32,23 @@
             {{items[2].title}}
           </nuxt-link>
         </template>
+        <v-card tile class="mt-5">
+          <v-card-text>
+            <nuxt-link :to="items[2].to">
+              肩
+            </nuxt-link>
+          </v-card-text>
+          <v-card-text>
+             <nuxt-link :to="items[2].to">
+              腰
+            </nuxt-link>
+          </v-card-text>
+          <v-card-text>
+             <nuxt-link :to="items[2].to">
+              股関節
+            </nuxt-link>
+          </v-card-text>
+        </v-card>
       </v-menu>
       <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
         {{items[3].title}}
@@ -84,15 +105,6 @@ export default {
       clipped: false,
       drawer: false,
       fixed: true,
-      blogCategory:null,
-      categorys:[
-        { name: "肩・首", id:'n35zhq2x8' },
-        { name: "すね", id:'ahxwr80o6' },
-        { name: "腰", id:'ogw9fi9za' },
-        { name: "足首", id:'abznzivci' },
-        { name: "太もも", id:'45arjwblp' },
-        { name: "ヒザ", id:'u_zfrrxup' },
-      ],
       items: [
         {
           title: '月間100kmメソッド',
@@ -115,12 +127,6 @@ export default {
       right: true,
       rightDrawer: false,
       title: '大人のRunトレ練習帳'
-    }
-  },
-  methods:{
-    async moveBlog(){
-      alert(this.blogCategory)
-      this.$router.push({ path: '/blogCategory' , query :{ blogCategory: this.blogCategory}});
     }
   }
 }
