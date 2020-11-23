@@ -41,10 +41,14 @@
             </nuxt-link>
           </v-card-text>
           <v-card-text>
-            腰
+             <nuxt-link :to="items[2].to">
+              腰
+            </nuxt-link>
           </v-card-text>
           <v-card-text>
-            股関節
+             <nuxt-link :to="items[2].to">
+              股関節
+            </nuxt-link>
           </v-card-text>
         </v-card>
       </v-menu>
