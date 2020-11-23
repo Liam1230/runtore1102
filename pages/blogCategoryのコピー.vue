@@ -55,7 +55,7 @@
 import axios from 'axios'
 export default {
 	data: () => ({
-        //contents:null,
+        contents:null,
         category:null,
         categorys:[
             '肩',
@@ -78,7 +78,6 @@ export default {
                 headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
             }
         )
-        //console.log(data)
         return data
     },
     methods:{
@@ -90,14 +89,11 @@ export default {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
             )
-            console.log(data)
-            this.contents.splice(0)
-            alert(data.contents.length)
-            for (var i=0; i<data.contents.length;i++){
-                alert('追加')
-                this.$set(this.contents, i, data.contents[i]);
-            }
-            //return data
+            this.contents = await data
+           
+            alert('getContens')
+            alert(this.category)
+            return data
         }
     }
 }
