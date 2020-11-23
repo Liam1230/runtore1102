@@ -10,9 +10,9 @@
             自己紹介ページ
         </v-btn>
         <div class="d-flex justify-center" style="margin-top:60px;">
-            <v-text-field rounded filled dense placeholder="サイト内検索">
+            <v-text-field rounded filled dense placeholder="サイト内検索" v-model="search">
             </v-text-field>
-            <v-btn color="primary">
+            <v-btn color="primary" @click="getContens()">
                 検索
             </v-btn>
         </div>
@@ -45,8 +45,10 @@
     </v-container>
 </template>
 <script>
+import axios from 'axios'
 export default {
 	data: () => ({
+        search:null,
         newPost:null
     }),
     async mounted(){
@@ -58,6 +60,20 @@ export default {
             }
         )
         this.newPost = data.contents[0]
+    },
+    methods:{
+        async getContens(){
+            const { data } = await axios.get(
+                // your-service-id部分は自分のサービスidに置き換えてください
+                `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.search}"`,
+                {
+                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                }
+            )
+            //alert('検索' + data.contents[0])
+            this.newPost = await data.contents[0]
+        }
     }
+
 }
 </script>

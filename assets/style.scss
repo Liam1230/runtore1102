@@ -149,3 +149,15 @@ $title-text-color: #6B6B6B;
     font-size: 1.3rem;
     border-bottom: solid 2px $title-text-color;
 }
+
+.active {
+    border: 9px solid #00cc00;
+}
+
+.inactive {
+    border: 0px none;
+}
+
+.border {
+    border: 2px dashed #00ADFF;
+}
