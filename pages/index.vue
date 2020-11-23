@@ -68,7 +68,7 @@
           <v-expansion-panels flat v-model="formOpen" multiple class="mt-5">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
-                <v-card class="my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
+                <v-card class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
                       <v-col cols="8" class="pt-2 pl-5">
@@ -96,7 +96,7 @@
           <v-expansion-panels flat v-model="painOpen" multiple class="mt-5">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
-                <v-card class="my-3" color="#FFE200" v-for="(content, i) in contents" :key="i">
+                <v-card class="my-3" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
                       <v-col cols="8" class="pt-2 pl-5">
@@ -143,24 +143,57 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data:()=>({
+    formid:'p1nbcm2kg',
+    painid:'nnin-08mq',
+    formcontens:[],
+    paincontens:[],
     formOpen:[],
     painOpen:[]
   }),
   methods:{
-    formClick(){
+    async formClick(){
       if(this.formOpen.length){
         this.formOpen = []
       }else{
         this.formOpen = [0]
+        const { data } = await axios.get(
+          // your-service-id部分は自分のサービスidに置き換えてください
+          `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.formid}`,
+          {
+              headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+          }
+        )
+        console.log(data)
+        //this.formcontens.splice(0)
+        alert(data.contents.length)
+        for (let i=0; i<data.contents.length;i++){
+            alert('追加')
+            this.$set(this.formcontens, i, data.contents[i]);
+        }
       }
     },
-    painClick(){
+    async painClick(){
       if(this.painOpen.length){
         this.painOpen = []
       }else{
         this.painOpen = [0]
+        const { data } = await axios.get(
+          // your-service-id部分は自分のサービスidに置き換えてください
+          `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.painid}`,
+          {
+              headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+          }
+        )
+        console.log(data)
+        //this.paincontens.splice(0)
+        alert(data.contents.length)
+        for (let i=0; i<data.contents.length;i++){
+            alert('追加')
+            this.$set(this.paincontens, i, data.contents[i]);
+        }
       }
     }
   },
