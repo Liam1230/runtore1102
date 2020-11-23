@@ -595,7 +595,7 @@ export default {
 
 	mounted: async function(){
         
-        for (var i=0; i<60;i++){
+        for (let i=0; i<60;i++){
             this.minutes.push(i)
         }
         
@@ -614,7 +614,7 @@ export default {
 			let quiz1 = this.quiz1selected
 			//alert(this.quiz1selected)
 			//alert(Number(this.quiz1srcs[q1].score))
-			//alert(Number(this.quiz1srcs[this.quiz1selected].score))
+			alert(Number(this.quiz1srcs[this.quiz1selected].score))
 			//alert(this.quiz1)
 			if(this.quiz1selected.length == 0){
 				errorMessages.push("Q.1が未回答です。")
@@ -660,21 +660,6 @@ export default {
 				alert(errorMessages.join('\n'));
 				return false;
 			}else{
-				let q1 = this.quiz1selected
-				let q21 = this.quiz2selected[0]
-				let q22 = this.quiz2selected[1]
-				let q3 = this.quiz3selected
-				let q4 = this.quiz4selected
-				let q5 = this.quiz5selected
-				let q6 = this.quiz6selected
-				let q71 = this.quiz7selected[0]
-				let q72 = this.quiz7selected[1]
-				let q8 = this.quiz8selected
-				let q9 = this.quiz9selected
-				let q10 = this.quiz10selected
-				let q11 = this.quiz11selected
-				let q12 = this.quiz12selected
-
 			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
 			 	this.totalBody = Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz7srcs[this.quiz7selected[0]].score) + Number(this.quiz7srcs[this.quiz7selected[1]].score) + Number(this.quiz8srcs[this.quiz8selected].score) 
 			 	this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.quiz12srcs[this.quiz12selected].score)

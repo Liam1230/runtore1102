@@ -9,7 +9,7 @@
                 <v-col cols="9">
                     <div class="d-flex main-under-line">
                         <h2 class="main-color text-h4 mt-3">カテゴリー</h2>
-                        <v-select :items="categorys" filled rounded class="ml-5" style="max-width:500px;" v-model="category" @change="getContens()">
+                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-5" style="max-width:500px;" @change="getContens()">
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
@@ -58,10 +58,10 @@ export default {
         //contents:null,
         category:null,
         categorys:[
-            '肩',
-            '腰',
-            '股関節',
-            'マラソン'
+            { name: "肩・首", id:'n35zhq2x8' },
+            { name: "すね", id:'ahxwr80o6' },
+            { name: "フォーム", id:'p1nbcm2kg' },
+            { name: "痛み", id:'nnin-08mq' }
         ]
     }),
     filters:{
@@ -85,15 +85,16 @@ export default {
         async getContens(){
            const { data } = await axios.get(
                 // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=title[contains]${this.category}`,
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
                 {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
             )
+            alert(this.category)
             console.log(data)
             this.contents.splice(0)
             alert(data.contents.length)
-            for (var i=0; i<data.contents.length;i++){
+            for (let i=0; i<data.contents.length;i++){
                 alert('追加')
                 this.$set(this.contents, i, data.contents[i]);
             }
