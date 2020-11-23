@@ -58,10 +58,14 @@ export default {
         //contents:null,
         category:null,
         categorys:[
+            { name: "フォーム", id:'p1nbcm2kg' },
+            { name: "痛み", id:'nnin-08mq' },
             { name: "肩・首", id:'n35zhq2x8' },
             { name: "すね", id:'ahxwr80o6' },
-            { name: "フォーム", id:'p1nbcm2kg' },
-            { name: "痛み", id:'nnin-08mq' }
+            { name: "腰", id:'ogw9fi9za' },
+            { name: "足首", id:'abznzivci' },
+            { name: "太もも", id:'45arjwblp' },
+            { name: "ヒザ", id:'u_zfrrxup' },
         ]
     }),
     filters:{
