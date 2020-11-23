@@ -82,7 +82,6 @@ export default {
                 headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
             }
         )
-        //console.log(data)
         return data
     },
     methods:{
@@ -94,15 +93,27 @@ export default {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
             )
-            alert(this.category)
             console.log(data)
             this.contents.splice(0)
-            alert(data.contents.length)
             for (let i=0; i<data.contents.length;i++){
-                alert('追加')
                 this.$set(this.contents, i, data.contents[i]);
             }
-            //return data
+        }
+    },
+    async mounted(){
+        if(this.$route.query.categoryId){
+             const { data } = await axios.get(
+                // your-service-id部分は自分のサービスidに置き換えてください
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
+                {
+                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                }
+            )
+            console.log(data)
+            this.contents.splice(0)
+            for (let i=0; i<data.contents.length;i++){
+                this.$set(this.contents, i, data.contents[i]);
+            }
         }
     }
 }

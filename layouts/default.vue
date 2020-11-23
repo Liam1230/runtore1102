@@ -22,15 +22,10 @@
             </v-list-item>
           </nuxt-link>
         </v-list>
-        
       </v-menu>
-      <v-menu open-on-hover offset-y tile transition="slide-y-transition">
-        <template v-slot:activator="{ on, attrs }">
-          <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[2].to" class="white--text px-5" style="border-left: solid 2px white;">
-            {{items[2].title}}
-          </nuxt-link>
-        </template>
-      </v-menu>
+      <nuxt-link :to="`blogCategory?categoryId=${items[2].to}`" class="white--text px-5" style="border-left: solid 2px white;">
+        {{items[2].title}}
+      </nuxt-link>
       <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
         {{items[3].title}}
       </nuxt-link>
@@ -106,7 +101,7 @@ export default {
         },
         {
           title: 'フォーム',
-          to: '/blogCategory'
+          to: 'p1nbcm2kg'
         },
         {
           title: 'LINE練習帳',
@@ -121,7 +116,6 @@ export default {
   },
   methods:{
     async moveBlog(){
-      // alert(this.blogCategory)
       this.$router.push({ path: '/blogCategory' , query :{ blogCategory: this.blogCategory}});
     }
   }
