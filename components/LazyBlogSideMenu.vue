@@ -4,7 +4,7 @@
             <v-img src="/img/avatar.png"></v-img>
         </v-avatar>
         <h4 class="text-h6 mt-3 title-text-color">
-            大人のRunトレ塾<br>代表 吉野洸希
+            大人のRUNトレ塾<br>代表 吉野洸希
         </h4>
         <v-btn rounded color="primary" class="mt-3" to="/profile">
             自己紹介ページ

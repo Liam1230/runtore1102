@@ -14,7 +14,7 @@
     </section>
     <section class="my-5 py-5">
       <v-container column justify-center class="min-container text-center">
-        <h1 class="text-h3 mt-5 title-text-color">Runトレについて</h1>
+        <h1 class="text-h3 mt-5 title-text-color">RUNトレについて</h1>
         <h2 class="mt-3 title-text-color">-About-</h2>
         <h3 class="text-h4 my-5 py-5 blue-sub-title">一人ではたどりつけない自己ベストへ</h3>
         <p class="text-h6 text-left py-5 main-text-color">ランニングの痛みや ランニングフォームで悩んでいるあなたへ！「たくさん練習をこなしてもベストが更新できない」「怪我を繰り返す」 本当につらいものですよね 。多くのランナーが同じ悩みでつまずいてしまっています。あなた１人で背負い込む必要はありません！ この情報サイト の中で 、他の多くのランナーの悩みとともに 改善策を提示していきます。 その中にあなたの悩みを改善するヒントがあるかもしれません！</p>
@@ -27,7 +27,7 @@
             <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
           </v-col>
           <v-col cols=6 class="pl-5 text-center">
-            <h1 class="text-h4 text-left main-color">大人のRunトレ塾</h1>
+            <h1 class="text-h4 text-left main-color">大人のRUNトレ塾</h1>
             <h2 class="text-h6 mt-3 text-left title-text-color">代表 吉野洸希</h2>
             <v-divider class="my-5"></v-divider>
             <p class="text-left main-text-color">
@@ -155,6 +155,12 @@ export default {
     formOpen:[],
     painOpen:[]
   }),
+  head () {
+    return {
+      titleTemplate: null,
+      title: '大人のRUNトレ練習帳',
+    }
+  },
   methods:{
     async formClick(){
       if(this.formOpen.length){

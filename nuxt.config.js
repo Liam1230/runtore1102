@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
+  // mode: 'universal',
   target: 'static',
   generate: {
     async routes() {
@@ -26,12 +27,17 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - 大人のRunトレ練習帳',
-    title: '大人のRunトレ練習帳',
+    titleTemplate: '%s - 大人のRUNトレ練習帳',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
+      { hid: 'og:site_name', property: 'og:site_name', content: '大人のRUNトレ練習帳' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://example.com' },
+      { hid: 'og:title', property: 'og:title', content: '大人のRUNトレ練習帳' },
+      { hid: 'og:description', property: 'og:description', content: '' },
+      { hid: 'og:image', property: 'og:image', content: '/first.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

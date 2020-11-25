@@ -7,6 +7,9 @@
                   <h1 class="title main-color text-h4">{{ title }}</h1>
                   <p class="mb-0">{{date | dateFilter}}</p>
                 </div>
+                <div class="youtube" v-if="youtubeURL">
+                  <iframe :src="youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="post" v-html="text"></div>
               </v-container>
           </v-col>
@@ -19,6 +22,10 @@
 
 <script>
 export default {
+  data: () => ({
+    title:"大人のRUNトレ練習帳",
+    youtubeURL:"",
+  }),
   async asyncData(ctx) {
     const { data } = await ctx.$axios.get(
         // your-service-id部分は自分のサービスidに置き換えてください
@@ -29,6 +36,19 @@ export default {
     )
     return data
   },
+  head () {
+    return {
+      title: this.seoTitle,
+      meta: [
+        { hid: 'description', name: 'description', content: this.seoDescription },
+        { hid: 'og:type', property: 'og:type', content: "article" },
+        { hid: 'og:title', property: 'og:title', content: this.seoTitle },
+        { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+        { hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/${this.id}` },
+        { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+      ],
+    }
+  },
   filters:{
     dateFilter(val){
       const date = new Date(val)
@@ -37,3 +57,19 @@ export default {
   },
 }
 </script>
+
+<style>
+.youtube {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+</style>
