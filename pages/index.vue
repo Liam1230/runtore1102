@@ -155,6 +155,12 @@ export default {
     formOpen:[],
     painOpen:[]
   }),
+  head () {
+    return {
+      titleTemplate: null,
+      title: '大人のRUNトレ練習帳',
+    }
+  },
   methods:{
     async formClick(){
       if(this.formOpen.length){

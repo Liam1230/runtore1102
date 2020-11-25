@@ -22,8 +22,9 @@
 
 <script>
 export default {
-  data:()=>({
-    youtubeURL:""
+  data: () => ({
+    title:"大人のRUNトレ練習帳",
+    youtubeURL:"",
   }),
   async asyncData(ctx) {
     const { data } = await ctx.$axios.get(
@@ -34,6 +35,19 @@ export default {
         }
     )
     return data
+  },
+  head () {
+    return {
+      title: this.seoTitle,
+      meta: [
+        { hid: 'description', name: 'description', content: this.seoDescription },
+        { hid: 'og:type', property: 'og:type', content: "article" },
+        { hid: 'og:title', property: 'og:title', content: this.seoTitle },
+        { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+        { hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/${this.id}` },
+        { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+      ],
+    }
   },
   filters:{
     dateFilter(val){
