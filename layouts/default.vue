@@ -26,9 +26,9 @@
       <nuxt-link :to="`blogCategory?categoryId=${items[2].to}`" class="white--text px-5" style="border-left: solid 2px white;">
         {{items[2].title}}
       </nuxt-link>
-      <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
+      <!-- <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
         {{items[3].title}}
-      </nuxt-link>
+      </nuxt-link> -->
     </v-app-bar>
     <v-main>
       <transition name="fade-transform">
