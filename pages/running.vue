@@ -96,8 +96,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -120,8 +120,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -135,7 +135,6 @@
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
-							<div>{{quiz3selected}}</div>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -145,8 +144,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -209,8 +208,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -233,8 +232,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -257,8 +256,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -426,6 +425,7 @@ export default {
 		fullMinute:null,
 		halfTime:null,
 		halfMinute:null,
+		typeNum:0,
 		items: ['1', '2', '3', '4', '5', '6','7'],
         halfTimes:['1','2','3'],
         times: ['1', '2', '3', '4', '5', '6','7'],
@@ -609,6 +609,14 @@ export default {
 		},
 		async beforeResult(){
 			let errorMessages = []
+
+			if(this.fullTime ==null || this.fullMinute == null){
+				errorMessages.push("フルマラソンのタイムが未回答です。")
+			}
+
+			if(this.halfTime == null || this.halfMinute == null){
+				errorMessages.push("ハーフマラソンのタイムが未回答です。")
+			}
 			
 			if(this.quiz1selected.length == 0){
 				errorMessages.push("Q.1が未回答です。")
@@ -656,8 +664,9 @@ export default {
 			}else{
 			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
 			 	this.totalBody = Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz7srcs[this.quiz7selected[0]].score) + Number(this.quiz7srcs[this.quiz7selected[1]].score) + Number(this.quiz8srcs[this.quiz8selected].score) 
-			 	this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.quiz12srcs[this.quiz12selected].score)
-				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose }});
+				this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.quiz12srcs[this.quiz12selected].score)
+				this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
+				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum}});
 			 }
 		}
 	},

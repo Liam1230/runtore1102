@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@mdi/font": "^5.8.55",
     "@nuxtjs/axios": "^5.12.2",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
