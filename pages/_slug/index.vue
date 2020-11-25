@@ -7,6 +7,9 @@
                   <h1 class="title main-color text-h4">{{ title }}</h1>
                   <p class="mb-0">{{date | dateFilter}}</p>
                 </div>
+                <div class="youtube" v-if="youtubeURL">
+                  <iframe :src="youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="post" v-html="text"></div>
               </v-container>
           </v-col>
@@ -19,6 +22,9 @@
 
 <script>
 export default {
+  data:()=>({
+    youtubeURL:""
+  }),
   async asyncData(ctx) {
     const { data } = await ctx.$axios.get(
         // your-service-id部分は自分のサービスidに置き換えてください
@@ -37,3 +43,19 @@ export default {
   },
 }
 </script>
+
+<style>
+.youtube {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+</style>
