@@ -63,7 +63,7 @@
       <v-container>
         <v-row class="justify-center align-center">
           <v-col cols="5" class="text-center">
-            <span>&copy; 大人のRunトレ塾</span>
+            <span>&copy; 大人のRUNトレ塾</span>
           </v-col>
           <v-col cols="5" class="pl-5 py-0" style="border-left: solid 2px #ffffff;">
             <v-row class="pl-5">
@@ -126,7 +126,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: '大人のRunトレ練習帳'
+      title: '大人のRUNトレ練習帳'
     }
   }
 }

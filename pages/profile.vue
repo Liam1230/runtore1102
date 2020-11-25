@@ -9,7 +9,7 @@
             <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
           </v-col>
           <v-col cols=6 class="pl-5 text-center">
-            <h1 class="text-h4 text-left main-color">大人のRunトレ塾</h1>
+            <h1 class="text-h4 text-left main-color">大人のRUNトレ塾</h1>
             <h2 class="text-h6 mt-3 text-left title-text-color">代表 吉野洸希</h2>
             <v-divider class="my-5"></v-divider>
             <p class="text-left main-text-color">
