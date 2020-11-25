@@ -10,6 +10,14 @@
                 <div class="youtube" v-if="youtubeURL">
                   <iframe :src="youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <div class="mt-5 pa-3 dictionary">
+                  目次
+                  <ul class="mt-3">
+                    <nuxt-link to="#" v-scroll-to="{el: `#${dic.id}`}" v-for="(dic,i) in dics" :key="i">
+                      <li>{{dic.text}}</li>
+                    </nuxt-link>
+                  </ul>
+                </div>
                 <div class="post" v-html="text"></div>
               </v-container>
           </v-col>
@@ -34,6 +42,19 @@ export default {
             headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
         }
     )
+    const titlePattern = /<h2.*?>.+?<\/h2>/g
+    const res = data.text.match(titlePattern)
+
+    const dics = []
+    for(const r of res){
+      const id = r.match(/id="(.+?)"/)[1]
+      const text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
+      dics.push({
+        id:id,
+        text:text
+      })
+    }
+    data["dics"] = dics
     return data
   },
   head () {
@@ -59,17 +80,5 @@ export default {
 </script>
 
 <style>
-.youtube {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-}
-.youtube iframe {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
 
 </style>

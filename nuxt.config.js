@@ -59,7 +59,8 @@ export default {
     {
       src: '@/plugins/vue-select-image',
       mode: 'client'
-    }
+    },
+    '@/plugins/vue-scrollto',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

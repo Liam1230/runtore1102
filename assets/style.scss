@@ -165,3 +165,27 @@ $title-text-color: #6B6B6B;
 .active-hover {
     cursor:pointer;
 }
+
+.youtube {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+.youtube iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+.dictionary{
+    // background-color: lightgray;
+    border: solid 2px $main-text-color;
+    border-radius: 10px;
+}
+.dictionary > ul{
+    // list-style: none;
+}
+.dictionary > ul > a{
+    // text-decoration: underline;
+}
