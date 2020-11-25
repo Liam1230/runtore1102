@@ -86,34 +86,60 @@ export default {
     },
     methods:{
         async getContens(){
-           const { data } = await axios.get(
-                // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
-                {
-                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+            if(this.$route.query.search){
+                //alert('サイト内検索')
+                const { data } = await axios.get(
+                    // your-service-id部分は自分のサービスidに置き換えてください
+                    `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.$route.query.search}`,
+                    {
+                        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                    }
+                )
+                console.log(data)
+                this.contents.splice(0)
+                for (let i=0; i<data.contents.length;i++){
+                    this.$set(this.contents, i, data.contents[i]);
                 }
-            )
-            console.log(data)
-            this.contents.splice(0)
-            for (let i=0; i<data.contents.length;i++){
-                this.$set(this.contents, i, data.contents[i]);
+            }else if(this.$route.query.categoryId){
+                const { data } = await axios.get(
+                    // your-service-id部分は自分のサービスidに置き換えてください
+                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
+                    {
+                        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                    }
+                )
+                console.log(data)
+                this.contents.splice(0)
+                for (let i=0; i<data.contents.length;i++){
+                    this.$set(this.contents, i, data.contents[i]);
+                }
+
+                this.category = await this.categorys.find((queryCategoryId) => {
+                    return (queryCategoryId.id === this.$route.query.categoryId);
+                });
+            }else{
+                const { data } = await axios.get(
+                    // your-service-id部分は自分のサービスidに置き換えてください
+                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
+                    {
+                        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                    }
+                )
+                console.log(data)
+                this.contents.splice(0)
+                for (let i=0; i<data.contents.length;i++){
+                    this.$set(this.contents, i, data.contents[i]);
+                }
             }
         }
     },
     async mounted(){
-        if(this.$route.query.categoryId){
-             const { data } = await axios.get(
-                // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
-                {
-                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
-                }
-            )
-            console.log(data)
-            this.contents.splice(0)
-            for (let i=0; i<data.contents.length;i++){
-                this.$set(this.contents, i, data.contents[i]);
-            }
+        
+    },
+    watch: {
+        $route (to, from) {
+            //alert('getContens')
+            this.getContens()
         }
     }
 }

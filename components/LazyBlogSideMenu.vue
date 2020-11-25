@@ -65,14 +65,18 @@ export default {
         async getContens(){
             const { data } = await axios.get(
                 // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.search}"`,
+                `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.search}`,
                 {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
             )
             //alert('検索' + data.contents[0])
             this.newPost = await data.contents[0]
+
+            this.$router.push({ path: '/blogCategory' , query :{ search: this.search}});
+            //alert('ページ遷移')
         }
+        
     }
 
 }
