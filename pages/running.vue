@@ -14,7 +14,9 @@
 						</v-col>
 						<v-col cols="8">
 							<div class="talk">
-								<p class="text-left main-text-color">私は月間走行距離100ｋｍで 2:48:56 を 実現しました。初 のフルマラソンで は月間 250 ｋｍ練習し、 膝の痛みや 足底筋膜炎に顔をゆがめながら も 3 45で ゴール。 もっと良いタイムが出ると思っていたのに、 走っても ベストは伸びないばかりか、 痛みが出て しまう。ただ走るだけの 非効率な練習に疑問 を持つように 。そこで 当サイトでお伝えして いる 月間 100 ｋｍメソッドを生み出しました！</p>
+								<p class="text-left main-text-color">
+									あなたのランニング力をチェックしましょう！ランナーに必要な要素を3項目に分けています！直感で選べ、5分程度で終わるよう問題を作成しました！採点後、間違えた場所の解説記事・おすすめ記事を読み、弱点を克服してレベルアップしていきましょう！
+								</p>
 							</div>
 						</v-col>
 					</v-row>
@@ -439,7 +441,7 @@ export default {
 		quiz1selected:[],
 
 		quiz2category:"フォーム・技術",
-		quiz2text:"着地位置として\"正しいもの\"を\"2つ\"選んでください",
+		quiz2text:"着地位置として「正しいもの」を「2つ」選んでください",
 		quiz2srcs:[
 			{checked:false,score:0,image:"/img/sampleqa.png"},
 			{checked:false,score:3,image:"/img/sampleqa.png"},
@@ -449,7 +451,7 @@ export default {
 		quiz2selected:[],
 
 		quiz3category:"フォーム・技術",
-		quiz3text:"腰の落ちたフォームを改善するために\"効果の低いもの\"を選んでください",
+		quiz3text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
 		quiz3srcs:[
 			{checked:false,score:2,image:"/img/sampleqa.png"},
 			{checked:false,score:2,image:"/img/sampleqa.png"},
@@ -479,7 +481,7 @@ export default {
 		quiz5selected:[],
 
 		quiz6category:"体に関すること",
-		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして\"間違っているもの\"はどれか選んでください",
+		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
 		quiz6srcs:[
 			{checked:false,score:6,image:"/img/sampleqa.png"},
 			{checked:false,score:0,image:"/img/sampleqa.png"},
@@ -489,7 +491,7 @@ export default {
 		quiz6selected:[],
 
 		quiz7category:"体に関すること",
-		quiz7text:"ランニング前後の食事摂取の方法として\"適切ではない\"組み合わせのものを\"2つ\"選んでください",
+		quiz7text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
 		quiz7srcs:[
 			{checked:false,score:3,image:"/img/sampleqa.png"},
 			{checked:false,score:3,image:"/img/sampleqa.png"},
@@ -499,7 +501,7 @@ export default {
 		quiz7selected:[],
 
 		quiz8category:"体に関すること",
-		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが\"間違っているもの\"を選んでください",
+		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
 		quiz8srcs:[
 			{checked:false,score:6,image:"/img/sampleqa.png"},
 			{checked:false,score:3,image:"/img/sampleqa.png"},
@@ -509,7 +511,7 @@ export default {
 		quiz8selected:[],
 
 		quiz9category:"目標計画",
-		quiz9text:"練習の目的として”適切ではないも の”を選んでください",
+		quiz9text:"練習の目的として「適切ではないもの」を選んでください",
 		quiz9srcs:[
 			{checked:false,score:1,item:"ロングジョグ-毛細血管を増やし、脚の耐久性強化"},
 			{checked:false,score:1,item:"インターバル走-疲労物質(乳酸)を除去する能力を高める"},
@@ -529,7 +531,7 @@ export default {
 		quiz10selected:[],
 
 		quiz11category:"目標計画",
-		quiz11text:"課題に合わせた練習内容として 適したものを選んでください!",
+		quiz11text:"課題に合わせた練習内容として適したものを選んでください!",
 		quiz11srcs:[
 			{checked:false,score:1,item:"1km走のタイムが上がらない-ペース走"},
 			{checked:false,score:2,item:"5km走の途中で疲労で脚が動かない感覚 がある-短い距離の全力走"},
@@ -539,7 +541,7 @@ export default {
 		quiz11selected:[],
 
 		quiz12category:"目標計画",
-		quiz12text:"フルマラソンを○○切りするための 設定タイムとしてものとして ”適切ではないもの”を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
+		quiz12text:"フルマラソンを○○切りするための設定タイムとしてものとして「適切ではないもの」を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
 		quiz12srcs:[
 			{checked:false,score:6,item:"1kmを○○で走ることができる"},
 			{checked:false,score:3,item:"5kmを○○で走ることができる"},
