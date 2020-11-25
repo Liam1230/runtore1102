@@ -1,6 +1,6 @@
 <template>
     <v-container class="text-center side-bar">
-        <v-avatar size="auto">
+        <v-avatar size="auto" max-width="80%">
             <v-img src="/img/avatar.png"></v-img>
         </v-avatar>
         <h4 class="text-h6 mt-3 title-text-color">
