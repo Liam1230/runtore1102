@@ -27,7 +27,7 @@
                     <canvas id="resultCharts"></canvas>
 				</v-col>
 			</v-row>
-            <h2 class="mt-3 pb-5 title-text-color">あなたは...</h2>
+            <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
             <h1 class="text-h3 mt-5 title-text-color">{{this.runnerType}}</h1>
 		</v-container>
   </article>

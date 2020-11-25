@@ -96,8 +96,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -120,8 +120,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -135,7 +135,6 @@
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
-							<div>{{quiz3selected}}</div>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -145,8 +144,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -209,8 +208,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -233,8 +232,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
@@ -257,8 +256,8 @@
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
-														<v-icon color="blue">
-															{{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+														<v-icon color="black" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
 												</v-img>
