@@ -1,6 +1,14 @@
 <template>
   <article class="mt-5 pt-5">
 		<v-container column justify-center class="min-container text-center pt-5">
+			<v-snackbar v-model="snackBar" multi-line top>
+				{{ errorText }}
+				<template v-slot:action="{ attrs }">
+					<v-btn color="pink" text v-bind="attrs" @click="snackBar = false">
+						Close
+					</v-btn>
+				</template>
+			</v-snackbar>
 			<h1 class="text-h3 mt-5 title-text-color">ランニング力チェック</h1>
 			<h2 class="mt-3 pb-5 title-text-color">-Diagnosis-</h2>
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
@@ -421,6 +429,8 @@
 
 export default {
 	data: () => ({
+		errorText:"",
+		snackBar:false,
 		fullTime:null,
 		fullMinute:null,
 		halfTime:null,
@@ -659,7 +669,9 @@ export default {
 			}
 
 			if (errorMessages.length != 0) {
-				alert(errorMessages.join('\n'));
+				this.errorText = errorMessages.join('\n');
+				this.snackBar = true;
+				// alert(errorMessages.join('\n'));
 				return false;
 			}else{
 			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
