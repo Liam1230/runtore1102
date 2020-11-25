@@ -14,8 +14,8 @@
 						<v-col cols="8">
 							<div class="talk">
 								<p class="text-left main-text-color">
-                                    あなたの点数は {{this.totlaScore}}点<br>
-                                    Aランクです
+                                    あなたの点数は{{this.totlaScore}}<br>
+                                    {{this.rank}}ランクです
                                 </p>
 							</div>
 						</v-col>
@@ -27,6 +27,8 @@
                     <canvas id="resultCharts"></canvas>
 				</v-col>
 			</v-row>
+            <h2 class="mt-3 pb-5 title-text-color">あなたは...</h2>
+            <h1 class="text-h3 mt-5 title-text-color">{{this.runnerType}}</h1>
 		</v-container>
   </article>
 </template>
@@ -34,11 +36,30 @@
 <script>
 export default {
 	data: () => ({
-        totlaScore:0
+        totlaScore:0,
+        rank:null,
+        runnerType:null
     }),
     mounted(){
         //datasets[0].data.push(this.$route.query.toatlFormandTec)
-        this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose)
+        this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
+        
+        if(this.totlaScore <= 50){
+            this.rank = "D"
+        }else if(this.totlaScore <= 65){
+            this.rank = "C"
+        }else if(this.totlaScore <= 84){
+            this.rank = "B"
+        }else{
+            this.rank = "A"
+        }
+
+        if(Number(this.$route.query.totalBody) < 2.2){
+            this.runnerType = "マラソンタイプ"
+        }else{
+            this.runnerType = "スピードタイプ"
+        }
+
         const ctx = document.getElementById("resultCharts")
         const myChart = new Chart(ctx, {
             type:'radar',

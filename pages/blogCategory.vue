@@ -9,7 +9,7 @@
                 <v-col cols="9">
                     <div class="d-flex main-under-line">
                         <h2 class="main-color text-h4 mt-3">カテゴリー</h2>
-                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-5" style="max-width:500px;" @change="getContens()">
+                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
@@ -132,6 +132,9 @@ export default {
                     this.$set(this.contents, i, data.contents[i]);
                 }
             }
+        },
+        resetContent(){
+            this.category = null
         }
     },
     async mounted(){
