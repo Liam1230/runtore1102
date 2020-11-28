@@ -7,7 +7,7 @@
         <div id="first-view-content-text">
           <div id="first-view-content-text-inner">
             <h1 class="text-h4 mb-5">全てのランナーの<br>やったできた！を<br>この一冊に！</h1>
-            <p class="text-h6">目標タイム達成・ファンラン・健康増進など、1人1人に違った目的がありますが、「ランニングが好き」という気持ちは皆さん同じではないでしょうか？「完走・ベスト更新の高揚感や達成感」「青空のもと走る爽快感」は何物にも代えられません！そんな日々のランニングライフをよりよいものとする情報をまとめました！</p>
+            <p v-if="$vuetify.breakpoint.mdAndUp" class="text-h6">目標タイム達成・ファンラン・健康増進など、1人1人に違った目的がありますが、「ランニングが好き」という気持ちは皆さん同じではないでしょうか？「完走・ベスト更新の高揚感や達成感」「青空のもと走る爽快感」は何物にも代えられません！そんな日々のランニングライフをよりよいものとする情報をまとめました！</p>
           </div>
         </div>
       </div>
@@ -23,14 +23,14 @@
     <section class="my-5 py-5">
       <v-container column justify-center class="min-container text-center">
         <v-row class="align-center justify-space-between">
-          <v-col cols=5 class="mr-5">
+          <v-col cols=12 md=5 class="mr-5">
             <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
           </v-col>
-          <v-col cols=6 class="pl-5 text-center">
+          <v-col cols=12 md=6 class="pl-5 text-center">
             <h1 class="text-h4 text-left main-color">大人のRUNトレ塾</h1>
             <h2 class="text-h6 mt-3 text-left title-text-color">代表 吉野洸希</h2>
             <v-divider class="my-5"></v-divider>
-            <p class="text-left main-text-color">
+            <p class="text-left main-text-color text-h6">
               私は月間走行距離100ｋｍで2:48:56を実現しました。初のフルマラソンで は月間250ｋｍ練習し、膝の痛みや足底筋膜炎に顔をゆがめながらも3:45でゴール。もっと良いタイムが出ると思っていたのに、走ってもベストは伸びないばかりか、痛みが出てしまう。ただ走るだけの非効率な練習に疑問を持つように。そこで当サイトでお伝えしている月間100ｋｍメソッドを生み出しました！
             </p>
             <v-btn color="primary" large rounded to="profile">詳しく見る</v-btn>
@@ -63,12 +63,12 @@
       </div>
     </section>
     <section class="my-5 py-5 p-relative text-center">
-      <p class="main-color-bg pa-5 white--text text-h5" style="display: inline-block;">あなたが気になる悩みはどっち？</p>
-      <v-row class="justify-center align-start pt-5 mt-5">
-        <v-col cols="5">
+      <p class="main-color-bg pa-3 white--text text-h5" style="display: inline-block;">あなたが気になる悩みはどっち？</p>
+      <v-row style="max-width:100%; margin:0 auto;" class="d-flex justify-center align-start pt-5 mt-5">
+        <v-col cols="12" md="5">
           <v-btn rounded x-large @click="formClick" color="secondary">フォーム</v-btn>
           <v-expansion-panels flat v-model="formOpen" multiple class="mt-5">
-            <v-expansion-panel v-for="(item,i) in 1" :key="i">
+            <v-expansion-panel v-for="(item,i) in 1" :key="i"  class="">
               <v-expansion-panel-content>
                 <v-card class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
@@ -92,15 +92,17 @@
             </v-expansion-panel>
           </v-expansion-panels>
         </v-col>
-        <span class="text-h3 mx-5 title-text-color">or</span>
-        <v-col cols="5">
+        <v-col cols="12" md="2">
+          <span class="text-h3 mx-5 title-text-color">or</span>
+        </v-col>
+        <v-col cols="12" md="5">
           <v-btn rounded x-large @click="painClick" color="secondary">痛み</v-btn>
-          <v-expansion-panels flat v-model="painOpen" multiple class="mt-5">
+          <v-expansion-panels flat v-model="painOpen" multiple class="mt-5 px-0">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
                 <v-card class="my-3" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
-                    <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
+                    <v-row class="d-flex black--text flex-no-wrap justify-space-between pa-0">
                       <v-col cols="8" class="pt-2 pl-5">
                         <h3 class="text-left text-h6">
                           ・{{content.title}}
@@ -174,7 +176,7 @@ export default {
               headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
           }
         )
-        console.log(data)
+        // console.log(data)
         //this.formcontens.splice(0)
         //alert(data.contents.length)
         for (let i=0; i<data.contents.length;i++){
@@ -195,7 +197,7 @@ export default {
               headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
           }
         )
-        console.log(data)
+        // console.log(data)
         //this.paincontens.splice(0)
         //alert(data.contents.length)
         for (let i=0; i<data.contents.length;i++){
@@ -213,7 +215,7 @@ export default {
             headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
         }
     )
-    console.log(data)
+    // console.log(data)
     return data
   }
 }
