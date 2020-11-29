@@ -15,12 +15,12 @@
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
 					<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-						<v-col cols="4" class="text-right">
-							<v-avatar size="auto">
+						<v-col cols=12 md="4" class="text-right">
+							<v-avatar size="auto" max-width="100%">
 								<v-img src="/img/avatar.png"></v-img>
 							</v-avatar>
 						</v-col>
-						<v-col cols="8">
+						<v-col cols=12 md="8">
 							<div class="talk">
 								<p class="text-left main-text-color">
 									あなたのランニング力をチェックしましょう！ランナーに必要な要素を3項目に分けています！直感で選べ、5分程度で終わるよう問題を作成しました！採点後、間違えた場所の解説記事・おすすめ記事を読み、弱点を克服してレベルアップしていきましょう！
@@ -33,7 +33,7 @@
 							<h2 class="main-color">あなたのフルマラソンのタイムを教えてください。</h2>
 						</v-col>
 						<v-row class="justify-center align-center">
-							<v-col cols="2">
+							<v-col cols="7" md="2">
 								<v-select
 									rounded
 									:items="times"
@@ -41,10 +41,10 @@
 									v-model="fullTime"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">時間</h2>
 							</v-col>
-							<v-col cols="3">
+							<v-col cols=7 md="3">
 								<v-select
 									rounded
 									:items="minutes"
@@ -52,7 +52,7 @@
 									v-model="fullMinute"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">分</h2>
 							</v-col>
 						</v-row>
@@ -62,7 +62,7 @@
 							<h2 class="main-color">あなたのハーフマラソンのタイムを教えてください。</h2>
 						</v-col>
 						<v-row class="justify-center align-center">
-							<v-col cols="2">
+							<v-col cols=7 md="2">
 								<v-select
 									rounded
 									:items="halfTimes"
@@ -70,10 +70,10 @@
 									v-model="halfTime"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">時間</h2>
 							</v-col>
-							<v-col cols="3">
+							<v-col cols=7 md="3">
 								<v-select
 									rounded
 									:items="minutes"
@@ -81,7 +81,7 @@
 									v-model="halfMinute"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">分</h2>
 							</v-col>
 						</v-row>
@@ -102,7 +102,7 @@
 									<v-row>
 										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -126,7 +126,7 @@
 									<v-row>
 										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -150,7 +150,7 @@
 									<v-row>
 										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -214,7 +214,7 @@
 									<v-row>
 										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -238,7 +238,7 @@
 									<v-row>
 										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -262,7 +262,7 @@
 									<v-row>
 										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
