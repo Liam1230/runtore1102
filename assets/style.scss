@@ -4,6 +4,22 @@ $btn-shadow-color: #7E7E7E;
 $main-text-color: #707070;
 $title-text-color: #6B6B6B;
 
+$breakpoints: (
+    'xs': 'screen and (max-width: 600px)',
+    'sm': 'screen and (min-width: 601px) and (max-width: 960px)',
+    'md': 'screen and (min-width: 961px) and (max-width: 1264px)',
+    'lg': 'screen and (min-width: 1265px) and (max-width: 1904px)',
+    'xl': 'screen and (min-width: 1905px)',
+    'smAndDown': 'screen and (max-width: 960px)',
+    'mdAndUp': 'screen and (min-width: 961px)',
+) !default;
+
+@mixin mq($breakpoint: mdAndUp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
 // .v-application p{
 //     word-wrap: break-word;
 //     word-break: break-all;
@@ -44,11 +60,20 @@ $title-text-color: #6B6B6B;
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template:
+    @include mq(mdAndUp){
+        grid-template:
         "... ... ..." 1fr
         "... fvc-text ..." 1fr
         "... ... ..." 10%
         / 60% 35% 5%;
+    }
+    @include mq(smAndDown){
+        grid-template:
+        "... ... ..." 10%
+        "... fvc-text ..." 1fr
+        "... ... ..." 10%
+        / 5% 90% 5%;
+    }
 }
 
 #first-view-content-text{
@@ -57,8 +82,17 @@ $title-text-color: #6B6B6B;
 }
 #first-view-content-text-inner{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    @include mq(mdAndUp){
+        bottom: 0;
+        right: 0;
+    }
+    @include mq(smAndDown){
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
 }
 
 .blue-sub-title{

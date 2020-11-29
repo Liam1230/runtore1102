@@ -5,10 +5,10 @@
         <h1 class="text-h3 mt-5 title-text-color">自己紹介</h1>
         <h2 class="mt-3 pb-5 title-text-color">-Profile-</h2>
         <v-row class="align-center justify-space-between pt-5 mt-5">
-          <v-col cols=5 class="mr-5">
+          <v-col cols="12" md=5 class="mr-5">
             <v-img src="/img/profile.png" lazy-src="/img/profile_l.png"></v-img>
           </v-col>
-          <v-col cols=6 class="pl-5 text-center">
+          <v-col cols=12 md=6 class="pl-5 text-center">
             <h1 class="text-h4 text-left main-color">大人のRUNトレ塾</h1>
             <h2 class="text-h6 mt-3 text-left title-text-color">代表 吉野洸希</h2>
             <v-divider class="my-5"></v-divider>
@@ -62,7 +62,7 @@
       <v-container column justify-center class="min-container text-left pt-5">
         <h2 class="text-h4 text-left main-color border-h2 mb-5">経歴</h2>
         <p class="text-h6 text-left main-text-color">
-          <table style="border-spacing: 30px 5px;">
+          <table style="border-spacing: 15px 10px;">
             <tr>
               <td>2014年</td><td>某大阪陸上競技部　トレーナー</td>
             </tr>
@@ -103,5 +103,18 @@
 
 <script>
 export default {
+  head () {
+		return {
+      title: "自己紹介",
+      meta: [
+        // { hid: 'description', name: 'description', content: this.seoDescription },
+        { hid: 'og:type', property: 'og:type', content: "article" },
+        { hid: 'og:title', property: 'og:title', content: "自己紹介" },
+        // { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+        { hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/profile` },
+        // { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+      ],
+		}
+	},
 }
 </script>

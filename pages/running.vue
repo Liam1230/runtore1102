@@ -15,12 +15,12 @@
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
 					<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-						<v-col cols="4" class="text-right">
-							<v-avatar size="auto">
+						<v-col cols=12 md="4" class="text-right">
+							<v-avatar size="auto" max-width="100%">
 								<v-img src="/img/avatar.png"></v-img>
 							</v-avatar>
 						</v-col>
-						<v-col cols="8">
+						<v-col cols=12 md="8">
 							<div class="talk">
 								<p class="text-left main-text-color">
 									あなたのランニング力をチェックしましょう！ランナーに必要な要素を3項目に分けています！直感で選べ、5分程度で終わるよう問題を作成しました！採点後、間違えた場所の解説記事・おすすめ記事を読み、弱点を克服してレベルアップしていきましょう！
@@ -33,7 +33,7 @@
 							<h2 class="main-color">あなたのフルマラソンのタイムを教えてください。</h2>
 						</v-col>
 						<v-row class="justify-center align-center">
-							<v-col cols="2">
+							<v-col cols="7" md="2">
 								<v-select
 									rounded
 									:items="times"
@@ -41,10 +41,10 @@
 									v-model="fullTime"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">時間</h2>
 							</v-col>
-							<v-col cols="3">
+							<v-col cols=7 md="3">
 								<v-select
 									rounded
 									:items="minutes"
@@ -52,7 +52,7 @@
 									v-model="fullMinute"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">分</h2>
 							</v-col>
 						</v-row>
@@ -62,7 +62,7 @@
 							<h2 class="main-color">あなたのハーフマラソンのタイムを教えてください。</h2>
 						</v-col>
 						<v-row class="justify-center align-center">
-							<v-col cols="2">
+							<v-col cols=7 md="2">
 								<v-select
 									rounded
 									:items="halfTimes"
@@ -70,10 +70,10 @@
 									v-model="halfTime"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">時間</h2>
 							</v-col>
-							<v-col cols="3">
+							<v-col cols=7 md="3">
 								<v-select
 									rounded
 									:items="minutes"
@@ -81,7 +81,7 @@
 									v-model="halfMinute"
 								></v-select>
 							</v-col>
-							<v-col cols="2" class="text-left">
+							<v-col cols=4 md="2" class="text-left">
 								<h2 class="text-h4 main-color pb-3">分</h2>
 							</v-col>
 						</v-row>
@@ -102,7 +102,7 @@
 									<v-row>
 										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -126,7 +126,7 @@
 									<v-row>
 										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -150,7 +150,7 @@
 									<v-row>
 										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -214,7 +214,7 @@
 									<v-row>
 										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -238,7 +238,7 @@
 									<v-row>
 										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -262,7 +262,7 @@
 									<v-row>
 										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -570,7 +570,7 @@ export default {
 		extraquize1point:0,
 		extraquize1selected:[],
 
-		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
+		extraquize2:"フルマラソンを4時間切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize2srcs:[
 			{checked:false,score:0,item:"1km 4分40秒"},
 			{checked:false,score:0,item:"5km 25分"},
@@ -580,7 +580,7 @@ export default {
 		extraquize2point:0,
 		extraquize2selected:[],
 
-		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
+		extraquize3:"フルマラソンを3時間30分切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize3srcs:[
 			{checked:false,score:0,item:"5km 25分"},
 			{checked:false,score:6,item:"5km 21分40秒"},
@@ -590,7 +590,7 @@ export default {
 		extraquize3point:0,
 		extraquize3selected:[],
 
-		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
+		extraquize4:"フルマラソンを3時間切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize4srcs:[
 			{checked:false,score:0,item:"1km 3分30秒"},
 			{checked:false,score:0,item:"5km 21分40秒"},
@@ -693,7 +693,21 @@ export default {
 				return classList
 			}
 		},	
-    }
+	},
+	
+	head () {
+		return {
+		title: "ランニング力チェック",
+		meta: [
+			// { hid: 'description', name: 'description', content: this.seoDescription },
+			{ hid: 'og:type', property: 'og:type', content: "article" },
+			{ hid: 'og:title', property: 'og:title', content: "ランニング力チェック" },
+			// { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+			{ hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/running` },
+			// { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+		],
+		}
+	},
 		
   
 	
