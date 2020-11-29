@@ -103,5 +103,18 @@
 
 <script>
 export default {
+  head () {
+		return {
+      title: "自己紹介",
+      meta: [
+        // { hid: 'description', name: 'description', content: this.seoDescription },
+        { hid: 'og:type', property: 'og:type', content: "article" },
+        { hid: 'og:title', property: 'og:title', content: "自己紹介" },
+        // { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+        { hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/profile` },
+        // { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+      ],
+		}
+	},
 }
 </script>

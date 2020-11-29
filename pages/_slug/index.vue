@@ -1,7 +1,7 @@
 <template>
   <v-container>
       <v-row class="blog">
-          <v-col cols="9">
+          <v-col cols=12 md="9">
               <v-container class="min-container" column justify-center>
                 <div class="d-flex justify-space-between main-under-line pb-1 mb-5 align-end">
                   <h1 class="title main-color text-h4">{{ title }}</h1>
@@ -21,7 +21,7 @@
                 <div class="post" v-html="text"></div>
               </v-container>
           </v-col>
-          <v-col cols="3">
+          <v-col cols=12 md="3">
             <lazy-blog-side-menu></lazy-blog-side-menu>
           </v-col>
       </v-row>

@@ -570,7 +570,7 @@ export default {
 		extraquize1point:0,
 		extraquize1selected:[],
 
-		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
+		extraquize2:"フルマラソンを4時間切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize2srcs:[
 			{checked:false,score:0,item:"1km 4分40秒"},
 			{checked:false,score:0,item:"5km 25分"},
@@ -580,7 +580,7 @@ export default {
 		extraquize2point:0,
 		extraquize2selected:[],
 
-		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
+		extraquize3:"フルマラソンを3時間30分切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize3srcs:[
 			{checked:false,score:0,item:"5km 25分"},
 			{checked:false,score:6,item:"5km 21分40秒"},
@@ -590,7 +590,7 @@ export default {
 		extraquize3point:0,
 		extraquize3selected:[],
 
-		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
+		extraquize4:"フルマラソンを3時間切りするための設定タイムとしてものとして「適切ではないもの」を選んでください",
 		extraquize4srcs:[
 			{checked:false,score:0,item:"1km 3分30秒"},
 			{checked:false,score:0,item:"5km 21分40秒"},
@@ -695,7 +695,21 @@ export default {
 				return classList
 			}
 		},	
-    }
+	},
+	
+	head () {
+		return {
+		title: "ランニング力チェック",
+		meta: [
+			// { hid: 'description', name: 'description', content: this.seoDescription },
+			{ hid: 'og:type', property: 'og:type', content: "article" },
+			{ hid: 'og:title', property: 'og:title', content: "ランニング力チェック" },
+			// { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+			{ hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/running` },
+			// { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+		],
+		}
+	},
 		
   
 	

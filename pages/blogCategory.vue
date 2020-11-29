@@ -6,7 +6,7 @@
     <section>
         <v-container>
             <v-row>
-                <v-col cols="9">
+                <v-col cols="12" md="9">
                     <div class="d-flex main-under-line">
                         <h2 class="main-color text-h4 mt-3">カテゴリー</h2>
                         <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
@@ -42,7 +42,7 @@
                         </nuxt-link>
                     </div>
                 </v-col>
-                <v-col cols="3">
+                <v-col cols="12" md="3">
                     <lazy-blog-side-menu></lazy-blog-side-menu>
                 </v-col>
             </v-row>
