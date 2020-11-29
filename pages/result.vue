@@ -48,6 +48,16 @@ export default {
         rank:null,
         runnerType:null
     }),
+    async asyncData(ctx) {
+        const { data } = await ctx.$axios.get(
+            // your-service-id部分は自分のサービスidに置き換えてください
+            `https://runtrainingnote.microcms.io/api/v1/blog`,
+            {
+                headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+            }
+        )
+        return data
+    },
     mounted(){
         //datasets[0].data.push(this.$route.query.toatlFormandTec)
         this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
