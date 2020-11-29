@@ -163,6 +163,19 @@ export default {
             //alert('getContens')
             this.getContens()
         }
-    }
+    },
+    head () {
+		return {
+            title: "ブログ一覧",
+            meta: [
+                // { hid: 'description', name: 'description', content: this.seoDescription },
+                { hid: 'og:type', property: 'og:type', content: "article" },
+                { hid: 'og:title', property: 'og:title', content: "ブログ一覧" },
+                // { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+                { hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/blogCategory` },
+                // { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+            ],
+		}
+	},
 }
 </script>
