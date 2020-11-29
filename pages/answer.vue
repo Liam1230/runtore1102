@@ -9,84 +9,11 @@
 					</v-btn>
 				</template>
 			</v-snackbar>
-			<h1 class="text-h3 mt-5 title-text-color">ランニング力チェック</h1>
-			<h2 class="mt-3 pb-5 title-text-color">-Diagnosis-</h2>
-			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
+			<h1 class="text-h3 mt-5 title-text-color">回答</h1>
+			<h2 class="mt-3  title-text-color">-Answer-</h2>
+			<v-row class="align-center justify-center   flex-wrap">
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
-					<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-						<v-col cols="4" class="text-right">
-							<v-avatar size="auto">
-								<v-img src="/img/avatar.png"></v-img>
-							</v-avatar>
-						</v-col>
-						<v-col cols="8">
-							<div class="talk">
-								<p class="text-left main-text-color">
-									あなたのランニング力をチェックしましょう！ランナーに必要な要素を3項目に分けています！直感で選べ、5分程度で終わるよう問題を作成しました！採点後、間違えた場所の解説記事・おすすめ記事を読み、弱点を克服してレベルアップしていきましょう！
-								</p>
-							</div>
-						</v-col>
-					</v-row>
-					<v-row class="square-box align-center justify-center pt-5 mt-5 mx-0">
-						<v-col cols=12>
-							<h2 class="main-color">あなたのフルマラソンのタイムを教えてください。</h2>
-						</v-col>
-						<v-row class="justify-center align-center">
-							<v-col cols="2">
-								<v-select
-									rounded
-									:items="times"
-									filled
-									v-model="fullTime"
-								></v-select>
-							</v-col>
-							<v-col cols="2" class="text-left">
-								<h2 class="text-h4 main-color pb-3">時間</h2>
-							</v-col>
-							<v-col cols="3">
-								<v-select
-									rounded
-									:items="minutes"
-									filled
-									v-model="fullMinute"
-								></v-select>
-							</v-col>
-							<v-col cols="2" class="text-left">
-								<h2 class="text-h4 main-color pb-3">分</h2>
-							</v-col>
-						</v-row>
-					</v-row>
-					<v-row class="square-box align-center justify-center pt-5 mt-5 mx-0">
-						<v-col cols=12>
-							<h2 class="main-color">あなたのハーフマラソンのタイムを教えてください。</h2>
-						</v-col>
-						<v-row class="justify-center align-center">
-							<v-col cols="2">
-								<v-select
-									rounded
-									:items="halfTimes"
-									filled
-									v-model="halfTime"
-								></v-select>
-							</v-col>
-							<v-col cols="2" class="text-left">
-								<h2 class="text-h4 main-color pb-3">時間</h2>
-							</v-col>
-							<v-col cols="3">
-								<v-select
-									rounded
-									:items="minutes"
-									filled
-									v-model="halfMinute"
-								></v-select>
-							</v-col>
-							<v-col cols="2" class="text-left">
-								<h2 class="text-h4 main-color pb-3">分</h2>
-							</v-col>
-						</v-row>
-					</v-row>
-					
 					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
 						<v-col cols=12 class="main-color-bg">
 							<h2 class="white--text">【{{quiz1category}}】</h2>
@@ -98,13 +25,13 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz1selected">
+								<v-item-group v-model="quiz1selected" multiple active-class="border-red" >
 									<v-row>
-										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
+										<v-col v-for="(src, j) in quiz1srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
-														<v-icon color="black" large>
+														<v-icon color="black" large >
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -122,13 +49,13 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz2selected" multiple>
+								<v-item-group v-model="quiz2selected" multiple active-class="border-red" >
 									<v-row>
 										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
-											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+											<v-item v-slot="{ active, toggle }" >
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
-														<v-icon color="black" large>
+														<v-icon color="black" large >
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -146,11 +73,11 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz3selected" >
+								<v-item-group v-model="quiz3selected" active-class="border-red">
 									<v-row>
 										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -168,11 +95,10 @@
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.4 {{quiz4text}}</h3>
 						</v-col>
-						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz4selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, l) in quiz4srcs" :key="l">
+								<v-list-item-group v-model="quiz4selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, m) in quiz4srcs" :key="m" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -191,11 +117,10 @@
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.5 {{quiz5text}}</h3>
 						</v-col>
-						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz5selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, m) in quiz5srcs" :key="m">
+								<v-list-item-group v-model="quiz5selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, m) in quiz5srcs" :key="m" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -210,11 +135,11 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz6selected" >
+								<v-item-group v-model="quiz6selected" active-class="border-red">
 									<v-row>
 										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -234,11 +159,11 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz7selected" multiple>
+								<v-item-group v-model="quiz7selected" multiple active-class="border-red">
 									<v-row>
 										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -258,11 +183,11 @@
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz8selected">
+								<v-item-group v-model="quiz8selected" active-class="border-red">
 									<v-row>
 										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle">
+												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn icon dark>
 														<v-icon color="black" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -289,8 +214,8 @@
 						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz9selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, r) in quiz9srcs" :key="r">
+								<v-list-item-group v-model="quiz9selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, r) in quiz9srcs" :key="r" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -306,8 +231,8 @@
 						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz10selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, s) in quiz10srcs" :key="s">
+								<v-list-item-group v-model="quiz10selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, s) in quiz10srcs" :key="s" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -323,8 +248,8 @@
 						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz11selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, t) in quiz11srcs" :key="t">
+								<v-list-item-group v-model="quiz11selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, t) in quiz11srcs" :key="t" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -340,8 +265,8 @@
 						
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz12selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, u) in quiz12srcs" :key="u">
+								<v-list-item-group v-model="quiz12selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, u) in quiz12srcs" :key="u" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -357,8 +282,8 @@
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="extraquize1selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n">
+								<v-list-item-group v-model="extraquize1selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -373,8 +298,8 @@
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="extraquize2selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p">
+								<v-list-item-group v-model="extraquize2selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -389,8 +314,8 @@
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="extraquize3selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q">
+								<v-list-item-group v-model="extraquize3selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -405,8 +330,8 @@
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="extraquize4selected" active-class="border" color="indigo">
-									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r">
+								<v-list-item-group v-model="extraquize4selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r" disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -418,8 +343,10 @@
 				</v-col>
 				<v-col cols=12 sm=12 md=1></v-col>
 			</v-row>
-			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-				<v-btn color="secondary" rounded x-large class="my-5"  @click="beforeResult()">診断結果をみる</v-btn>
+			<v-row  class="my-5 align-center justify-center">
+				<nuxt-link  to="/" class="black--text px-5 my-5">
+					トップに戻る
+			　</nuxt-link>
 			</v-row>
 		</v-container>
   </article>
@@ -448,7 +375,7 @@ export default {
 			{checked:false,score:0,image:"/img/sampleqa.png"},
 			{checked:false,score:1,image:"/img/sampleqa.png"},
 		],
-		quiz1selected:[],
+		quiz1selected:[0],
 
 		quiz2category:"フォーム・技術",
 		quiz2text:"着地位置として「正しいもの」を「2つ」選んでください",
@@ -458,7 +385,7 @@ export default {
 			{checked:false,score:3,image:"/img/sampleqa.png"},
 			{checked:false,score:1,image:"/img/sampleqa.png"},
 		],
-		quiz2selected:[],
+		quiz2selected:[1,2],
 
 		quiz3category:"フォーム・技術",
 		quiz3text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
@@ -468,7 +395,7 @@ export default {
 			{checked:false,score:2,image:"/img/sampleqa.png"},
 			{checked:false,score:6,image:"/img/sampleqa.png"},
 		],
-		quiz3selected:[],
+		quiz3selected:3,
 
 		quiz4category:"フォーム・技術",
 		quiz4text:"ご自身でペースをコントロールできますか？",
@@ -478,7 +405,7 @@ export default {
 			{checked:false,score:3,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
 			{checked:false,score:2,item:"1kmあたり11秒以上タイムが変動する"},
 		],
-		quiz4selected:[],
+		quiz4selected:1,
 
 		quiz5category:"体に関すること",
 		quiz5text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
@@ -488,7 +415,7 @@ export default {
 			{checked:false,score:6,item:"息が軽く上がるが余裕のある速度"},
 			{checked:false,score:2,item:"息が上がり余裕の無い速度"},
 		],
-		quiz5selected:[],
+		quiz5selected:2,
 
 		quiz6category:"体に関すること",
 		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
@@ -498,7 +425,7 @@ export default {
 			{checked:false,score:0,image:"/img/sampleqa.png"},
 			{checked:false,score:0,image:"/img/sampleqa.png"},
 		],
-		quiz6selected:[],
+		quiz6selected:0,
 
 		quiz7category:"体に関すること",
 		quiz7text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
@@ -508,7 +435,7 @@ export default {
 			{checked:false,score:1,image:"/img/sampleqa.png"},
 			{checked:false,score:1,image:"/img/sampleqa.png"},
 		],
-		quiz7selected:[],
+		quiz7selected:[0,1],
 
 		quiz8category:"体に関すること",
 		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
@@ -518,7 +445,7 @@ export default {
 			{checked:false,score:0,image:"/img/sampleqa.png"},
 			{checked:false,score:1,image:"/img/sampleqa.png"},
 		],
-		quiz8selected:[],
+		quiz8selected:0,
 
 		quiz9category:"目標計画",
 		quiz9text:"練習の目的として「適切ではないもの」を選んでください",
@@ -528,7 +455,7 @@ export default {
 			{checked:false,score:1,item:"全力走-脚の回転数・ストライド向上で最大速度を高める"},
 			{checked:false,score:6,item:"ペース走-呼吸循環を高めて疲労回復"},
 		],
-		quiz9selected:[],
+		quiz9selected:3,
 
 		quiz10category:"目標計画",
 		quiz10text:"ランニングにおいて練習方法として適しているものを選んでください!",
@@ -538,7 +465,7 @@ export default {
 			{checked:false,score:1,item:"ペース走を行うときは息が上がらない速度で行う"},
 			{checked:false,score:0,item:"ロングジョグは息が上がる程度の速度を維持し続けないと効果は小さい"},
 		],
-		quiz10selected:[],
+		quiz10selected:0,
 
 		quiz11category:"目標計画",
 		quiz11text:"課題に合わせた練習内容として適したものを選んでください!",
@@ -548,7 +475,7 @@ export default {
 			{checked:false,score:2,item:"10km走のタイムが上がらない-インター バル走"},
 			{checked:false,score:6,item:"30km以降いつも歩いてしまう-ロング ジョグ"},
 		],
-		quiz11selected:[],
+		quiz11selected:3,
 
 		quiz12category:"目標計画",
 		quiz12text:"フルマラソンを○○切りするための設定タイムとしてものとして「適切ではないもの」を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
@@ -558,7 +485,7 @@ export default {
 			{checked:false,score:0,item:"10kmを○○で走ることができる"},
 			{checked:false,score:1,item:"ハーフを○○で走ることができる"},
 		],
-		quiz12selected:[],
+		quiz12selected:0,
 
 		extraquize1:"フルマラソンを5時間切りするために 適切な内容をお選びください",
 		extraquize1srcs:[
@@ -568,7 +495,7 @@ export default {
 			{checked:false,score:0,item:"8分/kmで完走すれば5時間を切れる"},
 		],
 		extraquize1point:0,
-		extraquize1selected:[],
+		extraquize1selected:2,
 
 		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
 		extraquize2srcs:[
@@ -578,7 +505,7 @@ export default {
 			{checked:false,score:6,item:"ハーフ 51分~52分"},
 		],
 		extraquize2point:0,
-		extraquize2selected:[],
+		extraquize2selected:3,
 
 		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
 		extraquize3srcs:[
@@ -588,7 +515,7 @@ export default {
 			{checked:false,score:0,item:"ハーフ 51分~52分"},
 		],
 		extraquize3point:0,
-		extraquize3selected:[],
+		extraquize3selected:1,
 
 		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
 		extraquize4srcs:[
@@ -598,7 +525,8 @@ export default {
 			{checked:false,score:0,item:"ハーフ 22分~25分"},
 		],
 		extraquize4point:0,
-		extraquize4selected:[],
+		extraquize4selected:2,
+
 		toatlFormandTec:0,
 		totalBody:0,
 		totalPurpose:0
@@ -620,12 +548,14 @@ export default {
 		async beforeResult(){
 			let errorMessages = []
 
-			// if(this.fullTime ==null || this.fullMinute == null){
-			// 	errorMessages.push("フルマラソンのタイムが未回答です。")
-			// }
-			// if(this.halfTime == null || this.halfMinute == null){
-			// 	errorMessages.push("ハーフマラソンのタイムが未回答です。")
-			// }
+			if(this.fullTime ==null || this.fullMinute == null){
+				errorMessages.push("フルマラソンのタイムが未回答です。")
+			}
+
+			if(this.halfTime == null || this.halfMinute == null){
+				errorMessages.push("ハーフマラソンのタイムが未回答です。")
+			}
+			
 			if(this.quiz1selected.length == 0){
 				errorMessages.push("Q.1が未回答です。")
 			}

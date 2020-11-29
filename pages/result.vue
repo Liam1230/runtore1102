@@ -11,11 +11,11 @@
 								<v-img src="/img/avatar.png"></v-img>
 							</v-avatar>
 						</v-col>
-						<v-col cols="8">
-							<div class="talk">
+						<v-col cols="5" class="background-color-yellow">
+							<div class="talk-answer">
 								<p class="text-left main-text-color">
-                                    あなたの点数は{{this.totlaScore}}<br>
-                                    {{this.rank}}ランクです
+                                    あなたの点数は<span style="font-size:3em;">{{this.totlaScore}}</span>点<br>
+                                    <span style="font-size:3em;">{{this.rank}}</span><span style="font-size:2em;">ランクです</span>
                                 </p>
 							</div>
 						</v-col>
@@ -28,7 +28,15 @@
 				</v-col>
 			</v-row>
             <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
-            <h1 class="text-h3 mt-5 title-text-color">{{this.runnerType}}</h1>
+            <h1 class="text-h3 mt-5 red--text">{{this.runnerType}}</h1>
+            <v-btn color="secondary" rounded x-large class="my-5" to="answer">問題の正しい答えが知りたい</v-btn>
+            <h3 class="text-h4 my-5 py-5 blue-sub-title">あなたの弱点は・・・&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <h3 class="text-h4 my-5 py-5 blue-sub-title">お勧めの記事&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <v-row  class="my-5 align-center justify-center">
+				<nuxt-link  to="/" class="black--text px-5 my-5">
+					トップに戻る
+			　</nuxt-link>
+			</v-row>
 		</v-container>
   </article>
 </template>
