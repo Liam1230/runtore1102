@@ -142,7 +142,7 @@ export default {
         {
           id:1,
           name: '月間100kmメソッド',
-          to: '/'
+          to: '/blogCategory?blogCategory=qsqzhls2o'
         },
         {
           id:2,

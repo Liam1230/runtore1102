@@ -116,7 +116,7 @@ export default {
                 }
 
                 this.category = await this.categorys.find((queryCategoryId) => {
-                    return (queryCategoryId.id === this.$route.query.categoryId);
+                    return (queryCategoryId.id == this.$route.query.categoryId);
                 });
             }else{
                 const { data } = await axios.get(
