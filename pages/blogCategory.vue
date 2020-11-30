@@ -9,7 +9,7 @@
                 <v-col cols="12" md="9">
                     <div class="d-flex main-under-line">
                         <h2 v-if="$vuetify.breakpoint.mdAndUp" class="main-color text-h4 mt-3">カテゴリー</h2>
-                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-md-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
+                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-md-5" style="max-width:500px;" @change="onCategoryChange">
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
@@ -131,6 +131,19 @@ export default {
                 for (let i=0; i<data.contents.length;i++){
                     this.$set(this.contents, i, data.contents[i]);
                 }
+            }
+        },
+        async onCategoryChange(){
+            console.log(this.category)
+            const { data } = await axios.get(
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
+                {
+                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                }
+            )
+            this.contents.splice(0)
+            for (let i=0; i<data.contents.length;i++){
+                this.$set(this.contents, i, data.contents[i]);
             }
         },
         resetContent(){
