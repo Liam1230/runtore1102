@@ -141,8 +141,10 @@ $breakpoints: (
     margin-top:100px;
 }
 .blog img{
-    width: 100%;
     max-width: 100%;
+    max-height: 50vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .blog h2{
     background-color: $main-color;
@@ -177,8 +179,9 @@ $breakpoints: (
 }
 
 .blog p{
-    margin-top: 24px;
+    margin-top: 1.6rem;
     color: $main-text-color;
+    line-height: 1.8rem;
 }
 .blog h3{
     text-align: left;
