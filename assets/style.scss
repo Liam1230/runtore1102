@@ -62,10 +62,11 @@ $breakpoints: (
     display: grid;
     @include mq(mdAndUp){
         grid-template:
-        "... ... ..." 1fr
-        "... fvc-text ..." 1fr
-        "... ... ..." 10%
-        / 60% 35% 5%;
+        "... ... ... ..." 20%
+        "... fvc-logo ... ..." 1fr
+        "... ... fvc-text ..." 1fr
+        "... ... ... ..." 10%
+        / 10% 50% 35% 5%;
     }
     @include mq(smAndDown){
         grid-template:
@@ -92,7 +93,14 @@ $breakpoints: (
         top: 50vh;
         left: 50%;
         transform: translate(-50%,-50%);
+        .top-logo{
+            margin: 0 auto;
+        }
     }
+}
+
+#first-view-logo-pc{
+    grid-area: fvc-logo;
 }
 
 .blue-sub-title{

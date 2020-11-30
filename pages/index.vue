@@ -4,9 +4,14 @@
       <v-img width="100vw" height="100vh" src="/img/first.png" lazy-src="/img/first_l.png" alt=""></v-img>
       <img class="p-absolute absolute-rb" style="width:35vw; height:35wh; min-width:250px; min-height:250px;" src="/img/triangle.png">
       <div id="first-view-content" class="white--text">
+        <div v-if="$vuetify.breakpoint.mdAndUp" id="first-view-logo-pc">
+          <v-img class="top-logo mb-3" max-width="60%" src="/img/Run_tore_rogo.png"></v-img>
+        </div>
         <div id="first-view-content-text">
           <div id="first-view-content-text-inner">
-            <h1 class="text-h4 mb-5">全てのランナーの<br>やったできた！を<br>この一冊に！</h1>
+            <v-img v-if="$vuetify.breakpoint.smAndDown" class="top-logo mb-3" max-width="60%" src="/img/Run_tore_rogo.png"></v-img>
+            <h1 v-if="$vuetify.breakpoint.mdAndUp" class="text-h3 mb-5">全てのランナーの<br>やったできた！をこの一冊に！</h1>
+            <h1 v-else class="text-h3 mb-5">全てのランナーの<br>やったできた！を<br>この一冊に！</h1>
             <p v-if="$vuetify.breakpoint.mdAndUp" class="text-h6">目標タイム達成・ファンラン・健康増進など、1人1人に違った目的がありますが、「ランニングが好き」という気持ちは皆さん同じではないでしょうか？「完走・ベスト更新の高揚感や達成感」「青空のもと走る爽快感」は何物にも代えられません！そんな日々のランニングライフをよりよいものとする情報をまとめました！</p>
           </div>
         </div>
@@ -74,13 +79,13 @@
                 <v-card height="100px" class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
-                      <v-col cols="8" class="pt-2 pl-5">
+                      <v-col cols="8" class="d-flex align-center pt-2 pl-5">
                         <h3 class="text-left text-h6">
                           ・{{content.title}}
                         </h3>
-                        <p class="text-body-2 text-left">
+                        <!-- <p class="text-body-2 text-left">
                           {{content.seoDescription | blogTextFileter}}
-                        </p>
+                        </p> -->
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
@@ -108,9 +113,9 @@
                         <h3 class="text-left text-h6">
                           ・{{content.title}}
                         </h3>
-                        <p class="text-body-2 text-left">
+                        <!-- <p class="text-body-2 text-left">
                           {{content.seoDescription | blogTextFileter}}
-                        </p>
+                        </p> -->
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
