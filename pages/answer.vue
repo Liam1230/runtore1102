@@ -14,11 +14,7 @@
 			<v-row class="align-center justify-center   flex-wrap">
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
-					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
-						<v-col cols=12 class="main-color-bg">
-							<h2 class="white--text">【{{quiz1category}}】</h2>
-						</v-col>
-					</v-row>
+					
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.1 {{quiz1text}}</h3>
@@ -45,7 +41,39 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.2 {{quiz2text}}</h3>
+							<h3 class="main-color text-h5">Q.2 {{quiz5text}}</h3>
+						</v-col>
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz5selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, m) in quiz5srcs" :key="m" :disabled="true">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.3 {{quiz9text}}</h3>
+						</v-col>
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz9selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, r) in quiz9srcs" :key="r" :disabled="true">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.4 {{quiz2text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -69,69 +97,7 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
-						</v-col>
-						<v-card width="750" >
-							<v-container class="pa-1">
-								<v-item-group v-model="quiz3selected" active-class="border-red">
-									<v-row>
-										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
-											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn fab>
-														<v-icon color="rgba(0, 173, 255, 1)" large>
-															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
-														</v-icon>
-													</v-btn>
-												</v-img>
-											</v-item>
-										</v-col>
-									</v-row>
-								</v-item-group>
-							</v-container>
-						</v-card>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.4 {{quiz4text}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz4selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, m) in quiz4srcs" :key="m" :disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-
-					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
-						<v-col cols=12 class="main-color-bg">
-							<h2 class="white--text">【{{quiz5category}}】</h2>
-						</v-col>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.5 {{quiz5text}}</h3>
-						</v-col>
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz5selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, m) in quiz5srcs" :key="m" :disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.6 {{quiz6text}}</h3>
+							<h3 class="main-color text-h5">Q.5 {{quiz6text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -155,7 +121,47 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.7 {{quiz7text}}</h3>
+							<h3 class="main-color text-h5">Q.10 {{quiz10text}}</h3>
+						</v-col>
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz10selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, s) in quiz10srcs" :key="s" :disabled="true">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.7 {{quiz3text}}</h3>
+						</v-col>
+						<v-card width="750" >
+							<v-container class="pa-1">
+								<v-item-group v-model="quiz3selected" active-class="border-red">
+									<v-row>
+										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
+											<v-item v-slot="{ active, toggle }">
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
+															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+														</v-icon>
+													</v-btn>
+												</v-img>
+											</v-item>
+										</v-col>
+									</v-row>
+								</v-item-group>
+							</v-container>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.8 {{quiz7text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -179,7 +185,39 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.8 {{quiz8text}}</h3>
+							<h3 class="main-color text-h5">Q.9 {{quiz11text}}</h3>
+						</v-col>
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz11selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, t) in quiz11srcs" :key="t" :disabled="true">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.10 {{quiz4text}}</h3>
+						</v-col>
+						<v-card width="750">
+							<v-list>
+								<v-list-item-group v-model="quiz4selected" active-class="border-red" color="indigo">
+									<v-list-item v-for="(src, m) in quiz4srcs" :key="m" :disabled="true">
+										<v-list-item-content>
+											<v-list-item-title v-text="src.item"></v-list-item-title>
+										</v-list-item-content>
+									</v-list-item>
+								</v-list-item-group>
+							</v-list>
+						</v-card>
+					</v-row>
+					<v-row class="align-center justify-center mt-3 mx-0">
+						<v-col cols="12" class="text-left">
+							<h3 class="main-color text-h5">Q.11 {{quiz8text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
@@ -201,64 +239,6 @@
 							</v-container>
 						</v-card>
 					</v-row>
-
-					<v-row class="align-center justify-center pt-5 mt-5 mx-0">
-						<v-col cols=12 class="main-color-bg">
-							<h2 class="white--text">【{{quiz9category}}】</h2>
-						</v-col>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.9 {{quiz9text}}</h3>
-						</v-col>
-						
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz9selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, r) in quiz9srcs" :key="r" :disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.10 {{quiz10text}}</h3>
-						</v-col>
-						
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz10selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, s) in quiz10srcs" :key="s" :disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.11 {{quiz11text}}</h3>
-						</v-col>
-						
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz11selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, t) in quiz11srcs" :key="t" :disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-					
 
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
