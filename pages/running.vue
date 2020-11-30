@@ -102,9 +102,9 @@
 									<v-row>
 										<v-col v-for="(src, i) in quiz1srcs" :key="i" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -126,9 +126,9 @@
 									<v-row>
 										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -150,9 +150,9 @@
 									<v-row>
 										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -214,9 +214,9 @@
 									<v-row>
 										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -238,9 +238,9 @@
 									<v-row>
 										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -262,9 +262,9 @@
 									<v-row>
 										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" class="text-right pa-2" @click="toggle">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -443,30 +443,30 @@ export default {
 		quiz1category:"フォーム・技術",
 		quiz1text:"腰の落ちたフォームを選んでください",
 		quiz1srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/f_1-1.jpg"},
+			{checked:false,score:3,image:"/img/check/f_1-2.jpg"},
+			{checked:false,score:0,image:"/img/check/f_1-3.jpg"},
+			{checked:false,score:1,image:"/img/check/f_1-4.jpg"},
 		],
 		quiz1selected:[],
 
 		quiz2category:"フォーム・技術",
 		quiz2text:"着地位置として「正しいもの」を「2つ」選んでください",
 		quiz2srcs:[
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/check/f_2-1.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-2.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-3.jpg"},
+			{checked:false,score:1,image:"/img/check/f_2-4.jpg"},
 		],
 		quiz2selected:[],
 
 		quiz3category:"フォーム・技術",
 		quiz3text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
 		quiz3srcs:[
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:6,image:"/img/sampleqa.png"},
+			{checked:false,score:2,image:"/img/check/f_3-1.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-2.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-3.jpg"},
+			{checked:false,score:6,image:"/img/check/f_3-4.jpg"},
 		],
 		quiz3selected:[],
 
@@ -493,30 +493,30 @@ export default {
 		quiz6category:"体に関すること",
 		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
 		quiz6srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/t_2-1.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-3.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-4.jpg"},
 		],
 		quiz6selected:[],
 
 		quiz7category:"体に関すること",
 		quiz7text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
 		quiz7srcs:[
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/check/t_3-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_3-2.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-4.jpg"},
 		],
 		quiz7selected:[],
 
 		quiz8category:"体に関すること",
 		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
 		quiz8srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/t_4-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_4-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_4-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_4-4.jpg"},
 		],
 		quiz8selected:[],
 

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <header>
+    <header class="blogHeader">
         <v-img width="100vw" src="/img/blogtop.png" lazy-src="/img/blogtop_l.png" alt=""></v-img>
     </header>
     <section>
@@ -8,8 +8,8 @@
             <v-row>
                 <v-col cols="12" md="9">
                     <div class="d-flex main-under-line">
-                        <h2 class="main-color text-h4 mt-3">カテゴリー</h2>
-                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
+                        <h2 v-if="$vuetify.breakpoint.mdAndUp" class="main-color text-h4 mt-3">カテゴリー</h2>
+                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-md-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
@@ -18,21 +18,21 @@
                                 {{content.date | dateFilter}}
                             </div>
                             <v-row>
-                                <v-col cols="5">
-                                    <v-img class="rounded" :aspect-ratio="16/9" :src="content.headerImg.url"></v-img>
+                                <v-col cols="12" md="5">
+                                    <v-img v-if="content.headerImg" class="rounded" :aspect-ratio="16/9" :src="content.headerImg.url"></v-img>
                                 </v-col>
-                                <v-col cols="7">
-                                    <h3 class="text-h4 sub-under-line title-text-color">{{content.title}}</h3>
+                                <v-col cols="12" md="7">
+                                    <h3 class="text-h5 sub-under-line title-text-color">{{content.title}}</h3>
                                     <p class="main-text-color mt-5 text-body-2">
                                         {{content.seoDescription}}
                                     </p>
                                     <div>
                                         <h4 class="text-caption title-text-color">カテゴリー</h4>
                                         <div class="d-flex mt-1">
-                                            <v-btn outlined rounded small class="mr-3">
+                                            <v-btn v-if="content.category1" outlined rounded small class="mr-3">
                                                 {{content.category1.name}}
                                             </v-btn>
-                                            <v-btn outlined rounded small class="mr-3">
+                                            <v-btn v-if="content.category2" outlined rounded small class="mr-3">
                                                 {{content.category2.name}}
                                             </v-btn>
                                         </div>

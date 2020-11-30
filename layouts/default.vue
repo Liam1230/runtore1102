@@ -1,5 +1,26 @@
 <template>
   <v-app dark>
+    <v-dialog v-model="menu" class="" overlay-color="rgba(0, 173, 255, 0.7)" overlay-opacity="255">
+      <v-card class="pa-3">
+        <v-treeview :items="items" transition activatable hoverable>
+        <template v-slot:label="{ item }">
+          <template v-if="item.to">
+              <nuxt-link is="a" @click="movePage(item.to)" class="">
+                  <u><b class="">{{ item.name }}</b></u>
+              </nuxt-link>
+          </template>
+          <template v-else-if="item.id">
+            <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
+              <u><b class="">{{ item.name }}</b></u>
+            </nuxt-link>
+          </template>
+          <template v-else>
+            <u><b class="">{{ item.name }}</b></u>
+          </template>
+        </template>
+      </v-treeview>
+      </v-card>
+    </v-dialog>
     <v-app-bar :clipped-left="clipped" fixed color="rgba(0, 173, 255, 0.7)">
       <nuxt-link to="/">
         <v-toolbar-title class="ml-md-3 white--text" v-text="title" />
@@ -7,12 +28,12 @@
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
         <nuxt-link :to="items[0].to" class="white--text px-5" style="border-left: solid 2px white;">
-          {{items[0].title}}
+          {{items[0].name}}
         </nuxt-link>
         <v-menu open-on-hover offset-y tile transition="slide-y-transition">
           <template v-slot:activator="{ on, attrs }">
             <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[1].to" class="white--text px-5" style="border-left: solid 2px white;">
-              {{items[1].title}}
+              {{items[1].name}}
             </nuxt-link>
           </template>
           <v-list>
@@ -25,8 +46,13 @@
           </v-list>
         </v-menu>
         <nuxt-link :to="`blogCategory?categoryId=${items[2].to}`" class="white--text px-5" style="border-left: solid 2px white;">
-          {{items[2].title}}
+          {{items[2].name}}
         </nuxt-link>
+      </template>
+      <template v-else>
+        <v-btn color="white" @click="menu=!menu" icon>
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
       </template>
       <!-- <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
         {{items[3].title}}
@@ -80,6 +106,7 @@
 export default {
   data () {
     return {
+      menu:false,
       clipped: false,
       drawer: false,
       fixed: true,
@@ -94,19 +121,31 @@ export default {
       ],
       items: [
         {
-          title: '月間100kmメソッド',
+          id:1,
+          name: '月間100kmメソッド',
           to: '/'
         },
         {
-          title: '痛み',
-          to: '/blogCategory'
+          id:2,
+          name: '痛み',
+          to: '/blogCategory',
+          children:[
+            { name: "肩・首", id:'n35zhq2x8' },
+            { name: "すね", id:'ahxwr80o6' },
+            { name: "腰", id:'ogw9fi9za' },
+            { name: "足首", id:'abznzivci' },
+            { name: "太もも", id:'45arjwblp' },
+            { name: "ヒザ", id:'u_zfrrxup' },
+          ],
         },
         {
-          title: 'フォーム',
+          id:3,
+          name: 'フォーム',
           to: 'p1nbcm2kg'
         },
         {
-          title: 'LINE練習帳',
+          id:4,
+          name: 'LINE練習帳',
           to: '/inspire'
         },
       ],
@@ -119,6 +158,10 @@ export default {
   methods:{
     async moveBlog(){
       this.$router.push({ path: '/blogCategory' , query :{ blogCategory: this.blogCategory}});
+    },
+    movePage(to){
+      this.$router.push(to);
+      this.menu = false
     }
   }
 }

@@ -14,6 +14,7 @@
     </section>
     <section class="my-5 py-5">
       <v-container column justify-center class="min-container text-center">
+        <p v-if="$vuetify.breakpoint.smAndDown" class="main-text-color text-h6">目標タイム達成・ファンラン・健康増進など、1人1人に違った目的がありますが、「ランニングが好き」という気持ちは皆さん同じではないでしょうか？「完走・ベスト更新の高揚感や達成感」「青空のもと走る爽快感」は何物にも代えられません！そんな日々のランニングライフをよりよいものとする情報をまとめました！</p>
         <h1 class="text-h3 mt-5 title-text-color">RUNトレについて</h1>
         <h2 class="mt-3 title-text-color">-About-</h2>
         <h3 class="text-h4 my-5 py-5 blue-sub-title">一人ではたどりつけない自己ベストへ</h3>
