@@ -9,7 +9,7 @@
                 <v-col cols="12" md="9">
                     <div class="d-flex main-under-line">
                         <h2 v-if="$vuetify.breakpoint.mdAndUp" class="main-color text-h4 mt-3">カテゴリー</h2>
-                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-md-5" style="max-width:500px;" @change="getContens()" @input="resetContent()">
+                        <v-select :items="categorys" item-text="name" item-value="id" v-model="category" filled rounded class="ml-md-5" style="max-width:500px;" @change="onCategoryChange">
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
@@ -24,7 +24,7 @@
                                 <v-col cols="12" md="7">
                                     <h3 class="text-h5 sub-under-line title-text-color">{{content.title}}</h3>
                                     <p class="main-text-color mt-5 text-body-2">
-                                        {{content.seoDescription}}
+                                        {{content.seoDescription | blogTextFileter}}
                                     </p>
                                     <div>
                                         <h4 class="text-caption title-text-color">カテゴリー</h4>
@@ -77,6 +77,16 @@ export default {
         dateFilter(val){
             const date = new Date(val)
             return `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`
+        },
+        blogTextFileter(val){
+            if(!val) return ""
+            if(val.length > 40){
+                let tmp = val.substr(0,40)
+                tmp += "…"
+                return tmp
+            }else {
+                return val
+            }
         }
     },
     async asyncData(ctx) {
@@ -121,7 +131,7 @@ export default {
                 }
 
                 this.category = await this.categorys.find((queryCategoryId) => {
-                    return (queryCategoryId.id === this.$route.query.categoryId);
+                    return (queryCategoryId.id == this.$route.query.categoryId);
                 });
             }else{
                 const { data } = await axios.get(
@@ -136,6 +146,19 @@ export default {
                 for (let i=0; i<data.contents.length;i++){
                     this.$set(this.contents, i, data.contents[i]);
                 }
+            }
+        },
+        async onCategoryChange(){
+            console.log(this.category)
+            const { data } = await axios.get(
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
+                {
+                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                }
+            )
+            this.contents.splice(0)
+            for (let i=0; i<data.contents.length;i++){
+                this.$set(this.contents, i, data.contents[i]);
             }
         },
         resetContent(){

@@ -142,7 +142,7 @@ export default {
         {
           id:1,
           name: '月間100kmメソッド',
-          to: '/'
+          to: '/blogCategory?categoryId=qsqzhls2o'
         },
         {
           id:2,
@@ -160,7 +160,14 @@ export default {
         {
           id:3,
           name: 'フォーム',
-          to: 'p1nbcm2kg'
+          to: 'p1nbcm2kg',
+          children:[
+            { name: "着地について", id:'2j5l_40ie' },
+            { name: "正しいフォーム", id:'gn7fmy_ym' },
+            { name: "ダメフォーム6選", id:'wft0bf7in' },
+            { name: "楽に進む", id:'dn5atadp6' },
+            { name: "ダメ腕ふり5選", id:'eygy4jgn8' },
+          ]
         },
         {
           id:4,
