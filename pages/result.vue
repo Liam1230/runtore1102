@@ -6,8 +6,8 @@
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
 				<v-col cols=10 class="text-center">
 					<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-						<v-col cols="4" class="text-right">
-							<v-avatar size="auto">
+						<v-col cols=4 md="4" class="text-right">
+							<v-avatar size="auto" max-width="100%">
 								<v-img src="/img/avatar.png"></v-img>
 							</v-avatar>
 						</v-col>
@@ -29,7 +29,7 @@
 			</v-row>
             <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
             <h1 class="text-h3 mt-5 red--text">{{this.runnerType}}</h1>
-            <v-btn color="secondary" rounded x-large class="my-5" to="answer">問題の正しい答えが知りたい</v-btn>
+            <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
             <h3 class="text-h4 my-5 py-5 blue-sub-title">あなたの弱点は・・・&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
             <h3 class="text-h4 my-5 py-5 blue-sub-title">お勧めの記事&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
             <v-row  class="my-5 align-center justify-center">
@@ -46,8 +46,15 @@ export default {
 	data: () => ({
         totlaScore:0,
         rank:null,
-        runnerType:null
+        runnerType:null,
+        fullTime:null,
+		fullMinute:null,
     }),
+    methods:{
+        async toAnswer(){
+            this.$router.push({ path: 'answer' , query :{fullTime: this.fullTime, fullMinute: this.fullMinute}});
+        }
+    },
     async asyncData(ctx) {
         const { data } = await ctx.$axios.get(
             // your-service-id部分は自分のサービスidに置き換えてください
@@ -61,7 +68,9 @@ export default {
     mounted(){
         //datasets[0].data.push(this.$route.query.toatlFormandTec)
         this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
-        
+        this.fullTime = this.$route.query.fullTime
+        this.fullMinute = this.$route.query.fullMinute
+
         if(this.totlaScore <= 50){
             this.rank = "D"
         }else if(this.totlaScore <= 65){

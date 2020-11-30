@@ -518,7 +518,9 @@ export default {
 	}),
 
 	mounted: async function(){
-        
+        this.fullTime = this.$route.query.fullTime
+		this.fullMinute = this.$route.query.fullMinute
+		
         for (let i=0; i<60;i++){
             this.minutes.push(i)
         }

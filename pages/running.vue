@@ -641,11 +641,11 @@ export default {
 			if(this.quiz11selected.length == 0){
 				errorMessages.push("Q.11が未回答です。")
 			}
-			if(this.quiz12selected.length == 0){
-				errorMessages.push("Q.12が未回答です。")
-			}
+			// if(this.quiz12selected.length == 0){
+			// 	errorMessages.push("Q.12が未回答です。")
+			// }
 			if(this.extraquize1selected.length == 0 && this.extraquize2selected.length == 0 && this.extraquize3selected.length == 0 && this.extraquize4selected.length == 0){
-				errorMessages.push("Q.13が未回答です。")
+				errorMessages.push("Q.12が未回答です。")
 			}
 
 			if (errorMessages.length != 0) {
@@ -666,7 +666,7 @@ export default {
 					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
 				}
 				this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
-				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum}});
+				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum, fullTime: this.fullTime, fullMinute: this.fullMinute}});
 			 }
 		}
 	},
