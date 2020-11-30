@@ -19,6 +19,26 @@ export default {
       return pages
     }
   },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://runtore.netlify.app',
+    // generate: true,
+    exclude: [
+      // '/admin'
+    ],
+    async routes() {
+      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog?limit=100', {
+        headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
+      })
+      .then((res) =>
+        res.data.contents.map((content) => ({
+          route: `/${content.id}`,
+          payload: content
+        })
+      ))
+      return pages
+    }
+  },
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
@@ -76,6 +96,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

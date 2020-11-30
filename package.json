@@ -12,6 +12,7 @@
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@mdi/font": "^5.8.55",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "dr-vue-echarts": "^1.0.13",
