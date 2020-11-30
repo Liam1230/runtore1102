@@ -71,7 +71,7 @@
           <v-expansion-panels flat v-model="formOpen" multiple class="mt-5">
             <v-expansion-panel v-for="(item,i) in 1" :key="i"  class="">
               <v-expansion-panel-content>
-                <v-card class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
+                <v-card height="100px" class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
                       <v-col cols="8" class="pt-2 pl-5">
@@ -79,12 +79,12 @@
                           ・{{content.title}}
                         </h3>
                         <p class="text-body-2 text-left">
-                          {{content.seoDescription}}
+                          {{content.seoDescription | blogTextFileter}}
                         </p>
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
-                        <v-img height="100%" :src="content.headerImg.url"></v-img>
+                        <v-img height="100px" :src="content.headerImg.url"></v-img>
                       </v-col>
                     </v-row>
                   </nuxt-link>
@@ -101,7 +101,7 @@
           <v-expansion-panels flat v-model="painOpen" multiple class="mt-5 px-0">
             <v-expansion-panel v-for="(item,i) in 1" :key="i">
               <v-expansion-panel-content>
-                <v-card class="my-3" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
+                <v-card height="100px" class="my-3" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
                   <nuxt-link :to="`/${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between pa-0">
                       <v-col cols="8" class="pt-2 pl-5">
@@ -109,12 +109,12 @@
                           ・{{content.title}}
                         </h3>
                         <p class="text-body-2 text-left">
-                          {{content.seoDescription}}
+                          {{content.seoDescription | blogTextFileter}}
                         </p>
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
-                        <v-img height="100%" :src="content.headerImg.url"></v-img>
+                        <v-img height="100px" :src="content.headerImg.url"></v-img>
                       </v-col>
                     </v-row>
                   </nuxt-link>
@@ -162,6 +162,18 @@ export default {
     return {
       titleTemplate: null,
       title: '大人のRUNトレ練習帳',
+    }
+  },
+  filters:{
+    blogTextFileter(val){
+      if(!val) return ""
+      if(val.length > 40){
+          let tmp = val.substr(0,40)
+          tmp += "…"
+          return tmp
+      }else {
+          return val
+      }
     }
   },
   methods:{

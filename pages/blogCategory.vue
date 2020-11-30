@@ -24,7 +24,7 @@
                                 <v-col cols="12" md="7">
                                     <h3 class="text-h5 sub-under-line title-text-color">{{content.title}}</h3>
                                     <p class="main-text-color mt-5 text-body-2">
-                                        {{content.seoDescription}}
+                                        {{content.seoDescription | blogTextFileter}}
                                     </p>
                                     <div>
                                         <h4 class="text-caption title-text-color">カテゴリー</h4>
@@ -72,6 +72,16 @@ export default {
         dateFilter(val){
             const date = new Date(val)
             return `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`
+        },
+        blogTextFileter(val){
+            if(!val) return ""
+            if(val.length > 40){
+                let tmp = val.substr(0,40)
+                tmp += "…"
+                return tmp
+            }else {
+                return val
+            }
         }
     },
     async asyncData(ctx) {
