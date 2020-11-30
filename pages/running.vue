@@ -10,7 +10,7 @@
 				</template>
 			</v-snackbar>
 			<h1 class="text-h3 mt-5 title-text-color">ランニング力チェック</h1>
-			<h2 class="mt-3 pb-5 title-text-color">-Diagnosis-</h2>
+			<h2 class="mt-3 pb-5 title-text-color">-RunCheck-</h2>
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
@@ -535,7 +535,7 @@ export default {
 			{checked:false,score:0,item:"1km 4分40秒"},
 			{checked:false,score:0,item:"5km 25分"},
 			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:6,item:"ハーフ 51分~52分"},
+			{checked:false,score:6,item:"ハーフ 1時間51分~52分"},
 		],
 		extraquize2point:0,
 		extraquize2selected:[],
@@ -545,7 +545,7 @@ export default {
 			{checked:false,score:0,item:"5km 25分"},
 			{checked:false,score:6,item:"5km 21分40秒"},
 			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:0,item:"ハーフ 51分~52分"},
+			{checked:false,score:0,item:"ハーフ 1時間51分~52分"},
 		],
 		extraquize3point:0,
 		extraquize3selected:[],
@@ -555,7 +555,7 @@ export default {
 			{checked:false,score:0,item:"1km 3分30秒"},
 			{checked:false,score:0,item:"5km 21分40秒"},
 			{checked:false,score:6,item:"10km 38分20秒~39分"},
-			{checked:false,score:0,item:"ハーフ 22分~25分"},
+			{checked:false,score:0,item:"ハーフ 1時間22分~25分"},
 		],
 		extraquize4point:0,
 		extraquize4selected:[],
