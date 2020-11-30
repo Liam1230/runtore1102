@@ -39,15 +39,27 @@
           <v-list>
             <nuxt-link v-for="(category,i) in categorys" :key="i" :to="`blogCategory?categoryId=${category.id}`">       
               <v-list-item link>
-                  <v-list-item-title v-text="category.name">
-                  </v-list-item-title>
+                <v-list-item-title v-text="category.name">
+                </v-list-item-title>
               </v-list-item>
             </nuxt-link>
           </v-list>
         </v-menu>
-        <nuxt-link :to="`blogCategory?categoryId=${items[2].to}`" class="white--text px-5" style="border-left: solid 2px white;">
-          {{items[2].name}}
-        </nuxt-link>
+        <v-menu open-on-hover offset-y tile transition="slide-y-transition">
+          <template v-slot:activator="{ on, attrs }">
+            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[2].to" class="white--text px-5" style="border-left: solid 2px white;">
+              {{items[2].name}}
+            </nuxt-link>
+          </template>
+          <v-list>
+            <nuxt-link v-for="(from,j) in categorysForm" :key="j" :to="`blogCategory?categoryId=${from.id}`">       
+              <v-list-item link>
+                <v-list-item-title v-text="from.name">
+                </v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+          </v-list>
+        </v-menu>
       </template>
       <template v-else>
         <v-btn color="white" @click="menu=!menu" icon>
@@ -118,6 +130,13 @@ export default {
         { name: "足首", id:'abznzivci' },
         { name: "太もも", id:'45arjwblp' },
         { name: "ヒザ", id:'u_zfrrxup' },
+      ],
+      categorysForm:[
+        { name: "着地について", id:'2j5l_40ie' },
+        { name: "正しいフォーム", id:'gn7fmy_ym' },
+        { name: "ダメフォーム6選", id:'wft0bf7in' },
+        { name: "楽に進む", id:'dn5atadp6' },
+        { name: "ダメ腕ふり5選", id:'eygy4jgn8' },
       ],
       items: [
         {

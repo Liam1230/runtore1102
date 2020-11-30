@@ -29,9 +29,9 @@
 									<v-row>
 										<v-col v-for="(src, j) in quiz1srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large >
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -53,9 +53,9 @@
 									<v-row>
 										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }" >
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large >
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -77,9 +77,9 @@
 									<v-row>
 										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -98,7 +98,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz4selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, m) in quiz4srcs" :key="m" disabled="true">
+									<v-list-item v-for="(src, m) in quiz4srcs" :key="m" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -120,7 +120,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz5selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, m) in quiz5srcs" :key="m" disabled="true">
+									<v-list-item v-for="(src, m) in quiz5srcs" :key="m" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -139,9 +139,9 @@
 									<v-row>
 										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -163,9 +163,9 @@
 									<v-row>
 										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -187,9 +187,9 @@
 									<v-row>
 										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
-												<v-img :src="src.image" height="200" class="text-right pa-2" @click="toggle" style="pointer-events: none;">
-													<v-btn icon dark>
-														<v-icon color="black" large>
+												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
+													<v-btn fab>
+														<v-icon color="rgba(0, 173, 255, 1)" large>
 															{{ active ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
 														</v-icon>
 													</v-btn>
@@ -215,7 +215,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz9selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, r) in quiz9srcs" :key="r" disabled="true">
+									<v-list-item v-for="(src, r) in quiz9srcs" :key="r" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -232,7 +232,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz10selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, s) in quiz10srcs" :key="s" disabled="true">
+									<v-list-item v-for="(src, s) in quiz10srcs" :key="s" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -249,7 +249,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz11selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, t) in quiz11srcs" :key="t" disabled="true">
+									<v-list-item v-for="(src, t) in quiz11srcs" :key="t" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
@@ -258,32 +258,16 @@
 							</v-list>
 						</v-card>
 					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.12 {{quiz12text}}</h3>
-						</v-col>
-						
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz12selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(src, u) in quiz12srcs" :key="u" disabled="true">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
+					
 
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize1}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize1}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="extraquize1selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n" disabled="true">
+									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -294,12 +278,12 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize2}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize2}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="extraquize2selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p" disabled="true">
+									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -310,12 +294,12 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize3}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize3}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="extraquize3selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q" disabled="true">
+									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -326,12 +310,12 @@
 					</v-row>
 					<v-row v-else class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize4}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize4}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="extraquize4selected" active-class="border-red" color="indigo">
-									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r" disabled="true">
+									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r" :disabled="true">
 										<v-list-item-content>
 											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
 										</v-list-item-content>
@@ -370,30 +354,30 @@ export default {
 		quiz1category:"フォーム・技術",
 		quiz1text:"腰の落ちたフォームを選んでください",
 		quiz1srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/f_1-1.jpg"},
+			{checked:false,score:3,image:"/img/check/f_1-2.jpg"},
+			{checked:false,score:0,image:"/img/check/f_1-3.jpg"},
+			{checked:false,score:1,image:"/img/check/f_1-4.jpg"},
 		],
 		quiz1selected:[0],
 
 		quiz2category:"フォーム・技術",
 		quiz2text:"着地位置として「正しいもの」を「2つ」選んでください",
 		quiz2srcs:[
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:0,image:"/img/check/f_2-1.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-2.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-3.jpg"},
+			{checked:false,score:1,image:"/img/check/f_2-4.jpg"},
 		],
 		quiz2selected:[1,2],
 
 		quiz3category:"フォーム・技術",
 		quiz3text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
 		quiz3srcs:[
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:2,image:"/img/sampleqa.png"},
-			{checked:false,score:6,image:"/img/sampleqa.png"},
+			{checked:false,score:2,image:"/img/check/f_3-1.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-2.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-3.jpg"},
+			{checked:false,score:6,image:"/img/check/f_3-4.jpg"},
 		],
 		quiz3selected:3,
 
@@ -420,30 +404,30 @@ export default {
 		quiz6category:"体に関すること",
 		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
 		quiz6srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/t_2-1.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-3.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-4.jpg"},
 		],
 		quiz6selected:0,
 
 		quiz7category:"体に関すること",
 		quiz7text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
 		quiz7srcs:[
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:3,image:"/img/check/t_3-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_3-2.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-4.jpg"},
 		],
 		quiz7selected:[0,1],
 
 		quiz8category:"体に関すること",
 		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
 		quiz8srcs:[
-			{checked:false,score:6,image:"/img/sampleqa.png"},
-			{checked:false,score:3,image:"/img/sampleqa.png"},
-			{checked:false,score:0,image:"/img/sampleqa.png"},
-			{checked:false,score:1,image:"/img/sampleqa.png"},
+			{checked:false,score:6,image:"/img/check/t_4-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_4-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_4-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_4-4.jpg"},
 		],
 		quiz8selected:0,
 
@@ -589,11 +573,11 @@ export default {
 			if(this.quiz11selected.length == 0){
 				errorMessages.push("Q.11が未回答です。")
 			}
-			if(this.quiz12selected.length == 0){
-				errorMessages.push("Q.12が未回答です。")
-			}
+			// if(this.quiz12selected.length == 0){
+			// 	errorMessages.push("Q.12が未回答です。")
+			// }
 			if(this.extraquize1selected.length == 0 && this.extraquize2selected.length == 0 && this.extraquize3selected.length == 0 && this.extraquize4selected.length == 0){
-				errorMessages.push("Q.13が未回答です。")
+				errorMessages.push("Q.12が未回答です。")
 			}
 
 			if (errorMessages.length != 0) {

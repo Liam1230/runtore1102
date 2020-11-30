@@ -333,27 +333,9 @@
 							</v-list>
 						</v-card>
 					</v-row>
-					<v-row class="align-center justify-center mt-3 mx-0">
-						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.12 {{quiz12text}}</h3>
-						</v-col>
-						
-						<v-card width="750">
-							<v-list>
-								<v-list-item-group v-model="quiz12selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, u) in quiz12srcs" :key="u">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
-										</v-list-item-content>
-									</v-list-item>
-								</v-list-item-group>
-							</v-list>
-						</v-card>
-					</v-row>
-
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize1}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize1}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -369,7 +351,7 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize2}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize2}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -385,7 +367,7 @@
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize3}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize3}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -401,7 +383,7 @@
 					</v-row>
 					<v-row v-else class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.13 {{extraquize4}}</h3>
+							<h3 class="main-color text-h5">Q.12 {{extraquize4}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
@@ -674,7 +656,15 @@ export default {
 			}else{
 			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
 			 	this.totalBody = Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz7srcs[this.quiz7selected[0]].score) + Number(this.quiz7srcs[this.quiz7selected[1]].score) + Number(this.quiz8srcs[this.quiz8selected].score) 
-				this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.quiz12srcs[this.quiz12selected].score)
+				if(this.extraquize1selected.length != 0	){
+					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize1srcs[this.extraquize1selected].score)
+				}else if(this.extraquize2selected.length != 0){
+					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize2srcs[this.extraquize2selected].score)
+				}else if(this.extraquize3selected.length != 0){
+					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize3srcs[this.extraquize3selected].score)
+				}else{
+					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
+				}
 				this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
 				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum}});
 			 }
