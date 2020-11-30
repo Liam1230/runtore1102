@@ -7,7 +7,7 @@ export default {
   target: 'static',
   generate: {
     async routes() {
-      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog?limit=100', {
+      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog', {
         headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
       })
       .then((res) =>
@@ -23,8 +23,8 @@ export default {
     path: '/sitemap.xml',
     hostname: 'https://runtore.netlify.app',
     // generate: true,
-    async routes(callback) {
-      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog?limit=100', {
+    async routes() {
+      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog', {
         headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
       })
       .then((res) =>
@@ -33,7 +33,6 @@ export default {
           payload: content
         })
       ))
-      .catch(callback)
       return pages
     }
   },
