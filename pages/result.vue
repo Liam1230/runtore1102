@@ -88,6 +88,9 @@ export default {
         typeId:"9thfr5thv8",
         timeID:null,
         randomId:null,
+        totalPurpose:null,
+        toatlFormandTec:null,
+        totalBody:null,
         randomsrc:[
             {quiz:1,id:"rke9zq62x"},
             {quiz:2,id:"aas01mw7n"},
@@ -144,7 +147,9 @@ export default {
         this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
         this.fullTime = this.$route.query.fullTime
         this.fullMinute = this.$route.query.fullMinute
-
+        this.toatlFormandTec = Number(this.$route.query.toatlFormandTec)
+        this.totalBody = Number(this.$route.query.totalBody)
+        this.totalPurpose = Number(this.$route.query.totalPurpose)
         if(this.totlaScore <= 50){
             this.rank = "D"
         }else if(this.totlaScore <= 65){
