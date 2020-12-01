@@ -26,7 +26,9 @@
             <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
             <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
             <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
-            <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">あなたの弱点は・・・&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <div class="main-under-line mt-5">
+                <h3 class="text-h4 main-color text-left">あなたの弱点は・・・</h3>
+            </div>
             <template>
                 <h2  class="my-5 text-left" v-if="toatlFormandTec <= totalBody && toatlFormandTec <= totalPurpose">{{taskFormTitle}}</h2>
                 <h2  class="my-5 text-left" v-else-if="totalPurpose <= totalBody && totalPurpose <= toatlFormandTec">{{taskPracticeTitle}}</h2>
@@ -37,8 +39,9 @@
                 <p class="text-left" v-else-if="totalPurpose <= totalBody && totalPurpose <= toatlFormandTec">{{taskPractice}}</p>
                 <p class="text-left" v-else>{{taskBody}}</p>
             </template>
-            
-            <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">お勧めの記事&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <div class="main-under-line mb-5 mt-5">
+                <h3 class="text-h4 main-color text-left">お勧めの記事</h3>
+            </div>
             <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
                 <nuxt-link :to="`/${content.id}`">
                     <div class="d-flex justify-end text-subtitle-2 title-text-color">
