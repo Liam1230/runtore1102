@@ -38,8 +38,8 @@
             </template>
             <template>
                 <p class="text-left" v-if="this.toatlFormandTec < this.totalBody && this.toatlFormandTec < this.totalPurpose">{{this.taskForm}}</p>
-                <p class="text-left" v-else-if="this.totalBody < this.toatlFormandTec && this.totalBody < this.totalPurpose">{{this.taskBody}}</p>
-                <p class="text-left" v-else>{{this.taskPractice}}</p>
+                <p class="text-left" v-else-if="this.totalPurpose < this.totalBody && this.totalPurpose < this.toatlFormandTec">{{this.taskPractice}}</p>
+                <p class="text-left" v-else>{{this.taskBody}}</p>
             </template>
             
             <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">お勧めの記事&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>

@@ -590,34 +590,34 @@ export default {
 				errorMessages.push("Q.1が未回答です。")
 			}
 			if(this.quiz2selected.length != 2){
-				errorMessages.push("Q.2を二つ選択して下さい。")
+				errorMessages.push("Q.4を二つ選択して下さい。")
 			}
 			if(this.quiz3selected.length == 0){
-				errorMessages.push("Q.3が未回答です。")
+				errorMessages.push("Q.7が未回答です。")
 			}
 			if(this.quiz4selected.length == 0){
-				errorMessages.push("Q.4が未回答です。")
-			}
-			if(this.quiz5selected.length == 0){
-				errorMessages.push("Q.5が未回答です。")
-			}
-			if(this.quiz6selected.length == 0){
-				errorMessages.push("Q.6が未回答です。")
-			}
-			if(this.quiz7selected.length != 2){
-				errorMessages.push("Q.7を二つ選択して下さい。")
-			}
-			if(this.quiz8selected.length == 0){
-				errorMessages.push("Q.8が未回答です。")
-			}
-			if(this.quiz9selected.length == 0){
-				errorMessages.push("Q.9が未回答です。")
-			}
-			if(this.quiz10selected.length == 0){
 				errorMessages.push("Q.10が未回答です。")
 			}
-			if(this.quiz11selected.length == 0){
+			if(this.quiz5selected.length == 0){
+				errorMessages.push("Q.2が未回答です。")
+			}
+			if(this.quiz6selected.length == 0){
+				errorMessages.push("Q.5が未回答です。")
+			}
+			if(this.quiz7selected.length != 2){
+				errorMessages.push("Q.8を二つ選択して下さい。")
+			}
+			if(this.quiz8selected.length == 0){
 				errorMessages.push("Q.11が未回答です。")
+			}
+			if(this.quiz9selected.length == 0){
+				errorMessages.push("Q.3が未回答です。")
+			}
+			if(this.quiz10selected.length == 0){
+				errorMessages.push("Q.6が未回答です。")
+			}
+			if(this.quiz11selected.length == 0){
+				errorMessages.push("Q.9が未回答です。")
 			}
 			// if(this.quiz12selected.length == 0){
 			// 	errorMessages.push("Q.12が未回答です。")

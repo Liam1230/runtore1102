@@ -57,21 +57,9 @@ export default {
 	data: () => ({
         //contents:null,
         category:null,
-        categorys:[
-            { name: "フォーム", id:'p1nbcm2kg' },
-            { name: "着地について", id:'2j5l_40ie' },
-            { name: "正しいフォーム", id:'gn7fmy_ym' },
-            { name: "ダメフォーム6選", id:'wft0bf7in' },
-            { name: "楽に進む", id:'dn5atadp6' },
-            { name: "ダメ腕ふり5選", id:'eygy4jgn8' },
-            { name: "痛み", id:'nnin-08mq' },
-            { name: "肩・首", id:'n35zhq2x8' },
-            { name: "すね", id:'ahxwr80o6' },
-            { name: "腰", id:'ogw9fi9za' },
-            { name: "足首", id:'abznzivci' },
-            { name: "太もも", id:'45arjwblp' },
-            { name: "ヒザ", id:'u_zfrrxup' },
-        ]
+        lrageCategorys:{},
+        MiddleCategorys:{},
+        categorys:[]
     }),
     filters:{
         dateFilter(val){
@@ -161,9 +149,6 @@ export default {
                 this.$set(this.contents, i, data.contents[i]);
             }
         },
-        resetContent(){
-            this.category = null
-        }
     },
     async mounted(){
         if(this.$route.query.categoryId){
@@ -185,6 +170,37 @@ export default {
                 return (queryCategoryId.id === this.$route.query.categoryId);
             });
         }
+
+        //大カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
+        this.lrageCategorys = await axios.get(
+            // your-service-id部分は自分のサービスidに置き換えてください
+            `https://runtrainingnote.microcms.io/api/v1/hpcategory1?limit=30`,
+            {
+                headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+            }
+        )
+        console.log(this.lrageCategorys)
+        // this.categorys.splice(0)
+        for (let i=0; i<this.lrageCategorys.data.contents.length;i++){
+            this.$set(this.categorys, i, this.lrageCategorys.data.contents[i]);
+        }
+
+        //中カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
+        this.MiddleCategorys = await axios.get(
+            // your-service-id部分は自分のサービスidに置き換えてください
+            `https://runtrainingnote.microcms.io/api/v1/hpcategory2?limit=50`,
+            {
+                headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+            }
+        )
+        console.log(this.MiddleCategorys)
+        //this.categorys.splice(0)
+        for (let i=0; i<this.MiddleCategorys.data.contents.length;i++){
+            //alert(this.lrageCategorys.data.contents.length + i)
+            this.$set(this.categorys, this.lrageCategorys.data.contents.length + i, this.MiddleCategorys.data.contents[i]);
+        }
+
+
     },
     watch: {
         $route (to, from) {
