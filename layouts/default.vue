@@ -27,9 +27,21 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-        <nuxt-link :to="items[0].to" class="white--text px-5" style="border-left: solid 2px white;">
-          {{items[0].name}}
-        </nuxt-link>
+         <v-menu open-on-hover offset-y tile transition="slide-y-transition">
+          <template v-slot:activator="{ on, attrs }">
+            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[0].to" class="white--text px-5" style="border-left: solid 2px white;">
+              {{items[0].name}}
+            </nuxt-link>
+          </template>
+          <v-list>
+            <nuxt-link v-for="(method,i) in categorysMethod" :key="i" :to="`blogCategory?categoryId=${method.id}`">       
+              <v-list-item link>
+                <v-list-item-title v-text="method.name">
+                </v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+          </v-list>
+        </v-menu>
         <v-menu open-on-hover offset-y tile transition="slide-y-transition">
           <template v-slot:activator="{ on, attrs }">
             <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[1].to" class="white--text px-5" style="border-left: solid 2px white;">
@@ -52,9 +64,9 @@
             </nuxt-link>
           </template>
           <v-list>
-            <nuxt-link v-for="(from,j) in categorysForm" :key="j" :to="`blogCategory?categoryId=${from.id}`">       
+            <nuxt-link v-for="(form,j) in categorysForm" :key="j" :to="`blogCategory?categoryId=${form.id}`">       
               <v-list-item link>
-                <v-list-item-title v-text="from.name">
+                <v-list-item-title v-text="form.name">
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
@@ -115,6 +127,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -123,21 +136,10 @@ export default {
       drawer: false,
       fixed: true,
       blogCategory:null,
-      categorys:[
-        { name: "肩・首", id:'n35zhq2x8' },
-        { name: "すね", id:'ahxwr80o6' },
-        { name: "腰", id:'ogw9fi9za' },
-        { name: "足首", id:'abznzivci' },
-        { name: "太もも", id:'45arjwblp' },
-        { name: "ヒザ", id:'u_zfrrxup' },
-      ],
-      categorysForm:[
-        { name: "着地について", id:'2j5l_40ie' },
-        { name: "正しいフォーム", id:'gn7fmy_ym' },
-        { name: "ダメフォーム6選", id:'wft0bf7in' },
-        { name: "楽に進む", id:'dn5atadp6' },
-        { name: "ダメ腕ふり5選", id:'eygy4jgn8' },
-      ],
+      getCategorys:{},
+      categorys:[],
+      categorysForm:[],
+      categorysMethod:[],
       items: [
         {
           id:1,
@@ -188,6 +190,38 @@ export default {
     movePage(to){
       this.$router.push(to);
       this.menu = false
+    }
+  },
+  async mounted(){
+    //中カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
+    this.getCategorys = await axios.get(
+      // your-service-id部分は自分のサービスidに置き換えてください
+      `https://runtrainingnote.microcms.io/api/v1/hpcategory2?limit=50`,
+      {
+        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+      }
+    )
+    //console.log(this.getCategorys)
+    //this.categorys.splice(0)
+    let categorysCount =0
+    let categorysFormCount = 0
+    let categorysMethodCount = 0
+    for (let i=0; i<this.getCategorys.data.contents.length;i++){
+      if(this.getCategorys.data.contents[i].parent){
+        //フォーム
+        if(this.getCategorys.data.contents[i].parent.id == "p1nbcm2kg"){
+          this.$set(this.categorysForm, categorysFormCount, this.getCategorys.data.contents[i]);
+          categorysFormCount = categorysFormCount + 1
+        //痛み
+        }else if(this.getCategorys.data.contents[i].parent.id == "nnin-08mq"){
+          this.$set(this.categorys, categorysCount, this.getCategorys.data.contents[i]);
+          categorysCount = categorysCount + 1
+        //100kmメソッド
+        }else if(this.getCategorys.data.contents[i].parent.id == "qsqzhls2o"){
+          this.$set(this.categorysMethod, categorysMethodCount, this.getCategorys.data.contents[i]);
+          categorysMethodCount = categorysMethodCount + 1
+        }
+      }
     }
   }
 }
