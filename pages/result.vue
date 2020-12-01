@@ -19,7 +19,7 @@
                 </v-col>
 			</v-row>
             <v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-				<v-col cols=10 class="text-center">
+				<v-col cols=12 class="text-center">
                     <canvas id="resultCharts"></canvas>
 				</v-col>
 			</v-row>
@@ -201,7 +201,7 @@ export default {
                         suggestedMax:12,
                         suggestedMin:0,
                     },
-                    stepSize:5
+                    stepSize:6
                 }
             }
         })
@@ -223,3 +223,9 @@ export default {
     }
 }
 </script>
+
+<style>
+#resultCharts{
+    /* min-height: 50vh; */
+}
+</style>
