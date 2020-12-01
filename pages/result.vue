@@ -220,12 +220,19 @@ export default {
         }
 
         
-    }
+    },
+    head () {
+		return {
+		title: "ランニング力チェック結果",
+		meta: [
+			// { hid: 'description', name: 'description', content: this.seoDescription },
+			{ hid: 'og:type', property: 'og:type', content: "article" },
+			{ hid: 'og:title', property: 'og:title', content: "ランニング力チェック結果" },
+			// { hid: 'og:description', property: 'og:description', content: this.seoDescription },
+			{ hid: 'og:url', property: 'og:url', content: `https://runtore.netlify.app/result` },
+			// { hid: 'og:image', property: 'og:image', content: this.headerImg ? this.headerImg.url : "" },
+		],
+		}
+	},
 }
 </script>
-
-<style>
-#resultCharts{
-    /* min-height: 50vh; */
-}
-</style>
