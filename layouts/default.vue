@@ -147,7 +147,7 @@ export default {
         {
           id:2,
           name: '痛み',
-          to: '/blogCategory',
+          to: '/blogCategory?categoryId=nnin-08mq',
           children:[
             { name: "肩・首", id:'n35zhq2x8' },
             { name: "すね", id:'ahxwr80o6' },
@@ -160,7 +160,7 @@ export default {
         {
           id:3,
           name: 'フォーム',
-          to: 'p1nbcm2kg',
+          to: '/blogCategory/?categoryId=p1nbcm2kg',
           children:[
             { name: "着地について", id:'2j5l_40ie' },
             { name: "正しいフォーム", id:'gn7fmy_ym' },

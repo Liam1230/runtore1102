@@ -10,7 +10,7 @@
                 <div class="youtube" v-if="youtubeURL">
                   <iframe :src="youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="mt-5 pa-3 dictionary">
+                <div v-if="dics" class="mt-5 pa-3 dictionary">
                   目次
                   <ul class="mt-3">
                     <nuxt-link to="#" v-scroll-to="{el: `#${dic.id}`}" v-for="(dic,i) in dics" :key="i">
@@ -45,16 +45,18 @@ export default {
     const titlePattern = /<h2.*?>.+?<\/h2>/g
     const res = data.text.match(titlePattern)
 
-    const dics = []
-    for(const r of res){
-      const id = r.match(/id="(.+?)"/)[1]
-      const text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
-      dics.push({
-        id:id,
-        text:text
-      })
+    if(res){
+      const dics = []
+      for(const r of res){
+        const id = r.match(/id="(.+?)"/)[1]
+        const text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
+        dics.push({
+          id:id,
+          text:text
+        })
+      }
+      data["dics"] = dics
     }
-    data["dics"] = dics
     return data
   },
   head () {
