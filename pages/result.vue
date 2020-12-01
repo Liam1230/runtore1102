@@ -24,18 +24,18 @@
 				</v-col>
 			</v-row>
             <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
-            <h1 class="text-h3 mt-5 red--text">{{this.runnerType}}</h1>
+            <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
             <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
             <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">あなたの弱点は・・・&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
             <template>
-                <h2  class="my-5 text-left" v-if="this.toatlFormandTec <= this.totalBody && this.toatlFormandTec <= this.totalPurpose">{{this.taskFormTitle}}</h2>
-                <h2  class="my-5 text-left" v-else-if="this.totalPurpose <= this.totalBody && this.totalPurpose <= this.toatlFormandTec">{{this.taskPracticeTitle}}</h2>
-                <h2  class="my-5 text-left" v-else>{{this.taskBodyTitle}}</h2>
+                <h2  class="my-5 text-left" v-if="toatlFormandTec <= totalBody && toatlFormandTec <= totalPurpose">{{taskFormTitle}}</h2>
+                <h2  class="my-5 text-left" v-else-if="totalPurpose <= totalBody && totalPurpose <= toatlFormandTec">{{taskPracticeTitle}}</h2>
+                <h2  class="my-5 text-left" v-else>{{taskBodyTitle}}</h2>
             </template>
             <template>
-                <p class="text-left" v-if="this.toatlFormandTec <= this.totalBody && this.toatlFormandTec <= this.totalPurpose">{{this.taskForm}}</p>
-                <p class="text-left" v-else-if="this.totalPurpose <= this.totalBody && this.totalPurpose <= this.toatlFormandTec">{{this.taskPractice}}</p>
-                <p class="text-left" v-else>{{this.taskBody}}</p>
+                <p class="text-left" v-if="toatlFormandTec <= totalBody && toatlFormandTec <= totalPurpose">{{taskForm}}</p>
+                <p class="text-left" v-else-if="totalPurpose <= totalBody && totalPurpose <= toatlFormandTec">{{taskPractice}}</p>
+                <p class="text-left" v-else>{{taskBody}}</p>
             </template>
             
             <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">お勧めの記事&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
@@ -143,9 +143,11 @@ export default {
         this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
         this.fullTime = this.$route.query.fullTime
         this.fullMinute = this.$route.query.fullMinute
+
         this.toatlFormandTec = Number(this.$route.query.toatlFormandTec)
         this.totalBody = Number(this.$route.query.totalBody)
         this.totalPurpose = Number(this.$route.query.totalPurpose)
+
         if(this.totlaScore <= 50){
             this.rank = "D"
         }else if(this.totlaScore <= 65){
