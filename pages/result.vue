@@ -32,13 +32,13 @@
             <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
             <h3 class="text-h4 my-5 py-5 blue-sub-title text-left">あなたの弱点は・・・&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
             <template>
-                <h2  class="my-5 text-left" v-if="this.toatlFormandTec < this.totalBody && this.toatlFormandTec < this.totalPurpose">{{this.taskFormTitle}}</h2>
-                <h2  class="my-5 text-left" v-else-if="this.totalPurpose < this.totalBody && this.totalPurpose < this.toatlFormandTec">{{this.taskPracticeTitle}}</h2>
+                <h2  class="my-5 text-left" v-if="this.toatlFormandTec <= this.totalBody && this.toatlFormandTec <= this.totalPurpose">{{this.taskFormTitle}}</h2>
+                <h2  class="my-5 text-left" v-else-if="this.totalPurpose <= this.totalBody && this.totalPurpose <= this.toatlFormandTec">{{this.taskPracticeTitle}}</h2>
                 <h2  class="my-5 text-left" v-else>{{this.taskBodyTitle}}</h2>
             </template>
             <template>
-                <p class="text-left" v-if="this.toatlFormandTec < this.totalBody && this.toatlFormandTec < this.totalPurpose">{{this.taskForm}}</p>
-                <p class="text-left" v-else-if="this.totalPurpose < this.totalBody && this.totalPurpose < this.toatlFormandTec">{{this.taskPractice}}</p>
+                <p class="text-left" v-if="this.toatlFormandTec <= this.totalBody && this.toatlFormandTec <= this.totalPurpose">{{this.taskForm}}</p>
+                <p class="text-left" v-else-if="this.totalPurpose <= this.totalBody && this.totalPurpose <= this.toatlFormandTec">{{this.taskPractice}}</p>
                 <p class="text-left" v-else>{{this.taskBody}}</p>
             </template>
             
