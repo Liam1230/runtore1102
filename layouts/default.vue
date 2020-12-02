@@ -88,12 +88,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: true,
-      blogCategory:null,
-      getCategorys:{},
       getLargeCategorys:{},
-      categorys:[],
-      categorysForm:[],
-      categorysMethod:[],
       items: [],
       miniVariant: false,
       right: true,
@@ -102,13 +97,7 @@ export default {
     }
   },
   methods:{
-    async moveBlog(){
-      this.$router.push({ path: '/blogCategory' , query :{ blogCategory: this.blogCategory}});
-    },
-    movePage(to){
-      this.$router.push(to);
-      this.menu = false
-    }
+    
   },
   async mounted(){
 
@@ -125,36 +114,7 @@ export default {
     }
     //this.items = this.getLargeCategorys.data.contents
 
-    //中カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
-    this.getCategorys = await axios.get(
-      // your-service-id部分は自分のサービスidに置き換えてください
-      `https://runtrainingnote.microcms.io/api/v1/hpcategory2?limit=50`,
-      {
-        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
-      }
-    )
-    //console.log(this.getCategorys)
-    //this.categorys.splice(0)
-    let categorysCount =0
-    let categorysFormCount = 0
-    let categorysMethodCount = 0
-    for (let i=0; i<this.getCategorys.data.contents.length;i++){
-      if(this.getCategorys.data.contents[i].parent){
-        //フォーム
-        if(this.getCategorys.data.contents[i].parent.id == "p1nbcm2kg"){
-          this.$set(this.categorysForm, categorysFormCount, this.getCategorys.data.contents[i]);
-          categorysFormCount = categorysFormCount + 1
-        //痛み
-        }else if(this.getCategorys.data.contents[i].parent.id == "nnin-08mq"){
-          this.$set(this.categorys, categorysCount, this.getCategorys.data.contents[i]);
-          categorysCount = categorysCount + 1
-        //100kmメソッド
-        }else if(this.getCategorys.data.contents[i].parent.id == "qsqzhls2o"){
-          this.$set(this.categorysMethod, categorysMethodCount, this.getCategorys.data.contents[i]);
-          categorysMethodCount = categorysMethodCount + 1
-        }
-      }
-    }
+    
   }
 }
 </script>
