@@ -504,9 +504,9 @@ export default {
 		quiz11text:"課題に合わせた練習内容として適したものを選んでください!",
 		quiz11srcs:[
 			{checked:false,score:1,item:"1km走のタイムが上がらない-ペース走"},
-			{checked:false,score:2,item:"5km走の途中で疲労で脚が動かない感覚 がある-短い距離の全力走"},
-			{checked:false,score:2,item:"10km走のタイムが上がらない-インター バル走"},
-			{checked:false,score:6,item:"30km以降いつも歩いてしまう-ロング ジョグ"},
+			{checked:false,score:2,item:"5km走の途中で疲労で脚が動かない感覚がある-短い距離の全力走"},
+			{checked:false,score:2,item:"10km走のタイムが上がらない-インターバル走"},
+			{checked:false,score:6,item:"30km以降いつも歩いてしまう-ロングジョグ"},
 		],
 		quiz11selected:[],
 
