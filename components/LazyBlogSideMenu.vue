@@ -29,7 +29,7 @@
                 <p class="text-body-2 px-2 pt-2">{{newPost.seoDescription}}</p>
             </nuxt-link>
         </div>
-        <h2 class="dence text-h6">
+        <!-- <h2 class="dence text-h6">
             人気記事
         </h2>
         <div v-if="newPost" class="sidebar-post">
@@ -40,7 +40,7 @@
                 <v-divider class="mx-1"></v-divider>
                 <p class="text-body-2 px-2 pt-2">{{newPost.seoDescription}}</p>
             </nuxt-link>
-        </div>
+        </div> -->
 
     </v-container>
 </template>

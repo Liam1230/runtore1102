@@ -119,8 +119,8 @@
 							<v-list>
 								<v-list-item-group v-model="quiz5selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, m) in quiz5srcs" :key="m">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{src.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -135,8 +135,8 @@
 							<v-list>
 								<v-list-item-group v-model="quiz9selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, r) in quiz9srcs" :key="r">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{src.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -199,8 +199,8 @@
 							<v-list>
 								<v-list-item-group v-model="quiz10selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, s) in quiz10srcs" :key="s">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{src.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -263,8 +263,8 @@
 							<v-list>
 								<v-list-item-group v-model="quiz11selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, t) in quiz11srcs" :key="t">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{src.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -279,8 +279,8 @@
 							<v-list>
 								<v-list-item-group v-model="quiz4selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, l) in quiz4srcs" :key="l">
-										<v-list-item-content>
-											<v-list-item-title v-text="src.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{src.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -319,8 +319,8 @@
 							<v-list>
 								<v-list-item-group v-model="extraquize1selected" active-class="border" color="indigo">
 									<v-list-item v-for="(extraquize, n) in extraquize1srcs" :key="n">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{extraquize.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -335,8 +335,8 @@
 							<v-list>
 								<v-list-item-group v-model="extraquize2selected" active-class="border" color="indigo">
 									<v-list-item v-for="(extraquize, p) in extraquize2srcs" :key="p">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{extraquize.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -351,8 +351,8 @@
 							<v-list>
 								<v-list-item-group v-model="extraquize3selected" active-class="border" color="indigo">
 									<v-list-item v-for="(extraquize, q) in extraquize3srcs" :key="q">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{extraquize.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
@@ -367,8 +367,8 @@
 							<v-list>
 								<v-list-item-group v-model="extraquize4selected" active-class="border" color="indigo">
 									<v-list-item v-for="(extraquize, r) in extraquize4srcs" :key="r">
-										<v-list-item-content>
-											<v-list-item-title v-text="extraquize.item"></v-list-item-title>
+										<v-list-item-content class="text-left">
+											{{extraquize.item}}
 										</v-list-item-content>
 									</v-list-item>
 								</v-list-item-group>
