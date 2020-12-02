@@ -161,7 +161,9 @@ export default {
             this.rank = "A"
         }
 
-        if(Number(this.$route.query.totalBody) < 2.2){
+
+
+        if(Number(this.$route.query.typeNum) < 2.2){
             this.runnerType = "マラソンタイプ"
         }else{
             this.runnerType = "スピードタイプ"
