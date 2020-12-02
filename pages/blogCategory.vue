@@ -28,8 +28,8 @@
                                     </p>
                                     <div>
                                         <h4 class="text-caption title-text-color">カテゴリー</h4>
-                                        <div class="d-flex mt-1">
-                                            <v-btn v-if="content.category1" outlined rounded small class="mr-3">
+                                        <div class="d-flex mt-1 flex-wrap">
+                                            <v-btn v-if="content.category1" outlined rounded small class="mr-3 mb-3">
                                                 {{content.category1.name}}
                                             </v-btn>
                                             <v-btn v-if="content.category2" outlined rounded small class="mr-3">
@@ -151,25 +151,7 @@ export default {
         },
     },
     async mounted(){
-        if(this.$route.query.categoryId){
-            //alert('category')
-            const { data } = await axios.get(
-                // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
-                {
-                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
-                }
-            )
-            console.log(data)
-            this.contents.splice(0)
-            for (let i=0; i<data.contents.length;i++){
-                this.$set(this.contents, i, data.contents[i]);
-            }
-
-            this.category = await this.categorys.find((queryCategoryId) => {
-                return (queryCategoryId.id === this.$route.query.categoryId);
-            });
-        }
+        
 
         //大カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
         this.lrageCategorys = await axios.get(
@@ -200,6 +182,25 @@ export default {
             this.$set(this.categorys, this.lrageCategorys.data.contents.length + i, this.MiddleCategorys.data.contents[i]);
         }
 
+        if(this.$route.query.categoryId){
+            //alert('category')
+            const { data } = await axios.get(
+                // your-service-id部分は自分のサービスidに置き換えてください
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
+                {
+                    headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+                }
+            )
+            console.log(data)
+            this.contents.splice(0)
+            for (let i=0; i<data.contents.length;i++){
+                this.$set(this.contents, i, data.contents[i]);
+            }
+
+            this.category = await this.categorys.find((queryCategoryId) => {
+                return (queryCategoryId.id === this.$route.query.categoryId);
+            });
+        }
 
     },
     watch: {

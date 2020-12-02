@@ -54,7 +54,7 @@ export default {
     async mounted(){
         const { data } = await this.$axios.get(
             // your-service-id部分は自分のサービスidに置き換えてください
-            `https://runtrainingnote.microcms.io/api/v1/blog`,
+            `https://runtrainingnote.microcms.io/api/v1/blog?limit=3`,
             {
                 headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
             }
@@ -71,7 +71,7 @@ export default {
                 }
             )
             //alert('検索' + data.contents[0])
-            this.newPost = [data.contents[0],data.contents[1],data.contents[2]]
+            // this.newPost = [data.contents[0],data.contents[1],data.contents[2]]
 
             this.$router.push({ path: '/blogCategory' , query :{ search: this.search}});
             //alert('ページ遷移')
