@@ -27,46 +27,16 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-         <v-menu open-on-hover offset-y tile transition="slide-y-transition">
+         <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-for="(item,i) in items" :key="i">
           <template v-slot:activator="{ on, attrs }">
-            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[0].to" class="white--text px-5" style="border-left: solid 2px white;">
-              {{items[0].name}}
+            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[i].to" class="white--text px-5" style="border-left: solid 2px white;">
+              {{item[i].name}}
             </nuxt-link>
           </template>
           <v-list>
-            <nuxt-link v-for="(method,i) in categorysMethod" :key="i" :to="`blogCategory?categoryId=${method.id}`">       
+            <nuxt-link v-for="(child,j) in item.children" :key="j" :to="`blogCategory?categoryId=${child.id}`">       
               <v-list-item link>
-                <v-list-item-title v-text="method.name">
-                </v-list-item-title>
-              </v-list-item>
-            </nuxt-link>
-          </v-list>
-        </v-menu>
-        <v-menu open-on-hover offset-y tile transition="slide-y-transition">
-          <template v-slot:activator="{ on, attrs }">
-            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[1].to" class="white--text px-5" style="border-left: solid 2px white;">
-              {{items[1].name}}
-            </nuxt-link>
-          </template>
-          <v-list>
-            <nuxt-link v-for="(category,i) in categorys" :key="i" :to="`blogCategory?categoryId=${category.id}`">       
-              <v-list-item link>
-                <v-list-item-title v-text="category.name">
-                </v-list-item-title>
-              </v-list-item>
-            </nuxt-link>
-          </v-list>
-        </v-menu>
-        <v-menu open-on-hover offset-y tile transition="slide-y-transition">
-          <template v-slot:activator="{ on, attrs }">
-            <nuxt-link is="a" v-on="on" v-bind="attrs" :to="items[2].to" class="white--text px-5" style="border-left: solid 2px white;">
-              {{items[2].name}}
-            </nuxt-link>
-          </template>
-          <v-list>
-            <nuxt-link v-for="(form,j) in categorysForm" :key="j" :to="`blogCategory?categoryId=${form.id}`">       
-              <v-list-item link>
-                <v-list-item-title v-text="form.name">
+                <v-list-item-title v-text="child.name">
                 </v-list-item-title>
               </v-list-item>
             </nuxt-link>
@@ -137,46 +107,11 @@ export default {
       fixed: true,
       blogCategory:null,
       getCategorys:{},
+      getLargeCategorys:{},
       categorys:[],
       categorysForm:[],
       categorysMethod:[],
-      items: [
-        {
-          id:1,
-          name: '月間100kmメソッド',
-          to: '/blogCategory?categoryId=qsqzhls2o'
-        },
-        {
-          id:2,
-          name: '痛み',
-          to: '/blogCategory?categoryId=nnin-08mq',
-          children:[
-            { name: "肩・首", id:'n35zhq2x8' },
-            { name: "すね", id:'ahxwr80o6' },
-            { name: "腰", id:'ogw9fi9za' },
-            { name: "足首", id:'abznzivci' },
-            { name: "太もも", id:'45arjwblp' },
-            { name: "ヒザ", id:'u_zfrrxup' },
-          ],
-        },
-        {
-          id:3,
-          name: 'フォーム',
-          to: '/blogCategory/?categoryId=p1nbcm2kg',
-          children:[
-            { name: "着地について", id:'2j5l_40ie' },
-            { name: "正しいフォーム", id:'gn7fmy_ym' },
-            { name: "ダメフォーム6選", id:'wft0bf7in' },
-            { name: "楽に進む", id:'dn5atadp6' },
-            { name: "ダメ腕ふり5選", id:'eygy4jgn8' },
-          ]
-        },
-        {
-          id:4,
-          name: 'LINE練習帳',
-          to: '/inspire'
-        },
-      ],
+      items: [],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -193,6 +128,20 @@ export default {
     }
   },
   async mounted(){
+
+    this.getLargeCategorys = await axios.get(
+      // your-service-id部分は自分のサービスidに置き換えてください
+      `https://runtrainingnote.microcms.io/api/v1/hpcategory1?limit=50`,
+      {
+        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+      }
+    )
+    console.log(this.getLargeCategorys.data.contents)
+    for (let i=0; i<this.getLargeCategorys.data.contents.length;i++){
+      this.$set(this.items, i, this.getLargeCategorys.data.contents[i]);
+    }
+    //this.items = this.getLargeCategorys.data.contents
+
     //中カテゴリ取得。取得件数がデフォルト10件なのでlimitを引数に入れて変更する必要あり
     this.getCategorys = await axios.get(
       // your-service-id部分は自分のサービスidに置き換えてください
