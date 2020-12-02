@@ -20,13 +20,13 @@
         <h2 class="dence text-h6">
             最新記事
         </h2>
-        <div v-if="newPost" class="sidebar-post">
-            <nuxt-link :to="`/${newPost.id}`">
+        <div v-for="(post,i) in newPost" :key="i" class="sidebar-post">
+            <nuxt-link :to="`/${post.id}`">
                 <h4 class="text-left main-color pa-2">
-                    {{newPost.title}}
+                    {{post.title}}
                 </h4>
                 <v-divider class="mx-1"></v-divider>
-                <p class="text-body-2 px-2 pt-2">{{newPost.seoDescription}}</p>
+                <p class="text-body-2 px-2 pt-2">{{post.seoDescription}}</p>
             </nuxt-link>
         </div>
         <!-- <h2 class="dence text-h6">
@@ -59,7 +59,7 @@ export default {
                 headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
             }
         )
-        this.newPost = data.contents[0]
+        this.newPost = [data.contents[0],data.contents[1],data.contents[2]]
     },
     methods:{
         async getContens(){
@@ -71,7 +71,7 @@ export default {
                 }
             )
             //alert('検索' + data.contents[0])
-            this.newPost = await data.contents[0]
+            this.newPost = [data.contents[0],data.contents[1],data.contents[2]]
 
             this.$router.push({ path: '/blogCategory' , query :{ search: this.search}});
             //alert('ページ遷移')
