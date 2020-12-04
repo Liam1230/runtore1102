@@ -113,12 +113,12 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.2 {{quiz5text}}</h3>
+							<h3 class="main-color text-h5">Q.2 {{quiz2text}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz5selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, m) in quiz5srcs" :key="m">
+								<v-list-item-group v-model="quiz2selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, m) in quiz2srcs" :key="m">
 										<v-list-item-content class="text-left">
 											{{src.item}}
 										</v-list-item-content>
@@ -129,12 +129,12 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.3 {{quiz9text}}</h3>
+							<h3 class="main-color text-h5">Q.3 {{quiz3text}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz9selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, r) in quiz9srcs" :key="r">
+								<v-list-item-group v-model="quiz3selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, r) in quiz3srcs" :key="r">
 										<v-list-item-content class="text-left">
 											{{src.item}}
 										</v-list-item-content>
@@ -145,13 +145,13 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.4 {{quiz2text}}</h3>
+							<h3 class="main-color text-h5">Q.4 {{quiz4text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz2selected" multiple>
+								<v-item-group v-model="quiz4selected" multiple>
 									<v-row>
-										<v-col v-for="(src, j) in quiz2srcs" :key="j" cols="12" md="6">
+										<v-col v-for="(src, j) in quiz4srcs" :key="j" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
 													<v-btn fab>
@@ -169,13 +169,13 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.5 {{quiz6text}}</h3>
+							<h3 class="main-color text-h5">Q.5 {{quiz5text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz6selected" >
+								<v-item-group v-model="quiz5selected" >
 									<v-row>
-										<v-col v-for="(src, n) in quiz6srcs" :key="n" cols="12" md="6">
+										<v-col v-for="(src, n) in quiz5srcs" :key="n" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
 													<v-btn fab>
@@ -193,11 +193,11 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.6 {{quiz10text}}</h3>
+							<h3 class="main-color text-h5">Q.6 {{quiz6text}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz10selected" active-class="border" color="indigo">
+								<v-list-item-group v-model="quiz6selected" active-class="border" color="indigo">
 									<v-list-item v-for="(src, s) in quiz10srcs" :key="s">
 										<v-list-item-content class="text-left">
 											{{src.item}}
@@ -209,13 +209,13 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.7 {{quiz3text}}</h3>
+							<h3 class="main-color text-h5">Q.7 {{quiz7text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz3selected" >
+								<v-item-group v-model="quiz7selected" >
 									<v-row>
-										<v-col v-for="(src, k) in quiz3srcs" :key="k" cols="12" md="6" >
+										<v-col v-for="(src, k) in quiz7srcs" :key="k" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
 													<v-btn fab>
@@ -233,13 +233,13 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.8 {{quiz7text}}</h3>
+							<h3 class="main-color text-h5">Q.8 {{quiz8text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz7selected" multiple>
+								<v-item-group v-model="quiz8selected" multiple>
 									<v-row>
-										<v-col v-for="(src, p) in quiz7srcs" :key="p" cols="12" md="6">
+										<v-col v-for="(src, p) in quiz8srcs" :key="p" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
 													<v-btn fab>
@@ -257,12 +257,12 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.9 {{quiz11text}}</h3>
+							<h3 class="main-color text-h5">Q.9 {{quiz9text}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz11selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, t) in quiz11srcs" :key="t">
+								<v-list-item-group v-model="quiz9selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, t) in quiz9srcs" :key="t">
 										<v-list-item-content class="text-left">
 											{{src.item}}
 										</v-list-item-content>
@@ -273,12 +273,12 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.10 {{quiz4text}}</h3>
+							<h3 class="main-color text-h5">Q.10 {{quiz10text}}</h3>
 						</v-col>
 						<v-card width="750">
 							<v-list>
-								<v-list-item-group v-model="quiz4selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, l) in quiz4srcs" :key="l">
+								<v-list-item-group v-model="quiz10selected" active-class="border" color="indigo">
+									<v-list-item v-for="(src, l) in quiz10srcs" :key="l">
 										<v-list-item-content class="text-left">
 											{{src.item}}
 										</v-list-item-content>
@@ -289,13 +289,13 @@
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
-							<h3 class="main-color text-h5">Q.11 {{quiz8text}}</h3>
+							<h3 class="main-color text-h5">Q.11 {{quiz11text}}</h3>
 						</v-col>
 						<v-card width="750" >
 							<v-container class="pa-1">
-								<v-item-group v-model="quiz8selected">
+								<v-item-group v-model="quiz11selected">
 									<v-row>
-										<v-col v-for="(src, q) in quiz8srcs" :key="q" cols="12" md="6">
+										<v-col v-for="(src, q) in quiz11srcs" :key="q" cols="12" md="6">
 											<v-item v-slot="{ active, toggle }">
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle">
 													<v-btn fab>
@@ -410,103 +410,103 @@ export default {
 		],
 		quiz1selected:[],
 
-		quiz2category:"フォーム・技術",
-		quiz2text:"着地位置として「正しいもの」を「2つ」選んでください",
+		quiz2category:"体に関すること",
+		quiz2text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
 		quiz2srcs:[
-			{checked:false,score:0,image:"/img/check/f_2-1.jpg"},
-			{checked:false,score:3,image:"/img/check/f_2-2.jpg"},
-			{checked:false,score:3,image:"/img/check/f_2-3.jpg"},
-			{checked:false,score:1,image:"/img/check/f_2-4.jpg"},
-		],
-		quiz2selected:[],
-
-		quiz3category:"フォーム・技術",
-		quiz3text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
-		quiz3srcs:[
-			{checked:false,score:2,image:"/img/check/f_3-1.jpg"},
-			{checked:false,score:2,image:"/img/check/f_3-2.jpg"},
-			{checked:false,score:2,image:"/img/check/f_3-3.jpg"},
-			{checked:false,score:6,image:"/img/check/f_3-4.jpg"},
-		],
-		quiz3selected:[],
-
-		quiz4category:"フォーム・技術",
-		quiz4text:"ご自身でペースをコントロールできますか？",
-		quiz4srcs:[
-			{checked:false,score:2,item:"普段タイムの計測を行っていない"},
-			{checked:false,score:6,item:"1kmあたり5秒以内のふり幅でコントロールできる"},
-			{checked:false,score:3,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
-			{checked:false,score:2,item:"1kmあたり11秒以上タイムが変動する"},
-		],
-		quiz4selected:[],
-
-		quiz5category:"体に関すること",
-		quiz5text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
-		quiz5srcs:[
 			{checked:false,score:2,item:"全く辛くなくしゃべられる速度"},
 			{checked:false,score:0,item:"息が上がりかなりつらいと思う速度"},
 			{checked:false,score:6,item:"息が軽く上がるが余裕のある速度"},
 			{checked:false,score:2,item:"息が上がり余裕の無い速度"},
 		],
-		quiz5selected:[],
+		quiz2selected:[],
 
-		quiz6category:"体に関すること",
-		quiz6text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
-		quiz6srcs:[
-			{checked:false,score:6,image:"/img/check/t_2-1.jpg"},
-			{checked:false,score:0,image:"/img/check/t_2-2.jpg"},
-			{checked:false,score:0,image:"/img/check/t_2-3.jpg"},
-			{checked:false,score:0,image:"/img/check/t_2-4.jpg"},
-		],
-		quiz6selected:[],
-
-		quiz7category:"体に関すること",
-		quiz7text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
-		quiz7srcs:[
-			{checked:false,score:3,image:"/img/check/t_3-1.jpg"},
-			{checked:false,score:3,image:"/img/check/t_3-2.jpg"},
-			{checked:false,score:1,image:"/img/check/t_3-3.jpg"},
-			{checked:false,score:1,image:"/img/check/t_3-4.jpg"},
-		],
-		quiz7selected:[],
-
-		quiz8category:"体に関すること",
-		quiz8text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
-		quiz8srcs:[
-			{checked:false,score:6,image:"/img/check/t_4-1.jpg"},
-			{checked:false,score:3,image:"/img/check/t_4-2.jpg"},
-			{checked:false,score:0,image:"/img/check/t_4-3.jpg"},
-			{checked:false,score:1,image:"/img/check/t_4-4.jpg"},
-		],
-		quiz8selected:[],
-
-		quiz9category:"目標計画",
-		quiz9text:"練習の目的として「適切ではないもの」を選んでください",
-		quiz9srcs:[
+		quiz3category:"目標計画",
+		quiz3text:"練習の目的として「適切ではないもの」を選んでください",
+		quiz3srcs:[
 			{checked:false,score:1,item:"ロングジョグ-毛細血管を増やし、脚の耐久性強化"},
 			{checked:false,score:1,item:"インターバル走-疲労物質(乳酸)を除去する能力を高める"},
 			{checked:false,score:1,item:"全力走-脚の回転数・ストライド向上で最大速度を高める"},
 			{checked:false,score:6,item:"ペース走-呼吸循環を高めて疲労回復"},
 		],
-		quiz9selected:[],
+		quiz3selected:[],
 
-		quiz10category:"目標計画",
-		quiz10text:"ランニングにおいて練習方法として適しているものを選んでください!",
-		quiz10srcs:[
+		quiz4category:"フォーム・技術",
+		quiz4text:"着地位置として「正しいもの」を「2つ」選んでください",
+		quiz4srcs:[
+			{checked:false,score:0,image:"/img/check/f_2-1.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-2.jpg"},
+			{checked:false,score:3,image:"/img/check/f_2-3.jpg"},
+			{checked:false,score:1,image:"/img/check/f_2-4.jpg"},
+		],
+		quiz4selected:[],
+
+		quiz5category:"体に関すること",
+		quiz5text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
+		quiz5srcs:[
+			{checked:false,score:6,image:"/img/check/t_2-1.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-3.jpg"},
+			{checked:false,score:0,image:"/img/check/t_2-4.jpg"},
+		],
+		quiz5selected:[],
+
+		quiz6category:"目標計画",
+		quiz6text:"ランニングにおいて練習方法として適しているものを選んでください!",
+		quiz6srcs:[
 			{checked:false,score:6,item:"全力走では、休憩を長く取って行う。"},
 			{checked:false,score:1,item:"インターバル走は休憩を長く取って行う練習として適している"},
 			{checked:false,score:1,item:"ペース走を行うときは息が上がらない速度で行う"},
 			{checked:false,score:0,item:"ロングジョグは息が上がる程度の速度を維持し続けないと効果は小さい"},
 		],
-		quiz10selected:[],
+		quiz6selected:[],
 
-		quiz11category:"目標計画",
-		quiz11text:"課題に合わせた練習内容として適したものを選んでください!",
-		quiz11srcs:[
+		quiz7category:"フォーム・技術",
+		quiz7text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
+		quiz7srcs:[
+			{checked:false,score:2,image:"/img/check/f_3-1.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-2.jpg"},
+			{checked:false,score:2,image:"/img/check/f_3-3.jpg"},
+			{checked:false,score:6,image:"/img/check/f_3-4.jpg"},
+		],
+		quiz7selected:[],
+
+		quiz8category:"体に関すること",
+		quiz8text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
+		quiz8srcs:[
+			{checked:false,score:3,image:"/img/check/t_3-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_3-2.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_3-4.jpg"},
+		],
+		quiz8selected:[],
+
+		quiz9category:"目標計画",
+		quiz9text:"課題に合わせた練習内容として適したものを選んでください!",
+		quiz9srcs:[
 			{checked:false,score:1,item:"1km走のタイムが上がらない-ペース走"},
 			{checked:false,score:2,item:"5km走の途中で疲労で脚が動かない感覚がある-短い距離の全力走"},
 			{checked:false,score:2,item:"10km走のタイムが上がらない-インターバル走"},
 			{checked:false,score:6,item:"30km以降いつも歩いてしまう-ロングジョグ"},
+		],
+		quiz9selected:[],
+
+		quiz10category:"フォーム・技術",
+		quiz10text:"ご自身でペースをコントロールできますか？",
+		quiz10srcs:[
+			{checked:false,score:2,item:"普段タイムの計測を行っていない"},
+			{checked:false,score:6,item:"1kmあたり5秒以内のふり幅でコントロールできる"},
+			{checked:false,score:3,item:"1kmあたり10秒以内のふり幅でコントロールできる"},
+			{checked:false,score:2,item:"1kmあたり11秒以上タイムが変動する"},
+		],
+		quiz10selected:[],
+
+		quiz11category:"体に関すること",
+		quiz11text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
+		quiz11srcs:[
+			{checked:false,score:6,image:"/img/check/t_4-1.jpg"},
+			{checked:false,score:3,image:"/img/check/t_4-2.jpg"},
+			{checked:false,score:0,image:"/img/check/t_4-3.jpg"},
+			{checked:false,score:1,image:"/img/check/t_4-4.jpg"},
 		],
 		quiz11selected:[],
 
@@ -589,35 +589,35 @@ export default {
 			if(this.quiz1selected.length == 0){
 				errorMessages.push("Q.1が未回答です。")
 			}
-			if(this.quiz2selected.length != 2){
-				errorMessages.push("Q.4を二つ選択して下さい。")
-			}
-			if(this.quiz3selected.length == 0){
-				errorMessages.push("Q.7が未回答です。")
-			}
-			if(this.quiz4selected.length == 0){
-				errorMessages.push("Q.10が未回答です。")
-			}
-			if(this.quiz5selected.length == 0){
+			if(this.quiz2selected.length == 0){
 				errorMessages.push("Q.2が未回答です。")
 			}
-			if(this.quiz6selected.length == 0){
-				errorMessages.push("Q.5が未回答です。")
-			}
-			if(this.quiz7selected.length != 2){
-				errorMessages.push("Q.8を二つ選択して下さい。")
-			}
-			if(this.quiz8selected.length == 0){
-				errorMessages.push("Q.11が未回答です。")
-			}
-			if(this.quiz9selected.length == 0){
+			if(this.quiz3selected.length == 0){
 				errorMessages.push("Q.3が未回答です。")
 			}
-			if(this.quiz10selected.length == 0){
+			if(this.quiz4selected.length != 2){
+				errorMessages.push("Q.4を二つ選択して下さい。")
+			}
+			if(this.quiz5selected.length == 0){
+				errorMessages.push("Q.5が未回答です。")
+			}
+			if(this.quiz6selected.length == 0){
 				errorMessages.push("Q.6が未回答です。")
 			}
-			if(this.quiz11selected.length == 0){
+			if(this.quiz7selected.length == 0){
+				errorMessages.push("Q.7が未回答です。")
+			}
+			if(this.quiz8selected.length != 2){
+				errorMessages.push("Q.8を二つ選択して下さい。")
+			}
+			if(this.quiz9selected.length == 0){
 				errorMessages.push("Q.9が未回答です。")
+			}
+			if(this.quiz10selected.length == 0){
+				errorMessages.push("Q.10が未回答です。")
+			}
+			if(this.quiz11selected.length == 0){
+				errorMessages.push("Q.11が未回答です。")
 			}
 			// if(this.quiz12selected.length == 0){
 			// 	errorMessages.push("Q.12が未回答です。")
@@ -632,19 +632,36 @@ export default {
 				// alert(errorMessages.join('\n'));
 				return false;
 			}else{
-			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score) + Number(this.quiz2srcs[this.quiz2selected[0]].score) + Number(this.quiz2srcs[this.quiz2selected[1]].score) +　Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz4srcs[this.quiz4selected].score)
-			 	this.totalBody = Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz7srcs[this.quiz7selected[0]].score) + Number(this.quiz7srcs[this.quiz7selected[1]].score) + Number(this.quiz8srcs[this.quiz8selected].score) 
+				this.$store.dispatch('setSelectAnswers',{no:'1',answer:this.quiz1selected})
+				this.$store.dispatch('setSelectAnswers',{no:'2',answer:this.quiz2selected})
+				this.$store.dispatch('setSelectAnswers',{no:'3',answer:this.quiz3selected})
+				this.$store.dispatch('setSelectAnswers',{no:'4',answer:this.quiz4selected})
+				this.$store.dispatch('setSelectAnswers',{no:'5',answer:this.quiz5selected})
+				this.$store.dispatch('setSelectAnswers',{no:'6',answer:this.quiz6selected})
+				this.$store.dispatch('setSelectAnswers',{no:'7',answer:this.quiz7selected})
+				this.$store.dispatch('setSelectAnswers',{no:'8',answer:this.quiz8selected})
+				this.$store.dispatch('setSelectAnswers',{no:'9',answer:this.quiz9selected})
+				this.$store.dispatch('setSelectAnswers',{no:'10',answer:this.quiz10selected})
+				this.$store.dispatch('setSelectAnswers',{no:'11',answer:this.quiz11selected})
+			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score)+ Number(this.quiz4srcs[this.quiz4selected[0]].score) + Number(this.quiz4srcs[this.quiz4selected[1]].score)  + Number(this.quiz7srcs[this.quiz7selected].score) + + Number(this.quiz10srcs[this.quiz10selected].score)
+			 	this.totalBody = Number(this.quiz2srcs[this.quiz2selected].score) + Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz8srcs[this.quiz8selected[0]].score) + Number(this.quiz8srcs[this.quiz8selected[1]].score) + Number(this.quiz11srcs[this.quiz11selected].score) 
 				if(this.extraquize1selected.length != 0	){
-					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize1srcs[this.extraquize1selected].score)
+					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize1selected})
+					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize1srcs[this.extraquize1selected].score)
 				}else if(this.extraquize2selected.length != 0){
-					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize2srcs[this.extraquize2selected].score)
+					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize2selected})
+					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize2srcs[this.extraquize2selected].score)
 				}else if(this.extraquize3selected.length != 0){
-					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize3srcs[this.extraquize3selected].score)
+					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize3selected})
+					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize3srcs[this.extraquize3selected].score)
 				}else{
-					this.totalPurpose = Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.quiz10srcs[this.quiz10selected].score) + Number(this.quiz11srcs[this.quiz11selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
+					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize4selected})
+					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
 				}
 				this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
 				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum, fullTime: this.fullTime, fullMinute: this.fullMinute}});
+				
+				
 			 }
 		}
 	},

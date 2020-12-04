@@ -5,14 +5,19 @@ export default () => new Vuex.Store({
 		selectAnswer: [],
 	},
 	getters: {
-		selectAnswers: (state) => state.selectAnswers,
+		selectAnswers: (state) => state.selectAnswer,
 	},
 	mutations: {
 		setSelectAnswers (state, answers) {
-            state.selectAnswers = answers
+            state.selectAnswer.push({no:answers.no,answer:answers.answer})
         },
         setSelectAnswer(state, index, answer ){
             state.selectAnswers[index] = answer
         }
 	},
+	actions:{
+		setSelectAnswers(context,payload){
+			context.commit('setSelectAnswers',payload)
+		}
+	}
 })

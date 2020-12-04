@@ -142,6 +142,7 @@ export default {
     },
 
     async mounted(){
+        
         //datasets[0].data.push(this.$route.query.toatlFormandTec)
         this.totlaScore = Number(this.$route.query.toatlFormandTec) + Number(this.$route.query.totalBody) + Number(this.$route.query.totalPurpose) + Number(28)
         this.fullTime = this.$route.query.fullTime
@@ -160,8 +161,6 @@ export default {
         }else{
             this.rank = "A"
         }
-
-
 
         if(Number(this.$route.query.typeNum) < 2.2){
             this.runnerType = "マラソンタイプ"
