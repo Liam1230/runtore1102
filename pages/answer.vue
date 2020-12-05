@@ -110,7 +110,7 @@
 							<v-container class="pa-1">
 								<v-item-group v-model="quiz5userselected" multiple>
 									<v-row>
-										<v-col v-for="(src, p) in quiz1srcs" :key="p" cols="12" md="6" >
+										<v-col v-for="(src, p) in quiz5srcs" :key="p" cols="12" md="6" >
 											<v-item v-slot="{ active, toggle }" v-bind:class="{borderRed: p==quiz5selected}"> 
 												<v-img :src="src.image" class="text-left pa-2" @click="toggle" style="pointer-events: none;">
 													<v-btn fab >
@@ -577,6 +577,7 @@ export default {
 				this.quiz12userselected = this.$store.getters.selectAnswers[i].answer
 			}
 		}
+		this.$store.dispatch('spliceSelectAnswers')
 		//console.log(this.userAnswers)
         
 	},
