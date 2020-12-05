@@ -632,6 +632,7 @@ export default {
 				// alert(errorMessages.join('\n'));
 				return false;
 			}else{
+				this.$store.dispatch('spliceSelectAnswers')
 				this.$store.dispatch('setSelectAnswers',{no:'1',answer:this.quiz1selected})
 				this.$store.dispatch('setSelectAnswers',{no:'2',answer:this.quiz2selected})
 				this.$store.dispatch('setSelectAnswers',{no:'3',answer:this.quiz3selected})

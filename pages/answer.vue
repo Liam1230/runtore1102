@@ -577,7 +577,7 @@ export default {
 				this.quiz12userselected = this.$store.getters.selectAnswers[i].answer
 			}
 		}
-		this.$store.dispatch('spliceSelectAnswers')
+		
 		//console.log(this.userAnswers)
         
 	},
