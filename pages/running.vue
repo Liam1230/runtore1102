@@ -198,7 +198,7 @@
 						<v-card width="750">
 							<v-list>
 								<v-list-item-group v-model="quiz6selected" active-class="border" color="indigo">
-									<v-list-item v-for="(src, s) in quiz10srcs" :key="s">
+									<v-list-item v-for="(src, s) in quiz6srcs" :key="s">
 										<v-list-item-content class="text-left">
 											{{src.item}}
 										</v-list-item-content>
@@ -403,9 +403,9 @@ export default {
 		quiz1category:"フォーム・技術",
 		quiz1text:"腰の落ちたフォームを選んでください",
 		quiz1srcs:[
-			{checked:false,score:6,image:"/img/check/f_1-1.jpg"},
+			{checked:false,score:0,image:"/img/check/f_1-1.jpg"},
 			{checked:false,score:3,image:"/img/check/f_1-2.jpg"},
-			{checked:false,score:0,image:"/img/check/f_1-3.jpg"},
+			{checked:false,score:6,image:"/img/check/f_1-3.jpg"},
 			{checked:false,score:1,image:"/img/check/f_1-4.jpg"},
 		],
 		quiz1selected:[],

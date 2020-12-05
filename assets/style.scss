@@ -221,6 +221,10 @@ $breakpoints: (
     border: 3px solid red;
 }
 
+.boxshadow {
+    box-shadow: 0 0 0 2px red inset;
+}
+
 .active-hover {
     cursor:pointer;
 }

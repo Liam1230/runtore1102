@@ -49,7 +49,7 @@
 									<template v-for="(src, k) in quiz2srcs">
 									<v-divider v-if="!src" :key="`divider-${k}`"></v-divider>
 									<v-list-item v-else :key="`src-${k}`" :value="src" :class="classList(2,k)" :disabled="true">
-										<v-list-item-content class="text-left" >
+										<v-list-item-content class="text-left">
 											<v-list-item-title v-text="src.item"></v-list-item-title>
 										</v-list-item-content>
 									</v-list-item>
@@ -362,12 +362,12 @@ export default {
 		quiz1category:"フォーム・技術",
 		quiz1text:"腰の落ちたフォームを選んでください",
 		quiz1srcs:[
-			{checked:false,score:6,image:"/img/check/f_1-1.jpg"},
+			{checked:false,score:0,image:"/img/check/f_1-1.jpg"},
 			{checked:false,score:3,image:"/img/check/f_1-2.jpg"},
-			{checked:false,score:0,image:"/img/check/f_1-3.jpg"},
+			{checked:false,score:6,image:"/img/check/f_1-3.jpg"},
 			{checked:false,score:1,image:"/img/check/f_1-4.jpg"},
 		],
-		quiz1selected:[0],
+		quiz1selected:[2],
 		quiz1userselected:[],
 
 		quiz2category:"体に関すること",
@@ -590,64 +590,72 @@ export default {
 				let classList = []
 				if(no===2){
 					if (item===2) {
-						classList.push('borderRed')
-					}else if(item===this.quiz2userselected){
+						classList.push('boxshadow')
+					}if(item===this.quiz2userselected){
 						classList.push('border')
 					}
 				}
 				if(no===3){
 					if (item===3) {
-						classList.push('borderRed')
-					}else if(item===this.quiz3userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz3userselected){
 						classList.push('border')
 					}
 				}
 				if(no===6){
 					if (item===0) {
-						classList.push('borderRed')
-					}else if(item===this.quiz6userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz6userselected){
 						classList.push('border')
 					}
 				}
 				if(no===9){
 					if (item===3) {
-						classList.push('borderRed')
-					}else if(item===this.quiz9userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz9userselected){
 						classList.push('border')
 					}
 				}
 				if(no===10){
 					if (item===1) {
-						classList.push('borderRed')
-					}else if(item===this.quiz10userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz10userselected){
 						classList.push('border')
 					}
 				}
 				if(no===11){
 					if (item===2) {
-						classList.push('borderRed')
-					}else if(item===this.quiz12userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz12userselected){
 						classList.push('border')
 					}
 				}
 				if(no===12){
 					if (item===2) {
-						classList.push('borderRed')
-					}else if(item===this.quiz12userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz12userselected){
 						classList.push('border')
 					}
 				}
 				if(no===13){
 					if (item===3) {
-						classList.push('borderRed')
-					}else if(item===this.quiz12userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz12userselected){
 						classList.push('border')
 					}
 				}
 				if(no===14){
 					if (item===1) {
-						classList.push('borderRed')
-					}else if(item===this.quiz12userselected){
+						classList.push('boxshadow')
+					}
+					if(item===this.quiz12userselected){
 						classList.push('border')
 					}
 				}
