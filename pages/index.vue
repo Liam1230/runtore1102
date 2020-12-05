@@ -74,14 +74,14 @@
         <v-col cols="12" md="5">
           <v-btn rounded x-large @click="formClick" color="secondary">フォーム</v-btn>
           <v-expansion-panels flat v-model="formOpen" multiple class="mt-5">
-            <v-expansion-panel v-for="(item,i) in 1" :key="i"  class="">
+            <v-expansion-panel class="">
               <v-expansion-panel-content>
                 <v-card height="100px" class="my-3" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
-                  <nuxt-link :to="`/${content.id}`">
+                  <nuxt-link :to="`/blogCategory?categoryId=${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
                       <v-col cols="8" class="d-flex align-center pt-2 pl-5">
                         <h3 class="text-left text-h6">
-                          ・{{content.title}}
+                          ・{{content.name}}
                         </h3>
                         <!-- <p class="text-body-2 text-left">
                           {{content.seoDescription | blogTextFileter}}
@@ -89,7 +89,8 @@
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
-                        <v-img height="100px" :src="content.headerImg.url"></v-img>
+                        <v-img v-if="content.image" height="100px" :src="content.image.url"></v-img>
+                        <v-img v-else height="100px" src="/img/Run_tore_rogo.png"></v-img>
                       </v-col>
                     </v-row>
                   </nuxt-link>
@@ -104,14 +105,14 @@
         <v-col cols="12" md="5">
           <v-btn rounded x-large @click="painClick" color="secondary">痛み</v-btn>
           <v-expansion-panels flat v-model="painOpen" multiple class="mt-5 px-0">
-            <v-expansion-panel v-for="(item,i) in 1" :key="i">
+            <v-expansion-panel>
               <v-expansion-panel-content>
                 <v-card height="100px" class="my-3" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
-                  <nuxt-link :to="`/${content.id}`">
+                  <nuxt-link :to="`/blogCategory?categoryId=${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between pa-0">
-                      <v-col cols="8" class="pt-2 pl-5">
+                      <v-col cols="8" class="d-flex align-center pt-2 pl-5">
                         <h3 class="text-left text-h6">
-                          ・{{content.title}}
+                          ・{{content.name}}
                         </h3>
                         <!-- <p class="text-body-2 text-left">
                           {{content.seoDescription | blogTextFileter}}
@@ -119,7 +120,8 @@
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
                       <v-col cols="4" class="py-0">
-                        <v-img height="100px" :src="content.headerImg.url"></v-img>
+                        <v-img v-if="content.image" height="100px" :src="content.image.url"></v-img>
+                        <v-img v-else height="100px" src="/img/Run_tore_rogo.png"></v-img>
                       </v-col>
                     </v-row>
                   </nuxt-link>
@@ -189,7 +191,7 @@ export default {
         this.formOpen = [0]
         const { data } = await axios.get(
           // your-service-id部分は自分のサービスidに置き換えてください
-          `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.formid}`,
+          `https://runtrainingnote.microcms.io/api/v1/hpcategory2?filters=parent[equals]${this.formid}`,
           {
               headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
           }
@@ -210,7 +212,7 @@ export default {
         this.painOpen = [0]
         const { data } = await axios.get(
           // your-service-id部分は自分のサービスidに置き換えてください
-          `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.painid}`,
+          `https://runtrainingnote.microcms.io/api/v1/hpcategory2?filters=parent[equals]${this.painid}`,
           {
               headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
           }
