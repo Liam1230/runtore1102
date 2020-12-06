@@ -2,6 +2,18 @@
   <v-app dark>
     <v-dialog v-model="menu" class="" overlay-color="rgba(0, 173, 255, 0.7)" overlay-opacity="255">
       <v-card class="pa-3">
+        <v-treeview :items="items" transition activatable hoverable>
+          <template v-slot:label="{ item }">
+            <template v-if="item.id">
+              <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
+                <u><b class="">{{ item.name }}</b></u>
+              </nuxt-link>
+            </template>
+            <template v-else>
+              <u><b class="">{{ item.name }}</b></u>
+            </template>
+          </template>
+        </v-treeview>
       </v-card>
     </v-dialog>
     <v-app-bar :clipped-left="clipped" fixed color="rgba(0, 173, 255, 0.7)">
@@ -97,7 +109,10 @@ export default {
     }
   },
   methods:{
-    
+    movePage(to){
+      this.$router.push(to);
+      this.menu = false
+    }
   },
   async mounted(){
 
