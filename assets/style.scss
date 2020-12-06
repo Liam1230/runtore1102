@@ -264,3 +264,15 @@ $breakpoints: (
         margin-top:3.5rem;
     }
 }
+
+.expantion-content{
+    margin: 0 auto;
+    @include mq(mdAndUp){
+        width:500px;
+        height:120px;
+    }
+    @include mq(smAndDown){
+        width: 248px;
+        height: 60px;
+    }
+}
