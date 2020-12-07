@@ -11,10 +11,9 @@
 			</v-snackbar>
 			<h1 class="text-h3 mt-5 title-text-color">回答</h1>
 			<h2 class="mt-3  title-text-color">-Answer-</h2>
-			<v-row class="align-center justify-center   flex-wrap">
+			<v-row class="align-center justify-center flex-wrap">
 				<v-col cols=12 sm=12 md=1></v-col>
 				<v-col cols=10 class="text-center">
-					
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
 							<h3 class="main-color text-h5">Q.1 {{quiz1text}}</h3>
@@ -38,6 +37,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz1CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz1CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -57,6 +57,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="quiz2CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz2CommentId">解説はこちら</v-btn>
 					</v-row>
 					
 					<v-row class="align-center justify-center mt-3 mx-0">
@@ -77,6 +78,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="quiz3CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz3CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -101,6 +103,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz4CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz4CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -125,6 +128,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz5CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz5CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -144,6 +148,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="quiz6CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz6CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -168,6 +173,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz7CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz7CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -192,6 +198,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz8CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz8CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -211,6 +218,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="quiz9CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz9CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -230,6 +238,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="quiz10CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz10CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -254,6 +263,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
+						<v-btn v-if="quiz11CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz11CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -273,6 +283,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="extraquize1CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize1CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -292,6 +303,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="extraquize2CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize2CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -311,6 +323,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="extraquize3CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize3CommentId">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -330,6 +343,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
+						<v-btn v-if="extraquize4CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize4CommentId">解説はこちら</v-btn>
 					</v-row>
 				</v-col>
 				<v-col cols=12 sm=12 md=1></v-col>
@@ -346,6 +360,22 @@
 <script>
 
 export default {
+	filters:{
+        dateFilter(val){
+            const date = new Date(val)
+            return `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`
+		},
+		blogTextFileter(val){
+            if(!val) return ""
+            if(val.length > 40){
+                let tmp = val.substr(0,40)
+                tmp += "…"
+                return tmp
+            }else {
+                return val
+            }
+        }
+	},
 	data: () => ({
 		errorText:"",
 		snackBar:false,
@@ -369,6 +399,8 @@ export default {
 		],
 		quiz1selected:[2],
 		quiz1userselected:[],
+		quiz1Comment:{},
+		quiz1CommentId: "rke9zq62x",
 
 		quiz2category:"体に関すること",
 		quiz2text:"フルマラソンを走るペースは、どの程度の速度が良いか選んでください",
@@ -380,6 +412,8 @@ export default {
 		],
 		quiz2selected:2,
 		quiz2userselected:0,
+		quiz2Comment:{},
+		quiz2CommentId: "nr0oamb2x",
 
 		quiz3category:"目標計画",
 		quiz3text:"練習の目的として「適切ではないもの」を選んでください",
@@ -391,6 +425,8 @@ export default {
 		],
 		quiz3selected:3,
 		quiz3userselected:0,
+		quiz3Comment:{},
+		quiz3CommentId: "zpkbhj0q9",
 
 		quiz4category:"フォーム・技術",
 		quiz4text:"着地位置として「正しいもの」を「2つ」選んでください",
@@ -402,6 +438,8 @@ export default {
 		],
 		quiz4selected:[1,2],
 		quiz4userselected:[],
+		quiz4Comment:{},
+		quiz4CommentId: "zxkx8pntb",
 
 		quiz5category:"体に関すること",
 		quiz5text:"伸ばしたい筋肉とストレッチ方法の組み合わせとして「間違っているもの」はどれか選んでください",
@@ -413,6 +451,8 @@ export default {
 		],
 		quiz5selected:0,
 		quiz5userselected:[],
+		quiz5Comment:{},
+		quiz5CommentId: "1nyhd6cmb",
 
 		quiz6category:"目標計画",
 		quiz6text:"ランニングにおいて練習方法として適しているものを選んでください!",
@@ -424,6 +464,8 @@ export default {
 		],
 		quiz6selected:0,
 		quiz6userselected:0,
+		quiz6Comment:{},
+		quiz6CommentId: "",
 
 		quiz7category:"フォーム・技術",
 		quiz7text:"腰の落ちたフォームを改善するために「効果の低いもの」を選んでください",
@@ -435,6 +477,8 @@ export default {
 		],
 		quiz7selected:3,
 		quiz7userselected:[],
+		quiz7Comment:{},
+		quiz7CommentId: "rke9zq62x",
 
 		quiz8category:"体に関すること",
 		quiz8text:"ランニング前後の食事摂取の方法として「適切ではない」組み合わせのものを「2つ」選んでください",
@@ -446,6 +490,8 @@ export default {
 		],
 		quiz8selected:[0,1],
 		quiz8userselected:[],
+		quiz8Comment:{},
+		quiz8CommentId: "",
 
 		quiz9category:"目標計画",
 		quiz9text:"課題に合わせた練習内容として適したものを選んでください!",
@@ -457,6 +503,8 @@ export default {
 		],
 		quiz9selected:3,
 		quiz9userselected:0,
+		quiz9Comment:{},
+		quiz9CommentId: "",
 
 		quiz10category:"フォーム・技術",
 		quiz10text:"ご自身でペースをコントロールできますか？",
@@ -468,6 +516,8 @@ export default {
 		],
 		quiz10selected:1,
 		quiz10userselected:0,
+		quiz10Comment:{},
+		quiz10CommentId: "rt7thpswy",
 
 		quiz11category:"体に関すること",
 		quiz11text:"クールダウン・セルフケアの方法と効果で組み合わせが「間違っているもの」を選んでください",
@@ -479,6 +529,8 @@ export default {
 		],
 		quiz11selected:3,
 		quiz11userselected:[],
+		quiz11Comment:{},
+		quiz11CommentId: "rke9zq62x",
 
 		quiz12category:"目標計画",
 		quiz12text:"フルマラソンを○○切りするための設定タイムとしてものとして「適切ではないもの」を選んでください ※あなたのベストタイムに合わせて問 題文が変わるようになっています!あなたのレベルに沿った答えをお選びください!",
@@ -490,6 +542,8 @@ export default {
 		],
 		quiz12selected:0,
 		quiz12userselected:0,
+		quiz12Comment:{},
+		quiz12CommentId: "rke9zq62x",
 
 		extraquize1:"フルマラソンを5時間切りするために 適切な内容をお選びください",
 		extraquize1srcs:[
@@ -500,36 +554,44 @@ export default {
 		],
 		extraquize1point:0,
 		extraquize1selected:2,
+		extraquize1Comment:{},
+		extraquize1CommentId:"ze6dougzw",
 
 		extraquize2:"フルマラソンを4時間切りするために 適切な内容をお選びください",
 		extraquize2srcs:[
-			{checked:false,score:0,item:"1km 4分40秒"},
-			{checked:false,score:0,item:"5km 25分"},
-			{checked:false,score:6,item:"10km 45分"},
-			{checked:false,score:0,item:"ハーフ 51分~52分"},
+			{checked:false,score:0,item:"1kmを4分40秒で走ることができる"},
+			{checked:false,score:0,item:"5kmを25分で走ることができる"},
+			{checked:false,score:6,item:"10kmを45分で走ることができる"},
+			{checked:false,score:0,item:"ハーフを51分~52分で走ることができる"},
 		],
 		extraquize2point:0,
 		extraquize2selected:2,
+		extraquize2Comment:{},
+		extraquize2CommentId:"xocg0ahey1",
 
 		extraquize3:"フルマラソンを3時間30分切りするために 適切な内容をお選びください",
 		extraquize3srcs:[
-			{checked:false,score:0,item:"5km 25分"},
-			{checked:false,score:0,item:"5km 21分40秒"},
-			{checked:false,score:0,item:"10km 45分"},
-			{checked:false,score:6,item:"ハーフ 51分~52分"},
+			{checked:false,score:0,item:"5kmを25分で走ることができる"},
+			{checked:false,score:0,item:"5kmを21分40秒で走ることができる"},
+			{checked:false,score:0,item:"10kmを45分で走ることができる"},
+			{checked:false,score:6,item:"ハーフを51分~52分で走ることができる"},
 		],
 		extraquize3point:3,
 		extraquize3selected:3,
+		extraquize3Comment:{},
+		extraquize3CommentId:"4xphoxv-1",
 
 		extraquize4:"フルマラソンを3時間切りするために 適切な内容をお選びください",
 		extraquize4srcs:[
-			{checked:false,score:0,item:"1km 3分30秒"},
-			{checked:false,score:6,item:"5km 21分40秒"},
-			{checked:false,score:0,item:"10km 38分20秒~39分"},
-			{checked:false,score:0,item:"ハーフ 22分~25分"},
+			{checked:false,score:0,item:"1kmを3分30秒で走ることができる"},
+			{checked:false,score:6,item:"5kmを21分40秒で走ることができる"},
+			{checked:false,score:0,item:"10kmを38分20秒~39分で走ることができる"},
+			{checked:false,score:0,item:"ハーフを22分~25分で走ることができる"},
 		],
 		extraquize4point:0,
 		extraquize4selected:1,
+		extraquize4Comment:{},
+		extraquize4CommentId:"3oevrcrl4",
 
 		toatlFormandTec:0,
 		totalBody:0,
@@ -577,14 +639,91 @@ export default {
 				this.quiz12userselected = this.$store.getters.selectAnswers[i].answer
 			}
 		}
-		
-		//console.log(this.userAnswers)
-        
+
+		// this.quiz1Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz1CommentId);
+		// });
+		// this.quiz2Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz2CommentId);
+		// });
+		// this.quiz3Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz3CommentId);
+		// });
+		// this.quiz4Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz4CommentId);
+		// });
+		// this.quiz5Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz5CommentId);
+		// });
+		// this.quiz6Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz6CommentId);
+		// });
+		// this.quiz7Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz7CommentId);
+		// });
+		// this.quiz8Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz8CommentId);
+		// });
+		// this.quiz9Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz9CommentId);
+		// });
+		// this.quiz10Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz10CommentId);
+		// });
+		// this.quiz11Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.quiz11CommentId);
+		// });
+		// //console.log(this.userAnswers)
+		// this.extraquize1Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.extraquize1CommentId);
+		// });
+        // this.extraquize2Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.extraquize2CommentId);
+		// });
+		// this.extraquize3Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.extraquize3CommentId);
+		// });
+		// this.extraquize4Comment = await this.blog.find((blog) => {
+		// 	return (blog.id == this.extraquize4CommentId);
+		// });
 	},
 
 	methods:{
 	},
+	async asyncData(ctx) {
+		// const quizCommentIds = [
+		// 	"rke9zq62x",
+		// 	"nr0oamb2x",
+		// 	"zpkbhj0q9",
+		// 	"zxkx8pntb",
+		// 	"1nyhd6cmb",
+		// 	// "",
+		// 	"rke9zq62x",
+		// 	// "",
+		// 	// "",
+		// 	"rt7thpswy",
+		// 	// "",
+		// 	//12問目
+		// 	"ze6dougzw",
+		// 	"xocg0ahey1",
+		// 	"4xphoxv-1",
+		// 	"3oevrcrl4"
+		// ]
 
+		// let query = "?ids=" + quizCommentIds.join(',')
+
+        // const { data } = await ctx.$axios.get(
+        //     // your-service-id部分は自分のサービスidに置き換えてください
+        //     `https://runtrainingnote.microcms.io/api/v1/blog${query}`,
+        //     {
+        //         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+        //     }
+		// )
+		// // console.log(data)
+        // return {
+		// 	blog: data.contents
+		// }
+    },
 	computed: {
 		classList: function () {
 			return function(no,item) {
