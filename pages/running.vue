@@ -395,7 +395,7 @@ export default {
 		fullMinute:null,
 		halfTime:null,
 		halfMinute:null,
-		typeNum:0,
+		typeNum:null,
 		items: ['1', '2', '3', '4', '5', '6','7'],
         halfTimes:['1','2','3'],
         times: ['1', '2', '3', '4', '5', '6','7'],
@@ -659,7 +659,9 @@ export default {
 					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize4selected})
 					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
 				}
-				this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
+				if(this.fullTime && this.halfTime){
+					this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
+				}
 				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum, fullTime: this.fullTime, fullMinute: this.fullMinute}});
 				
 				

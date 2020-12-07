@@ -23,8 +23,10 @@
                     <canvas id="resultCharts"></canvas>
 				</v-col>
 			</v-row>
-            <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
-            <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
+            <div v-if="this.runnerType != null"> 
+                <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
+                <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
+            </div>
             <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
             <div class="main-under-line mt-5">
                 <h3 class="text-h4 main-color text-left">あなたの弱点は・・・</h3>
@@ -162,18 +164,24 @@ export default {
             this.rank = "A"
         }
 
-        if(Number(this.$route.query.typeNum) < 2.2){
-            this.runnerType = "マラソンタイプ"
-        }else{
-            this.runnerType = "スピードタイプ"
+        if(this.$route.query.typeNum){
+            if(Number(this.$route.query.typeNum) < 2.2){
+                this.runnerType = "マラソンタイプ"
+            }else{
+                this.runnerType = "スピードタイプ"
+            }
         }
 
-        if(this.fullTime > 5){
+        if(Number(this.fullTime) >= 5){
             this.timeID = "ze6dougzw"
-        }else if(this.fullTime > 4){
+        }else if(Number(this.fullTime) >= 4){
             this.timeID = "xocg0ahey1"
-        }else{
+        }else if((Number(this.fullTime) == 3) && (Number(this.fullMinute) >= 30)){
+            this.timeID = "4xphoxv-1"
+        }else if(Number(this.fullTime) >= 3){
             this.timeID = "3oevrcrl4"
+        }else if(!this.fullTime){
+            this.timeID = null
         }
 
         this.randomId = this.randomsrc[Math.floor(Math.random() * this.randomsrc.length)].id
