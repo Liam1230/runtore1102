@@ -2,15 +2,15 @@
   <v-app dark>
     <v-dialog v-model="menu" class="" overlay-color="rgba(0, 173, 255, 0.7)" overlay-opacity="255">
       <v-card class="pa-3">
-        <v-treeview :items="items" transition activatable hoverable>
+        <v-treeview :items="items" transition activatable hoverable open-on-click>
           <template v-slot:label="{ item }">
-            <template v-if="item.id">
+            <template v-if="!item.children">
               <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
                 <u><b class="">{{ item.name }}</b></u>
               </nuxt-link>
             </template>
             <template v-else>
-              <u><b class="">{{ item.name }}</b></u>
+              <b class="main-color">{{ item.name }}</b>
             </template>
           </template>
         </v-treeview>
