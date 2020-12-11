@@ -230,7 +230,7 @@ export default {
   async asyncData(ctx){
     const { data } = await ctx.$axios.get(
         // your-service-id部分は自分のサービスidに置き換えてください
-        `https://runtrainingnote.microcms.io/api/v1/blog`,
+        `https://runtrainingnote.microcms.io/api/v1/blog?limit=300`,
         {
             headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
         }
