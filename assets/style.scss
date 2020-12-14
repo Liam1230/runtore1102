@@ -276,3 +276,76 @@ $breakpoints: (
         height: 60px;
     }
 }
+
+.lp-body{
+	background:white;
+	width:100vw !important;
+	max-width:none !important;
+	max-height:none;
+	margin:0;
+	padding:0 !important;
+}
+.line-green{
+	background:#21ad21
+}
+.info-dark{
+    background:linear-gradient(145deg, #202020, #202020 60%, #606060 100%);
+}
+
+.triangle-under{
+    width:0;
+    height:0;
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-top:20px solid #202020;
+    transform:scaleY(2);
+}
+
+.voices{
+    border:solid 1px black;
+    box-shadow:0 4px 10px #707070;
+}
+
+.hr{
+    display:flex;
+    align-items:center;
+}
+
+.bubble-1{
+    position: relative;
+    background:#cfcfcf;
+    color:#404040;
+    z-index:1;
+}
+.bubble-1::before{
+    content:"";
+    position:absolute;
+    display:block;
+    width:0;
+    height:0;
+    border-radius:50%;
+    transform:rotate(45deg);
+    left:-18px;
+    top:-18px;
+    border-left:25px solid #cfcfcf;
+    border-bottom:25px solid #cfcfcf;
+    border-right:25px solid transparent;
+    border-top:25px solid transparent;
+    z-index:-1;
+}
+.bubble-1::after{
+    content:"";
+    position:absolute;
+    display:block;
+    width:0;
+    height:0;
+    border-radius:50%;
+    transform:rotate(45deg);
+    left:-18px;
+    top:-33px;
+    border-left:25px solid white;
+    border-bottom:25px solid white;
+    border-right:25px solid transparent;
+    border-top:25px solid transparent;
+    z-index:-1;
+}
