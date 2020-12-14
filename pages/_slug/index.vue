@@ -49,7 +49,8 @@ export default {
       const dics = []
       for(const r of res){
         const id = r.match(/id="(.+?)"/)[1]
-        const text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
+        let text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
+        text = text.replace(/<.*?>/g,"")
         dics.push({
           id:id,
           text:text

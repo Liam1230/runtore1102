@@ -28,6 +28,15 @@
                 <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
             </div>
             <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
+            <template v-if="runnerType">
+                <div class="main-under-line mt-5">
+                    <h3 class="text-h4 main-color text-left">{{runnerType}}のあなたは・・・</h3>
+                </div>
+                <template>
+                    <p class="my-5 text-left" v-if="runnerType == 'マラソンタイプ'">{{marasonComment}}</p>
+                    <p class="my-5 text-left" v-else-if="runnerType == 'スピードタイプ'">{{speadComment}}</p>
+                </template>
+            </template>
             <div class="main-under-line mt-5">
                 <h3 class="text-h4 main-color text-left">あなたの弱点は・・・</h3>
             </div>
@@ -111,6 +120,8 @@ export default {
         toatlFormandTec:null,
         totalBody:null,
         totalPurpose:null,
+        speadComment : "自分に合ったタイプに合わせて練習を行うことをおすすめしています！\nあなたは、フルマラソンのタイムに比べ、ハーフマラソンのタイムが速い「スピードを出すことに向いている」タイプです！長距離の練習を増やすことやペース配分などのテクニックを磨くことによって、フルマラソンのタイムを伸ばすことを見込めます！",
+        marasonComment : "自分に合ったタイプに合わせて練習を行うことをおすすめしています！\nあなたは、ハーフマラソンのタイムに比べ、フルマラソンのタイムが速い「長距離を走ることに向いている」タイプです！\nスピード練習や筋力トレーニングを増やすことによってフルマラソンのタイムを伸ばすことを見込めます！",
         taskBodyTitle:"【体に関する知識】",
         taskBody:"ストレッチやトレーニング・栄養面など、体作りに関する知識のレベルを高めれば、ランニングを行う上で土台となる身体をメンテナンスできるようになり、更なるレベルアップを狙えます！課題に合わせたおすすめの記事を厳選しておりますので、そちらも合わせてご覧ください！",
         taskPracticeTitle:"【練習メニューに関する知識】",
