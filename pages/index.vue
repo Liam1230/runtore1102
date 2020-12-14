@@ -60,6 +60,7 @@
     <section class="mb-5 pb-5 p-relative" style="margin-top: -100px;">
       <v-img width="90%" style="margin-left: auto;" src="/img/sectiontop2.png" lazy-src="/img/sectiontop2_l.png"></v-img>
       <div class="">
+        
         <v-container column justify-center class="min-container text-center" style="margin-top:-1px;">
           <h1 class="text-h3 mt-5 pt-5 title-text-color">痛みをそのまま放置しないために</h1>
           <h2 class="mt-3 title-text-color">-Pain-</h2>
