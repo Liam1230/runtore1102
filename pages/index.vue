@@ -79,7 +79,7 @@
                 <v-card class="my-3 expantion-content" color="#FFE200" v-for="(content, i) in formcontens" :key="i">
                   <nuxt-link :to="`/blogCategory?categoryId=${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between py-0">
-                      <v-col cols="8" class="d-flex align-center pt-2 pl-5">
+                      <v-col cols="7" class="d-flex align-center pt-2 pl-5">
                         <h3 class="text-left text-h6">
                           ・{{content.name}}
                         </h3>
@@ -88,7 +88,7 @@
                         </p> -->
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
-                      <v-col cols="4" class="py-0">
+                      <v-col cols="5" class="py-0">
                         <v-img v-if="content.image" :height="$vuetify.breakpoint.mdAndUp ? '120px' : '60px' " :src="content.image.url"></v-img>
                         <v-img v-else  :height="$vuetify.breakpoint.mdAndUp ? '120px' : '60px'" src="/img/Run_tore_rogo.png"></v-img>
                       </v-col>
@@ -110,7 +110,7 @@
                 <v-card class="my-3 expantion-content" color="#FFE200" v-for="(content, i) in paincontens" :key="i">
                   <nuxt-link :to="`/blogCategory?categoryId=${content.id}`">
                     <v-row class="d-flex black--text flex-no-wrap justify-space-between pa-0">
-                      <v-col cols="8" class="d-flex align-center pt-2 pl-5">
+                      <v-col cols="7" class="d-flex align-center pt-2 pl-5">
                         <h3 class="text-left text-h6">
                           ・{{content.name}}
                         </h3>
@@ -119,7 +119,7 @@
                         </p> -->
                         <!-- <v-card-title class="text-h5" v-text=""></v-card-title> -->
                       </v-col>
-                      <v-col cols="4" class="py-0">
+                      <v-col cols="5" class="py-0">
                         <v-img v-if="content.image" :height="$vuetify.breakpoint.mdAndUp ? '120px' : '60px' " :src="content.image.url"></v-img>
                         <v-img v-else  :height="$vuetify.breakpoint.mdAndUp ? '120px' : '60px'" src="/img/Run_tore_rogo.png"></v-img>
                       </v-col>
