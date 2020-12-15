@@ -80,7 +80,7 @@
 				<div class="triangle-under pa-0 ma-0 mb-12"></div>
 				<div v-for="(v, i) in voices" class="mr-4 ml-4 mt-10 rounded-xl voices text-justify" :key="i">
 					<div style="display:flex; align-items:center;">
-						<img :src="(v.gender=='male' ? '/img/male.png':'img/female.png')" width="48">
+						<img :src="(v.gender=='male' ? '/img/male.png':'/img/female.png')" width="48">
 						<div class="ml-4 text-xl" style="color:#404040">{{v.name}}</div>
 					</div>
 					<img class="mt-4" src="/img/STAR.png" height="20">
