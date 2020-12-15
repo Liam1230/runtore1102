@@ -2,7 +2,7 @@
 	<v-container class="lp-body">
 		<v-system-bar height="56" color="#000000e4" fixed>
 			<v-row class="d-flex justify-end" no-gutters>
-				<div class="d-flex align-center line-green rounded-lg mr-8 overflow-hidden">
+				<div class="pointer d-flex align-center line-green rounded-lg mr-8 overflow-hidden" @click="toLINEAccount()">
 					<v-img width="40" contain src="/img/LINE_icon.png"></v-img>
 					<div class="ml-1 mr-3 text-s font-weight-bold white--text">今すぐLINE公式アカウントに登録</div>
 				</div>
@@ -22,7 +22,7 @@
 				<div>ランニングフォームを簡単チェック</div>
 			</div>
 			<div class="mt-8 hr justify-center" no-gutters>
-				<div class="d-flex align-center line-green rounded-lg overflow-hidden pa-0">
+				<div class="pointer d-flex align-center line-green rounded-lg overflow-hidden pa-0" @click="toLINEAccount()">
 					<v-img class="ml-1" width="48" contain src="/img/LINE_icon.png"></v-img>
 					<div class="ml-3 mr-8 text-s font-weight-bold white--text">今すぐLINE公式アカウントに登録</div>
 				</div>
@@ -121,7 +121,7 @@
 					<div>ランニングフォームを簡単チェック</div>
 				</div>
 				<div class="mt-8 hr justify-center" no-gutters>
-					<div class="d-flex align-center line-green rounded-lg overflow-hidden pa-0">
+					<div class="pointer d-flex align-center line-green rounded-lg overflow-hidden pa-0" @click="toLINEAccount()">
 						<v-img class="ml-1" width="48" contain src="/img/LINE_icon.png"></v-img>
 						<div class="ml-3 mr-8 text-s font-weight-bold white--text">今すぐLINE公式アカウントに登録</div>
 					</div>
@@ -215,7 +215,7 @@
 						<div>ランニングフォームを簡単チェック</div>
 					</div>
 					<div class="mt-8 hr justify-center" no-gutters>
-						<div class="d-flex align-center line-green rounded-lg overflow-hidden pa-0">
+						<div class="pointer d-flex align-center line-green rounded-lg overflow-hidden pa-0" @click="toLINEAccount()">
 							<v-img class="ml-1" width="48" contain src="/img/LINE_icon.png"></v-img>
 							<div class="ml-3 mr-8 text-s font-weight-bold white--text">今すぐLINE公式アカウントに登録</div>
 						</div>
@@ -276,6 +276,11 @@
 					その結果はタイムに現れています！`
 				},
 			],
-		})
+		}),
+		methods:{
+			toLINEAccount(){
+				window.open('https://lin.ee/xeES277', '_blank');
+			}
+		}
 	}
 </script>
