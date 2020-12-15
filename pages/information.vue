@@ -10,7 +10,7 @@
 		</v-system-bar>
 		<v-col no-gutters class="pa-0 font-weight-bold mt-13" align="center" wrap>
 			<picture>
-				<source media="(max-width:960px)" srcset="/img/firstview_Mobile_500.png">
+				<source media="(max-width:960px)" srcset="/img/firstview_Mobile.png">
 				<img width="100%" src="/img/firstview.png">
 			</picture>
 			<div class="text-xl">
