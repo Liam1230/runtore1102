@@ -1,17 +1,17 @@
 <template>
 	<v-container class="lp-body">
 		<v-system-bar height="56" color="#000000e4" fixed>
-			<v-row class="d-flex justify-end" no-gutters>
-				<div class="pointer d-flex align-center line-green rounded-lg mr-8 overflow-hidden" @click="toLINEAccount()">
+			<v-row class="d-flex header-link" no-gutters>
+				<div class="pointer d-flex align-center line-green rounded-lg overflow-hidden" @click="toLINEAccount()">
 					<v-img width="40" contain src="/img/LINE_icon.png"></v-img>
 					<div class="ml-1 mr-3 text-s font-weight-bold white--text">今すぐLINE公式アカウントに登録</div>
 				</div>
 			</v-row>
 		</v-system-bar>
-		<v-col no-gutters class="pa-0 font-weight-bold" align="center" wrap>
+		<v-col no-gutters class="pa-0 font-weight-bold mt-13" align="center" wrap>
 			<picture>
 				<source media="(max-width:960px)" srcset="/img/firstview_Mobile_500.png">
-				<img class="mt-11" width="100%" src="/img/firstview.png">
+				<img width="100%" src="/img/firstview.png">
 			</picture>
 			<div class="text-xl">
 				<div class="mt-12">フォーム改善で自己ベストを</div>

@@ -649,6 +649,15 @@ $breakpoints: (
         text-align: left;
     }
 }
+.header-link{
+    @media screen and (max-width:960px){
+        justify-content: center;
+    }
+    @media screen and (min-width:960px){
+        justify-content: flex-end;
+        padding-right:32px;
+    }
+}
 
 .pointer{
     cursor: pointer;
