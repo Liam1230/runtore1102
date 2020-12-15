@@ -92,29 +92,31 @@
 					こんな不安があっても大丈夫‼︎
 				</div>
 				<div class="info-dark mt-1 pa-1"></div>
-				<div class="hr mt-8">
-					<img width="16%" src="/img/woman.png">
-					<div class="bubble bubble-1 rounded-xl text-s font-weight-bold">
-						オンラインって難しいし手間がかかる？
+				<div style="width:95%;">
+					<div class="hr mt-8">
+						<img width="16%" src="/img/woman.png">
+						<div class="bubble bubble-1 rounded-xl text-s font-weight-bold">
+							オンラインって難しいし手間がかかる？
+						</div>
 					</div>
-				</div>
-				<div class="hr q-a">
-					<div class="text-justify ml-auto bubble bubble-2 rounded-xl text-s font-weight-bold">
-						簡単 ３STEP！ LINEを登録してランニングフォームの動画を送るだけ！
+					<div class="hr q-a">
+						<div class="text-justify ml-auto bubble bubble-2 rounded-xl text-s font-weight-bold">
+							簡単 ３STEP！ LINEを登録してランニングフォームの動画を送るだけです！
+						</div>
+						<img width="16%" src="/img/man.png">
 					</div>
-					<img width="16%" src="/img/man.png">
-				</div>
-				<div class="hr q-a">
-					<img width="16%" src="/img/woman.png">
-					<div class="bubble bubble-1 rounded-xl text-s font-weight-bold">
-						直接顔を見て話す？
+					<div class="hr q-a">
+						<img width="16%" src="/img/woman.png">
+						<div class="bubble bubble-1 rounded-xl text-s font-weight-bold">
+							直接顔を見て話す？
+						</div>
 					</div>
-				</div>
-				<div class="hr q-a">
-					<div class="text-justify ml-auto bubble bubble-2 rounded-xl text-s font-weight-bold">
-						LINE上のやり取りで完結するため、直接顔を合わせてお話する事はないので安心です！
+					<div class="hr q-a">
+						<div class="text-justify ml-auto bubble bubble-2 rounded-xl text-s font-weight-bold">
+							LINE上のやり取りで完結するため、直接顔を合わせてお話する事はないので安心です！
+						</div>
+						<img width="16%" src="/img/man.png">
 					</div>
-					<img width="16%" src="/img/man.png">
 				</div>
 				<div class="text-xl">
 					<div class="mt-12">『LINE』を使ってあなたの</div>
