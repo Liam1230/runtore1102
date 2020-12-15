@@ -505,6 +505,8 @@ $breakpoints: (
     outline:1px solid black;
     outline-offset:-4px;
     width:100%;
+    margin-left:4px;
+    margin-right:4px;
     display:grid;
     @media screen and (max-width:960px){
         padding:48px;
