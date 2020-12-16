@@ -9,18 +9,10 @@
 			</v-row>
 		</v-system-bar>
 		<v-col no-gutters class="pa-0 font-weight-bold mt-13" align="center" wrap>
-			<div style="position:relative">
-				<div v-if="!onload" style="position:absolute; top:0; left:0; right:0; bottom:0;">
-					<picture>
-						<source media="(max-width:960px)" srcset="/img/mobile_lazy.png">
-						<img width="100%" src="/img/firstview.png">
-					</picture>
-				</div>
-				<picture>
-					<source media="(max-width:960px)" srcset="/img/firstview_Mobile.png">
-					<img width="100%" src="/img/firstview.png" :onload="loaded()">
-				</picture>
-			</div>
+			<picture>
+				<source media="(max-width:960px)" srcset="/img/firstview_Mobile.png">
+				<img width="100%" src="/img/firstview.png">
+			</picture>
 			<div class="text-xl">
 				<div class="mt-12">フォーム改善で自己ベストを</div>
 				<div>更新しましょう！</div>
@@ -251,8 +243,6 @@
 			info3:`一人一人のランニングフォームの課題点を分かりやすくレポートにしてまとめます。
 			質問の回答に合わせてランニングのアドバイスも致します。`,
 
-			onload:false,
-
 			//ユーザーの声を編集するならココ！
 			/*
 				name:ユーザー名
@@ -292,9 +282,6 @@
 		mounted(){
 		},
 		methods:{
-			loaded(){
-				this.onload=true;
-			},
 			toLINEAccount(){
 				window.open('https://lin.ee/xeES277', '_blank');
 			}
