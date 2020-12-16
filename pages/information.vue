@@ -1,6 +1,6 @@
 <template>
 	<v-container class="lp-body">
-		<v-system-bar height="56" color="#000000e4" fixed>
+		<v-system-bar height="56" color="#000000e4" fixed style="padding:0; margin:0;">
 			<v-row class="d-flex header-link" no-gutters>
 				<div class="pointer d-flex align-center line-green rounded-lg overflow-hidden" @click="toLINEAccount()">
 					<v-img width="40" contain src="/img/LINE_icon.png"></v-img>
@@ -92,7 +92,7 @@
 					こんな不安があっても大丈夫‼︎
 				</div>
 				<div class="info-dark mt-1 pa-1"></div>
-				<div style="width:95%;">
+				<div style="width:90%;">
 					<div class="hr mt-8">
 						<img width="16%" src="/img/woman.png">
 						<div class="bubble bubble-1 rounded-xl text-s font-weight-bold">
