@@ -9,10 +9,14 @@
 			</v-row>
 		</v-system-bar>
 		<v-col no-gutters class="pa-0 font-weight-bold mt-13" align="center" wrap>
+			<!--
 			<picture>
 				<source media="(max-width:960px)" srcset="/img/firstview_Mobile.png">
 				<img width="100%" src="/img/firstview.png">
 			</picture>
+			-->
+			<v-img class="hidden-sm-and-up" width="100%" lazy-src="/img/mobile_lazy" src="/img/firstview_Mobile.png"></v-img>
+			<v-img class="hidden-sm-and-down" width="100%" src="/img/firstview.png"></v-img>
 			<div class="text-xl">
 				<div class="mt-12">フォーム改善で自己ベストを</div>
 				<div>更新しましょう！</div>
