@@ -199,7 +199,7 @@
 							</div>
 							<v-row class="font-weight-bold mt-4 align-center">
 								<v-col class="mt-n2 to-right" cols="12" sm="12" md="6" lg="6" xl="6">
-									<span class="text-h3 white--text black pa-2">1ヶ月10名限定</span>
+									<span class="text-h3 white--text black pa-2">1ヶ月３名限定</span>
 								</v-col>
 								<v-col class="mt-n2 text-xl to-left" cols="12" sm="12" md="6" lg="6" xl="6">
 									とさせて頂きます！
@@ -207,7 +207,7 @@
 							</v-row>
 							<div class="text-s font-weight-bold grey--text text--darken-3 mt-8">
 								<div>このオンラインフォームチェックの募集は人数が定員に達し次第、終了を予定しております！</div>
-								<div class="mt-1">また、一人一人手作業でフォーム改善を行うので人数も１ヶ月１０名限定とさせて頂きます！</div>
+								<div class="mt-1">また、一人一人手作業でフォーム改善を行うので人数も１ヶ月３名限定とさせて頂きます！</div>
 								<div class="mt-1">迷われている方はお早めにお申し込みください！</div>
 							</div>
 						</div>
