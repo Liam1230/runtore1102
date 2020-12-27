@@ -5,9 +5,16 @@
         <v-treeview :items="items" transition activatable hoverable open-on-click>
           <template v-slot:label="{ item }">
             <template v-if="!item.children">
-              <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
-                <u><b class="">{{ item.name }}</b></u>
-              </nuxt-link>
+              <template v-if="item.to">
+                <nuxt-link is="a" @click="movePage(`${item.to}`)">
+                  <u><b class="">{{ item.name }}</b></u>
+                </nuxt-link>
+              </template>
+              <template v-else>
+                <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
+                  <u><b class="">{{ item.name }}</b></u>
+                </nuxt-link>
+              </template>
             </template>
             <template v-else>
               <b class="main-color">{{ item.name }}</b>
@@ -22,7 +29,10 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-         <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-for="(item,i) in items" :key="i">
+        <nuxt-link class="white--text px-5" to="information" style="border-left: solid 2px white;">
+          オンラインフォームチェック
+        </nuxt-link>
+        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-if="i!=0" v-for="(item,i) in items" :key="i">
           <template v-slot:activator="{ on, attrs }">
             <nuxt-link is="a" v-on="on" v-bind="attrs"  class="white--text px-5" style="border-left: solid 2px white;">
               {{items[i].name}}
@@ -101,7 +111,12 @@ export default {
       drawer: false,
       fixed: true,
       getLargeCategorys:{},
-      items: [],
+      items: [
+        {
+          name:"オンラインフォームチェック",
+          to:"/information"
+        }
+      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -125,7 +140,7 @@ export default {
     )
     console.log(this.getLargeCategorys.data.contents)
     for (let i=0; i<this.getLargeCategorys.data.contents.length;i++){
-      this.$set(this.items, i, this.getLargeCategorys.data.contents[i]);
+      this.$set(this.items, i+1, this.getLargeCategorys.data.contents[i]);
     }
     //this.items = this.getLargeCategorys.data.contents
 
