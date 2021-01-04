@@ -59,7 +59,9 @@ export default {
       data["dics"] = dics
     }
 
-    console.log(data.youtubeURL)
+    console.log(data.text)
+
+    // console.log(data.youtubeURL)
     return data
   },
   head () {
