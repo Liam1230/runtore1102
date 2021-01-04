@@ -13,6 +13,7 @@
               <template v-else>
                 <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
                   <u><b class="">{{ item.name }}</b></u>
+                  {{ item.name }}
                 </nuxt-link>
               </template>
             </template>
@@ -29,33 +30,32 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-        <nuxt-link class="white--text px-5" to="information" style="border-left: solid 2px white;">
-          オンラインフォームチェック
-        </nuxt-link>
-        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-if="i!=0" v-for="(item,i) in items" :key="i">
+        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-if="i != largeCatCount" v-for="(item,i) in items" :key="i">
           <template v-slot:activator="{ on, attrs }">
             <nuxt-link is="a" v-on="on" v-bind="attrs"  class="white--text px-5" style="border-left: solid 2px white;">
               {{items[i].name}}
             </nuxt-link>
           </template>
-          <v-list>
-            <nuxt-link v-for="(child,j) in item.children" :key="j" :to="`blogCategory?categoryId=${child.id}`">       
-              <v-list-item link>
-                <v-list-item-title v-text="child.name">
-                </v-list-item-title>
-              </v-list-item>
-            </nuxt-link>
+          <v-list v-if="item">
+            <template>
+              <nuxt-link v-for="(child,j) in item.children" :key="j" :to="`blogCategory?categoryId=${child.id}`">       
+                <v-list-item link>
+                  <v-list-item-title v-text="child.name">
+                  </v-list-item-title>
+                </v-list-item>
+              </nuxt-link>
+            </template>
           </v-list>
         </v-menu>
+        <nuxt-link class="white--text px-5" to="information" style="border-left: solid 2px white;">
+          オンラインフォームチェック
+        </nuxt-link>
       </template>
       <template v-else>
         <v-btn color="white" @click="menu=!menu" icon>
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </template>
-      <!-- <nuxt-link :to="items[3].to" class="white--text px-5" style="border-left: solid 2px white;">
-        {{items[3].title}}
-      </nuxt-link> -->
     </v-app-bar>
     <v-main>
       <transition name="fade-transform">
@@ -111,12 +111,8 @@ export default {
       drawer: false,
       fixed: true,
       getLargeCategorys:{},
-      items: [
-        {
-          name:"オンラインフォームチェック",
-          to:"/information"
-        }
-      ],
+      largeCatCount:0,
+      items: [],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -140,8 +136,16 @@ export default {
     )
     console.log(this.getLargeCategorys.data.contents)
     for (let i=0; i<this.getLargeCategorys.data.contents.length;i++){
-      this.$set(this.items, i+1, this.getLargeCategorys.data.contents[i]);
+      this.$set(this.items, i, this.getLargeCategorys.data.contents[i]);
     }
+    this.largeCatCount = this.getLargeCategorys.data.contents.length
+    this.$set(this.items, this.largeCatCount, {
+      name:"オンラインフォームチェック",
+      to:"/information"
+    });
+
+    console.log(this.items)
+
     //this.items = this.getLargeCategorys.data.contents
 
     
