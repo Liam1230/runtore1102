@@ -30,13 +30,13 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-if="i != largeCatCount" v-for="(item,i) in items" :key="i">
-          <template v-slot:activator="{ on, attrs }">
+        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-for="(item,i) in items" :key="i">
+          <template v-slot:activator="{ on, attrs }" v-if="i != largeCatCount">
             <nuxt-link is="a" v-on="on" v-bind="attrs"  class="white--text px-5" style="border-left: solid 2px white;">
               {{items[i].name}}
             </nuxt-link>
           </template>
-          <v-list v-if="item">
+          <v-list v-if="item && i != largeCatCount">
             <template>
               <nuxt-link v-for="(child,j) in item.children" :key="j" :to="`blogCategory?categoryId=${child.id}`">       
                 <v-list-item link>

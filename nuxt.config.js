@@ -7,8 +7,8 @@ export default {
   target: 'static',
   generate: {
     async routes() {
-      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog?limit=300', {
-        headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
+      const pages = await axios.get('https://runtrainingnote.microcms.io/api/v1/blog?limit=400', {
+        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
       })
       .then((res) =>
         res.data.contents.map((content) => ({
@@ -16,16 +16,17 @@ export default {
           payload: content
         })
       ))
+      // console.log(pages)
       return pages
     }
   },
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://runtore.netlify.app',
-    // generate: true,
+    generate: true,
     async routes() {
-      const pages = await axios.get('https://valuup.microcms.io/api/v1/blog?limit=300', {
-        headers: { 'X-API-KEY': '66a46bb5-4cfd-4a48-903d-cd75f0ad4cd6' }
+      const pages = await axios.get('https://runtrainingnote.microcms.io/api/v1/blog?limit=400', {
+        headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
       })
       .then((res) =>
         res.data.contents.map((content) => ({

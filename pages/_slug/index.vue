@@ -42,6 +42,7 @@ export default {
             headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
         }
     )
+    // console.log(data)
     const titlePattern = /<h2.*?>.+?<\/h2>/g
     const res = data.text.match(titlePattern)
 
@@ -59,7 +60,7 @@ export default {
       data["dics"] = dics
     }
 
-    console.log(data.text)
+    // console.log(data.text)
 
     // console.log(data.youtubeURL)
     return data
