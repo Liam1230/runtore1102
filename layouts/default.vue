@@ -13,7 +13,6 @@
               <template v-else>
                 <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
                   <u><b class="">{{ item.name }}</b></u>
-                  {{ item.name }}
                 </nuxt-link>
               </template>
             </template>
