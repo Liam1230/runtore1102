@@ -201,6 +201,17 @@ $breakpoints: (
     border-bottom: solid 2px $title-text-color;
 }
 
+.blog .post iframe{
+    width: 840px;
+    height: 472px;
+    max-width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    @include mq(smAndDown){
+        height: 184px;
+    }
+}
+
 .active {
     border: 9px solid #00cc00;
 }
