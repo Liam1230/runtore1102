@@ -27,7 +27,7 @@
                 <h2 class="mt-3 pb-5 title-text-color">あなたは・・・</h2>
                 <h1 class="text-h3 mt-5 red--text">{{runnerType}}</h1>
             </div>
-            <v-btn color="secondary" rounded x-large class="my-5"  @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
+            <v-btn color="secondary" rounded x-large class="my-5" @click="toAnswer()">問題の正しい答えが知りたい</v-btn>
             <template v-if="runnerType">
                 <div class="main-under-line mt-5">
                     <h3 class="text-h4 main-color text-left">{{runnerType}}のあなたは・・・</h3>
@@ -54,7 +54,7 @@
                 <h3 class="text-h4 main-color text-left">お勧めの記事</h3>
             </div>
             <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
-                <nuxt-link :to="`/${content.id}`">
+                <a :href="`/${content.id}`" target="_blank">
                     <div class="d-flex justify-end text-subtitle-2 title-text-color">
                         {{content.date | dateFilter}}
                     </div>
@@ -80,7 +80,7 @@
                             </div>
                         </v-col>
                     </v-row>
-                </nuxt-link>
+                </a>
             </div>
             <v-row  class="my-5 align-center justify-center">
 				<nuxt-link  to="/" class="black--text px-5 my-5">
@@ -139,7 +139,10 @@ export default {
 
     methods:{
         async toAnswer(){
-            this.$router.push({ path: 'answer' , query :{fullTime: this.fullTime, fullMinute: this.fullMinute}});
+            const selectAnswers = JSON.stringify(this.$store.getters.selectAnswers)
+            console.log(selectAnswers)
+            window.open(`/answer?fullTime=${this.fullTime}&fullMinute=${this.fullMinute}&selectAnswers=${selectAnswers}`, '_blank');
+            // this.$router.push({ path: 'answer' , query :{fullTime: this.fullTime, fullMinute: this.fullMinute}});
         }
     },
 
