@@ -68,14 +68,14 @@
             <span>&copy; 大人のRUNトレ塾</span>
           </v-col>
           <v-col cols="12" md="5" class="pl-md-5 py-0" style="border-left: solid 2px #ffffff;">
-            <v-row class="pl-5">
+            <!-- <v-row class="pl-5">
               <v-col class="text-left mb-0 pb-0" cols=12 md="3">
                 TEL
               </v-col>
               <v-col class="mt-0 pt-0 pt-md-3" cols=12 md="9">
                 080-6143-0685
               </v-col>
-            </v-row>
+            </v-row> -->
             <v-row class="pl-5">
               <v-col class="text-left mb-0 pb-0" cols=12 md="3">
                 EMAIL
