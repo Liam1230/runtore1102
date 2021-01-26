@@ -19,6 +19,38 @@
                   </ul>
                 </div>
                 <div class="post" v-html="text"></div>
+                <div>
+                  <h2>おすすめの記事</h2>
+                  <div v-for="(recomend,i) in recomends" :key="i" class="blog-post pa-5 mt-5">
+                    <nuxt-link :to="`/${recomend.id}`">
+                      <div class="d-flex justify-end text-subtitle-2 title-text-color">
+                        {{recomend.date | dateFilter}}
+                      </div>
+                      <v-row>
+                          <v-col cols="12" md="5">
+                            <v-img v-if="recomend.headerImg" class="rounded" :aspect-ratio="16/9" :src="recomend.headerImg.url"></v-img>
+                          </v-col>
+                          <v-col cols="12" md="7">
+                            <h3 class="text-h5 sub-under-line title-text-color">{{recomend.title}}</h3>
+                            <p class="main-text-color mt-5 text-body-2">
+                              {{recomend.seoDescription | blogTextFileter}}
+                            </p>
+                            <div>
+                              <h4 class="text-caption title-text-color">カテゴリー</h4>
+                              <div class="d-flex mt-1 flex-wrap">
+                                <v-btn v-if="recomend.category1" outlined rounded small class="mr-3 mb-3">
+                                  {{recomend.category1.name}}
+                                </v-btn>
+                                <v-btn v-if="recomend.category2" outlined rounded small class="mr-3">
+                                  {{recomend.category2.name}}
+                                </v-btn>
+                              </div>
+                            </div>
+                          </v-col>
+                        </v-row>
+                    </nuxt-link>
+                  </div>
+                </div>
               </v-container>
           </v-col>
           <v-col cols=12 md="3">
@@ -37,11 +69,20 @@ export default {
   async asyncData(ctx) {
     const { data } = await ctx.$axios.get(
         // your-service-id部分は自分のサービスidに置き換えてください
-        `https://runtrainingnote.microcms.io/api/v1/blog/${ctx.params.slug}`,
+        `https://runtrainingnote.microcms.io/api/v1/blog/${ctx.params.slug}?depth=2`,
         {
             headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
         }
     )
+
+    // const recomends = await ctx.$axios.get(
+    //     // your-service-id部分は自分のサービスidに置き換えてください
+    //     `https://runtrainingnote.microcms.io/api/v1/blog/${ctx.params.slug}`,
+    //     {
+    //         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
+    //     }
+    // )
+
     // console.log(data)
     const titlePattern = /<h2.*?>.+?<\/h2>/g
     const res = data.text.match(titlePattern)
@@ -82,6 +123,16 @@ export default {
     dateFilter(val){
       const date = new Date(val)
       return `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`
+    },
+    blogTextFileter(val){
+      if(!val) return ""
+      if(val.length > 40){
+          let tmp = val.substr(0,40)
+          tmp += "…"
+          return tmp
+      }else {
+          return val
+      }
     }
   },
 }
