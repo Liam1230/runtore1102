@@ -19,6 +19,22 @@
                   </ul>
                 </div>
                 <div class="post" v-html="text"></div>
+                <!-- <div class="d-flex justify-start align-start py-3">
+                  <div class="d-flex justify-start">
+                    <img class="avatar mr-5" src="/img/avatar.png" alt="">
+                  </div>
+                  <div class="l-buble">
+                    ajlkdfjlaksdjlfjaldfjldfaskdjflaskjdflkasjdfslkdfjasdkljfklasjdf <br>dfasdfasdfasd
+                  </div>
+                </div>
+                <div class="d-flex justify-end align-start py-3">
+                  <div class="r-buble">
+                    ajlkdfjlaksdjlfjaldfjl
+                  </div>
+                  <div class="d-flex justify-start">
+                    <img class="avatar ml-5" src="/img/avatar.png" alt="">
+                  </div>
+                </div> -->
                 <div>
                   <h2>おすすめの記事</h2>
                   <div v-for="(recomend,i) in recomends" :key="i" class="blog-post pa-5 mt-5">
@@ -67,7 +83,7 @@ export default {
     youtubeURL:"",
   }),
   async asyncData(ctx) {
-    const { data } = await ctx.$axios.get(
+    let { data } = await ctx.$axios.get(
         // your-service-id部分は自分のサービスidに置き換えてください
         `https://runtrainingnote.microcms.io/api/v1/blog/${ctx.params.slug}?depth=2`,
         {
@@ -82,8 +98,8 @@ export default {
     //         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
     //     }
     // )
-
     // console.log(data)
+
     const titlePattern = /<h2.*?>.+?<\/h2>/g
     const res = data.text.match(titlePattern)
 
@@ -100,6 +116,25 @@ export default {
       }
       data["dics"] = dics
     }
+
+    const userPattern = /\|%user%\|/g
+    data.text = data.text.replace(userPattern, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
+    const userEndPattern = /\|%enduser%\|/g
+    data.text = data.text.replace(userEndPattern, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/avatar.png" alt=""></div></div>`)
+
+    const menterPattern = /\|%menter%\|/g
+    data.text = data.text.replace(menterPattern, `<div class="d-flex justify-start align-start py-3"><div class="d-flex justify-start"><img class="avatar mr-5" src="/img/avatar.png" alt=""></div><div class="l-buble">`)
+    const menterEndPattern = /\|%endmenter%\|/g
+    data.text = data.text.replace(menterEndPattern, `</div></div>`)
+    // if(talkRes){
+    //   for(const r of talkRes){
+    //     const userPattern = /<%user%>.+?<%\/user%>/g
+    //     const userRes = data.text.match(userPattern)
+    //     const id = r.match(/id="(.+?)"/)[1]
+    //     let text = r.match(/<h2.*?>(.+?)<\/h2>/)[1]
+    //     text = text.replace(/<.*?>/g,"")
+    //   }
+    // }
 
     // console.log(data.text)
 

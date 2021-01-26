@@ -674,3 +674,66 @@ $breakpoints: (
 .pointer{
     cursor: pointer;
 }
+
+.l-buble{
+    color: #444;
+    position: relative;
+    // margin-left: 100px;
+    // margin-right: 100px;
+    padding: 1.2em;
+    border: 3px solid #eee;
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: calc(100% - 110px);
+    &::after{
+        position: absolute;
+        content: '';
+        border: 10px solid transparent;
+        border-right: 10px solid #fff;
+        top: 21px;
+        left: -19px;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        border: 10px solid transparent;
+        border-right: 10px solid #eee;
+        top: 21px;
+        left: -23px;
+    }
+}
+
+img.avatar{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.r-buble{
+    color: #444;
+    position: relative;
+    // margin-left: 100px;
+    // margin-right: 100px;
+    padding: 1.2em;
+    border: 3px solid #eee;
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: calc(100% - 110px);
+    &::after{
+        position: absolute;
+        content: '';
+        border: 10px solid transparent;
+        border-left: 10px solid #fff;
+        top: 21px;
+        right: -19px;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        border: 10px solid transparent;
+        border-left: 10px solid #eee;
+        top: 21px;
+        right: -23px;
+    }
+}
