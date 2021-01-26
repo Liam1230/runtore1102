@@ -4,11 +4,11 @@
 			<h1 class="text-h3 mt-5 title-text-color">ランニング力チェック</h1>
 			<h2 class="mt-3 pb-5 title-text-color">-RunCheck-</h2>
 			<v-row class="align-center justify-center pt-5 mt-5 flex-wrap">
-                <v-col cols=12 md="4" class="text-right">
+                <!-- <v-col cols=12 md="4" class="text-right">
                     <v-avatar size="auto" max-width="100%">
                         <v-img src="/img/avatar.png"></v-img>
                     </v-avatar>
-                </v-col>
+                </v-col> -->
                 <v-col cols=12 md="5" class="background-color-yellow">
                     <div class="talk-answer">
                         <p class="text-left main-text-color">
