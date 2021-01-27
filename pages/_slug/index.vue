@@ -35,7 +35,7 @@
                     <img class="avatar ml-5" src="/img/avatar.png" alt="">
                   </div>
                 </div> -->
-                <div>
+                <div v-if="recomends.length > 0">
                   <h2>おすすめの記事</h2>
                   <div v-for="(recomend,i) in recomends" :key="i" class="blog-post pa-5 mt-5">
                     <nuxt-link :to="`/${recomend.id}`">
