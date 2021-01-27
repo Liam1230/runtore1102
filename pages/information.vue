@@ -185,7 +185,7 @@
 					<img class="pt-5" src="/img/pdf.svg" style="width:70%; max-width:400px">
 					<a class="text-s pt-4" href="/pdf/pdf_sample.pdf">診断結果PDFイメージはこちら</a>
 				</v-col>
-				<v-col class="mt-16" style="max-width:900px">
+				<v-col class="mt-6" style="max-width:900px">
 					<div class="to-runner justify-center rounded-xl">
 						<div class="text-xl font-weight-bold text-decoration-underline">ランナーの皆さんへ</div>
 						<div class="mt-10 ml-8 mr-8 text-md font-weight-bold text-justify">
