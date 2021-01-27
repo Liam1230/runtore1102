@@ -13,7 +13,6 @@
               <template v-else>
                 <nuxt-link is="a" @click="movePage(`blogCategory?categoryId=${item.id}`)">
                   <u><b class="">{{ item.name }}</b></u>
-                  {{ item.name }}
                 </nuxt-link>
               </template>
             </template>
@@ -30,13 +29,13 @@
       </nuxt-link>
       <v-spacer />
       <template v-if="$vuetify.breakpoint.mdAndUp">
-        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-if="i != largeCatCount" v-for="(item,i) in items" :key="i">
-          <template v-slot:activator="{ on, attrs }">
+        <v-menu open-on-hover offset-y tile transition="slide-y-transition" v-for="(item,i) in items" :key="i">
+          <template v-slot:activator="{ on, attrs }" v-if="i != largeCatCount">
             <nuxt-link is="a" v-on="on" v-bind="attrs"  class="white--text px-5" style="border-left: solid 2px white;">
               {{items[i].name}}
             </nuxt-link>
           </template>
-          <v-list v-if="item">
+          <v-list v-if="item && i != largeCatCount">
             <template>
               <nuxt-link v-for="(child,j) in item.children" :key="j" :to="`blogCategory?categoryId=${child.id}`">       
                 <v-list-item link>
@@ -69,14 +68,14 @@
             <span>&copy; 大人のRUNトレ塾</span>
           </v-col>
           <v-col cols="12" md="5" class="pl-md-5 py-0" style="border-left: solid 2px #ffffff;">
-            <v-row class="pl-5">
+            <!-- <v-row class="pl-5">
               <v-col class="text-left mb-0 pb-0" cols=12 md="3">
                 TEL
               </v-col>
               <v-col class="mt-0 pt-0 pt-md-3" cols=12 md="9">
                 080-6143-0685
               </v-col>
-            </v-row>
+            </v-row> -->
             <v-row class="pl-5">
               <v-col class="text-left mb-0 pb-0" cols=12 md="3">
                 EMAIL

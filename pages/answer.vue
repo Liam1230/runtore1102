@@ -37,7 +37,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz1CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz1CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz1CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz1CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -57,7 +57,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="quiz2CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz2CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz2CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz2CommentId)">解説はこちら</v-btn>
 					</v-row>
 					
 					<v-row class="align-center justify-center mt-3 mx-0">
@@ -78,7 +78,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="quiz3CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz3CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz3CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz3CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -103,7 +103,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz4CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz4CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz4CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz4CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -128,7 +128,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz5CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz5CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz5CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz5CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -148,7 +148,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="quiz6CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz6CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz6CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz6CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -173,7 +173,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz7CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz7CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz7CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz7CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -198,7 +198,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz8CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz8CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz8CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz8CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -218,7 +218,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="quiz9CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz9CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz9CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz9CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -238,7 +238,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="quiz10CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz10CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz10CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz10CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row class="align-center justify-center mt-3 mx-0">
 						<v-col cols="12" class="text-left">
@@ -263,7 +263,7 @@
 								</v-item-group>
 							</v-container>
 						</v-card>
-						<v-btn v-if="quiz11CommentId" color="primary" class="mt-3 mb-5" block rounded :to="quiz11CommentId">解説はこちら</v-btn>
+						<v-btn v-if="quiz11CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(quiz11CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-if="Number(this.fullTime) >= 5 || !this.fullTime" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -283,7 +283,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="extraquize1CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize1CommentId">解説はこちら</v-btn>
+						<v-btn v-if="extraquize1CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(extraquize1CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 4" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -303,7 +303,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="extraquize2CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize2CommentId">解説はこちら</v-btn>
+						<v-btn v-if="extraquize2CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(extraquize2CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else-if="Number(this.fullTime) >= 3 && Number(this.fullMinute) >= 30" class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -323,7 +323,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="extraquize3CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize3CommentId">解説はこちら</v-btn>
+						<v-btn v-if="extraquize3CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(extraquize3CommentId)">解説はこちら</v-btn>
 					</v-row>
 					<v-row v-else class="align-center justify-center mt-3 mx-0" >
 						<v-col cols="12" class="text-left">
@@ -343,7 +343,7 @@
 								</v-list-item-group>
 							</v-list>
 						</v-card>
-						<v-btn v-if="extraquize4CommentId" color="primary" class="mt-3 mb-5" block rounded :to="extraquize4CommentId">解説はこちら</v-btn>
+						<v-btn v-if="extraquize4CommentId" color="primary" class="mt-3 mb-5" block rounded @click="moveTo(extraquize4CommentId)">解説はこちら</v-btn>
 					</v-row>
 				</v-col>
 				<v-col cols=12 sm=12 md=1></v-col>
@@ -602,41 +602,40 @@ export default {
 	mounted: async function(){
         this.fullTime = this.$route.query.fullTime
 		this.fullMinute = this.$route.query.fullMinute
-		
-		console.log(this.$store.getters.selectAnswers)
+		const selectAnswers = JSON.parse(this.$route.query.selectAnswers)
 		//console.log(this.$store.getters.selectAnswers[0].answer)
-        for (let i=0; i<this.$store.getters.selectAnswers.length;i++){
+        for (let i=0; i<selectAnswers.length;i++){
 			//this.$set(this.quiz5userselected, 0, this.$store.state.selectAnswer[i].answer);
 			if(i==0){
-				this.quiz1userselected.push(this.$store.getters.selectAnswers[i].answer)
+				this.quiz1userselected.push(selectAnswers[i].answer)
 			}else if(i==1){
-				this.quiz2userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz2userselected = selectAnswers[i].answer
 			}else if(i==2){
-				this.quiz3userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz3userselected = selectAnswers[i].answer
 			}else if(i==3){
-				for (let j=0; j<this.$store.getters.selectAnswers[i].answer.length;j++){
+				for (let j=0; j<selectAnswers[i].answer.length;j++){
 					//this.quiz4userselected.push(this.$store.getters.selectAnswers[i].answer[j])
-					this.$set(this.quiz4userselected, j, this.$store.getters.selectAnswers[i].answer[j]);
+					this.$set(this.quiz4userselected, j, selectAnswers[i].answer[j]);
 				}
 				console.log(this.quiz4userselected)
 			}else if(i==4){
-				this.quiz5userselected.push(this.$store.getters.selectAnswers[i].answer)
+				this.quiz5userselected.push(selectAnswers[i].answer)
 			}else if(i==5){
-				this.quiz6userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz6userselected = selectAnswers[i].answer
 			}else if(i==6){
-				this.quiz7userselected.push(this.$store.getters.selectAnswers[i].answer)
+				this.quiz7userselected.push(selectAnswers[i].answer)
 			}else if(i==7){
-				for (let j=0; j<this.$store.getters.selectAnswers[i].answer.length;j++){
-					this.quiz8userselected.push(this.$store.getters.selectAnswers[i].answer[j])
+				for (let j=0; j<selectAnswers[i].answer.length;j++){
+					this.quiz8userselected.push(selectAnswers[i].answer[j])
 				}
 			}else if(i==8){
-				this.quiz9userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz9userselected = selectAnswers[i].answer
 			}else if(i==9){
-				this.quiz10userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz10userselected = selectAnswers[i].answer
 			}else if(i==10){
-				this.quiz11userselected.push(this.$store.getters.selectAnswers[i].answer)
+				this.quiz11userselected.push(selectAnswers[i].answer)
 			}else if(i==11){
-				this.quiz12userselected = this.$store.getters.selectAnswers[i].answer
+				this.quiz12userselected = selectAnswers[i].answer
 			}
 		}
 
@@ -689,6 +688,9 @@ export default {
 	},
 
 	methods:{
+		moveTo(to){
+			window.open(`/${to}`, '_blank');
+		}
 	},
 	async asyncData(ctx) {
 		// const quizCommentIds = [
