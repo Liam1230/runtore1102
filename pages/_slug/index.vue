@@ -117,10 +117,22 @@ export default {
       data["dics"] = dics
     }
 
-    const userPattern = /\|%user%\|/g
-    data.text = data.text.replace(userPattern, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
-    const userEndPattern = /\|%enduser%\|/g
-    data.text = data.text.replace(userEndPattern, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/avatar.png" alt=""></div></div>`)
+    const userPattern1 = /\|%user1%\|/g
+    data.text = data.text.replace(userPattern1, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
+    const userEndPattern1 = /\|%enduser1%\|/g
+    data.text = data.text.replace(userEndPattern1, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/man_1.png" alt=""></div></div>`)
+    const userPattern2 = /\|%user2%\|/g
+    data.text = data.text.replace(userPattern2, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
+    const userEndPattern2 = /\|%enduser2%\|/g
+    data.text = data.text.replace(userEndPattern2, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/man_2.png" alt=""></div></div>`)
+    const userPattern3 = /\|%user3%\|/g
+    data.text = data.text.replace(userPattern3, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
+    const userEndPattern3 = /\|%enduser3%\|/g
+    data.text = data.text.replace(userEndPattern3, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/man_3.png" alt=""></div></div>`)
+    const userPattern4 = /\|%user4%\|/g
+    data.text = data.text.replace(userPattern4, `<div class="d-flex justify-end align-start py-3"><div class="r-buble">`)
+    const userEndPattern4 = /\|%enduser4%\|/g
+    data.text = data.text.replace(userEndPattern4, `</div><div class="d-flex justify-start"><img class="avatar ml-5" src="/img/man_4.png" alt=""></div></div>`)
 
     const menterPattern = /\|%menter%\|/g
     data.text = data.text.replace(menterPattern, `<div class="d-flex justify-start align-start py-3"><div class="d-flex justify-start"><img class="avatar mr-5" src="/img/avatar.png" alt=""></div><div class="l-buble">`)
