@@ -503,11 +503,7 @@ $breakpoints: (
 .three-step{
     max-width:1280px;
     background:#f7f7f7;
-    outline:1px solid black;
-    outline-offset:-4px;
     width:100%;
-    margin-left:4px;
-    margin-right:4px;
     display:grid;
     @media screen and (max-width:960px){
         padding:48px;
@@ -522,10 +518,26 @@ $breakpoints: (
         padding:48px;
         padding-left:56px;
         padding-right:56px;
+        outline:1px solid #afafaf;
+        outline-offset: -4px;
         grid-template:
         "timg" auto
         "tsteps" auto
         "tindex" auto / 100%;
+    }
+}
+.step-arrow{
+    max-width:1280px;
+    width:100%;
+    @media screen and (max-width:1200px){
+        border-top:32px solid #f7f7f7;
+        border-right: 50vw solid transparent;
+        border-left: 50vw solid transparent;
+    }
+    @media screen and (min-width:1200px){
+        border-top:32px solid #f7f7f7;
+        border-right: 600px solid transparent;
+        border-left: 600px solid transparent;
     }
 }
 .steps{
