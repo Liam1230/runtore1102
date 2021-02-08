@@ -178,15 +178,13 @@
 						</div>
 					</div>
 				</div>
-				<!--
 				<div class="step-arrow"/>
 				<v-col class="text-xl pt-6 d-flex flex-column align-center" cols="12">
 					<div>診断結果は</div>
 					<div>PDFにまとめてお送りします！</div>
 					<img class="pt-5" src="/img/pdf.svg" style="width:70%; max-width:400px">
-					<a class="text-s pt-4" href="/pdf/pdf_sample.pdf">診断結果PDFイメージはこちら</a>
+					<!--<a class="text-s pt-4" href="/pdf/pdf_sample.pdf">診断結果PDFイメージはこちら</a>-->
 				</v-col>
-				-->
 				<v-col class="mt-6" style="max-width:900px">
 					<div class="to-runner justify-center rounded-xl">
 						<div class="text-xl font-weight-bold text-decoration-underline">ランナーの皆さんへ</div>
