@@ -1,8 +1,7 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+var firebase = require("firebase/app");
+require("firebase/firestore");
 import 'firebase/auth'
-import 'firebase/storage'
-
+// import 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAdSgkt0bCJ5dGfw6KYYqZlENQVUH0Y4PY",
@@ -12,20 +11,19 @@ const firebaseConfig = {
   storageBucket: "runtore.appspot.com",
   messagingSenderId: "577364328815",
   appId: "1:577364328815:web:ee6197dcf658e3008c689a",
-  measurementId: "G-NDECZR47JM"
 };
 
-firebase.initializeApp(firebaseConfig);
-export const auth = firebase.auth()
-export const db = firebase.firestore()
-
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
+// export const auth = firebase.auth()
+// export const db = firebase.firestore()
 
 export default function(app,inject){
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   inject('firebase', firebase)
   inject('firestore', firebase.firestore())
   inject('fireAuth', firebase.auth())
-  inject('fireStorage', firebase.storage())
+  // inject('fireStorage', firebase.storage())
 }
 
 
