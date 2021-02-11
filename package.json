@@ -16,6 +16,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "firebase": "^8.2.1",
     "dr-vue-echarts": "^1.0.13",
     "nuxt": "^2.14.6",
     "vue-scrollto": "^2.20.0",
