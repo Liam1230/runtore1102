@@ -281,7 +281,7 @@ export default {
                     this.init = true
                 })
             }else{
-                ctx.redirect("/admin/login")
+                self.$router.push("/admin/login")
             }
         })
         
