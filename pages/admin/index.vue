@@ -102,6 +102,17 @@ export default {
                                 ],
                                 backgroundColor: "rgba(255,183,76,0.5)"
                             },
+                            {
+                                label:"回答者数",
+                                data:[
+                                    this.scoreSum2.count,
+                                    this.scoreSum3.count,
+                                    this.scoreSum4.count,
+                                    this.scoreSum5.count,
+                                    this.scoreSum6.count,
+                                ],
+                                backgroundColor: "rgba(76,183,255,0.5)"
+                            },
                         ]
                     },
                     options:{
@@ -234,6 +245,7 @@ export default {
                             form : scoreSum2.form / scoreSum2.count,
                             body : scoreSum2.body / scoreSum2.count,
                             purpose : scoreSum2.purpose / scoreSum2.count,
+                            count: scoreSum2.count
                         }
                     }
                     if(scoreSum3.count){
@@ -241,6 +253,7 @@ export default {
                             form : scoreSum3.form / scoreSum3.count,
                             body : scoreSum3.body / scoreSum3.count,
                             purpose : scoreSum3.purpose / scoreSum3.count,
+                            count: scoreSum3.count
                         }
                     }
                     if(scoreSum4.count){
@@ -248,6 +261,7 @@ export default {
                             form : scoreSum4.form / scoreSum4.count,
                             body : scoreSum4.body / scoreSum4.count,
                             purpose : scoreSum4.purpose / scoreSum4.count,
+                            count: scoreSum4.count
                         }
                     }
                     if(scoreSum5.count){
@@ -255,6 +269,7 @@ export default {
                             form : scoreSum5.form / scoreSum5.count,
                             body : scoreSum5.body / scoreSum5.count,
                             purpose : scoreSum5.purpose / scoreSum5.count,
+                            count: scoreSum5.count
                         }
                     }
                     if(scoreSum6.count){
@@ -262,6 +277,7 @@ export default {
                             form : scoreSum6.form / scoreSum6.count,
                             body : scoreSum6.body / scoreSum6.count,
                             purpose : scoreSum6.purpose / scoreSum6.count,
+                            count: scoreSum6.count
                         }
                     }
                     // console.log({
