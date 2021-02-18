@@ -491,7 +491,7 @@ export default {
 		quiz8selected:[0,1],
 		quiz8userselected:[],
 		quiz8Comment:{},
-		quiz8CommentId: "",
+		quiz8CommentId: "yvpgfk8s4",
 
 		quiz9category:"目標計画",
 		quiz9text:"課題に合わせた練習内容として適したものを選んでください!",

@@ -79,6 +79,7 @@ export default {
       mode: 'client'
     },
     '@/plugins/vue-scrollto',
+    "@/plugins/firebase.js"
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

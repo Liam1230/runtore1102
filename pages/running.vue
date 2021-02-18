@@ -644,23 +644,54 @@ export default {
 				this.$store.dispatch('setSelectAnswers',{no:'9',answer:this.quiz9selected})
 				this.$store.dispatch('setSelectAnswers',{no:'10',answer:this.quiz10selected})
 				this.$store.dispatch('setSelectAnswers',{no:'11',answer:this.quiz11selected})
+				let fbAnswers = {
+					quiz1selected : this.quiz1selected,
+					quiz2selected : this.quiz2selected,
+					quiz3selected : this.quiz3selected,
+					quiz4selected : this.quiz4selected,
+					quiz5selected : this.quiz5selected,
+					quiz6selected : this.quiz6selected,
+					quiz7selected : this.quiz7selected,
+					quiz8selected : this.quiz8selected,
+					quiz9selected : this.quiz9selected,
+					quiz10selected : this.quiz10selected,
+					quiz11selected : this.quiz11selected,
+				}
 			 	this.toatlFormandTec = Number(this.quiz1srcs[this.quiz1selected].score)+ Number(this.quiz4srcs[this.quiz4selected[0]].score) + Number(this.quiz4srcs[this.quiz4selected[1]].score)  + Number(this.quiz7srcs[this.quiz7selected].score) + + Number(this.quiz10srcs[this.quiz10selected].score)
 			 	this.totalBody = Number(this.quiz2srcs[this.quiz2selected].score) + Number(this.quiz5srcs[this.quiz5selected].score) + Number(this.quiz8srcs[this.quiz8selected[0]].score) + Number(this.quiz8srcs[this.quiz8selected[1]].score) + Number(this.quiz11srcs[this.quiz11selected].score) 
 				if(this.extraquize1selected.length != 0	){
 					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize1selected})
+					fbAnswers["extraquize1selected"] = this.extraquize1selected
 					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize1srcs[this.extraquize1selected].score)
 				}else if(this.extraquize2selected.length != 0){
 					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize2selected})
+					fbAnswers["extraquize2selected"] = this.extraquize2selected
 					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize2srcs[this.extraquize2selected].score)
 				}else if(this.extraquize3selected.length != 0){
 					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize3selected})
+					fbAnswers["extraquize3selected"] = this.extraquize3selected
 					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize3srcs[this.extraquize3selected].score)
 				}else{
 					this.$store.dispatch('setSelectAnswers',{no:'12',answer:this.extraquize4selected})
+					fbAnswers["extraquize4selected"] = this.extraquize4selected
 					this.totalPurpose = Number(this.quiz3srcs[this.quiz3selected].score) + Number(this.quiz6srcs[this.quiz6selected].score) + Number(this.quiz9srcs[this.quiz9selected].score) + Number(this.extraquize4srcs[this.extraquize4selected].score)
 				}
 				if(this.fullTime && this.halfTime){
 					this.typeNum = (Number(this.fullTime * 60) + Number(this.fullMinute)) / (Number(this.halfTime * 60) + Number(this.halfMinute))
+					const fbBody = {
+						typeNum : this.typeNum,
+						answers : fbAnswers,
+						fullTime: Number(this.fullTime),
+						fullMinute: Number(this.fullMinute) / 60,
+						halfTime: Number(this.halfTime),
+						halfMinute: Number(this.halfMinute) / 60,
+						toatlFormandTec: this.toatlFormandTec,
+						totalBody: this.totalBody,
+						totalPurpose: this.totalPurpose
+					}
+					const db = this.$firestore
+					console.log(fbBody)
+					db.collection("checkrecords").add(fbBody)
 				}
 				this.$router.push({ path: 'result' , query :{ toatlFormandTec: this.toatlFormandTec, totalBody: this.totalBody, totalPurpose: this.totalPurpose,  typeNum: this.typeNum, fullTime: this.fullTime, fullMinute: this.fullMinute}});
 				
