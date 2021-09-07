@@ -22,7 +22,7 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://runtore.netlify.app',
+    hostname: 'https://runtore.com',
     generate: true,
     async routes() {
       const pages = await axios.get('https://runtrainingnote.microcms.io/api/v1/blog?limit=400', {
