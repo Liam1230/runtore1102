@@ -13,6 +13,7 @@
     "@mdi/font": "^5.8.55",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",

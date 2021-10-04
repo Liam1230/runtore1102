@@ -37,6 +37,11 @@ export default {
       return pages
     }
   },
+  robots: {
+    /* module options */
+    UserAgent: '*',
+    Sitemap: "https://runtore.com/sitemap.xml"
+  },
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
@@ -99,7 +104,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
