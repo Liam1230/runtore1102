@@ -93,7 +93,7 @@ export default {
                 //alert('サイト内検索')
                 const { data } = await axios.get(
                     // your-service-id部分は自分のサービスidに置き換えてください
-                    `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.$route.query.search}`,
+                    `https://runtrainingnote.microcms.io/api/v1/blog?q=${this.$route.query.search}&limit=300`,
                     {
                         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                     }
@@ -107,7 +107,7 @@ export default {
                 //alert('category')
                 const { data } = await axios.get(
                     // your-service-id部分は自分のサービスidに置き換えてください
-                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
+                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}&limit=300`,
                     {
                         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                     }
@@ -124,7 +124,7 @@ export default {
             }else{
                 const { data } = await axios.get(
                     // your-service-id部分は自分のサービスidに置き換えてください
-                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
+                    `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}&limit=300`,
                     {
                         headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                     }
@@ -139,7 +139,7 @@ export default {
         async onCategoryChange(){
             console.log(this.category)
             const { data } = await axios.get(
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}`,
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.category}[or]category2[equals]${this.category}&limit=300`,
                 {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
@@ -186,7 +186,7 @@ export default {
             //alert('category')
             const { data } = await axios.get(
                 // your-service-id部分は自分のサービスidに置き換えてください
-                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}`,
+                `https://runtrainingnote.microcms.io/api/v1/blog?filters=category1[equals]${this.$route.query.categoryId}[or]category2[equals]${this.$route.query.categoryId}&limit=300`,
                 {
                     headers: { 'X-API-KEY': '52975eee-cb37-4b73-9769-bb902ce81adc' }
                 }
