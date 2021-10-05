@@ -13,7 +13,7 @@
                         </v-select>
                     </div>
                     <div v-for="(content,i) in contents" :key="i" class="blog-post pa-5 mt-5">
-                        <nuxt-link :to="`/${content.id}`">
+                        <nuxt-link :to="`/${content.id}/`">
                             <div class="d-flex justify-end text-subtitle-2 title-text-color">
                                 {{content.date | dateFilter}}
                             </div>
